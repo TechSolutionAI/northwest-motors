@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { HeroCarousel } from "@/components/home/hero-carousel"
 import FeaturedVehicles from "@/components/home/featured-vehicles"
 import { WhyChooseUs } from "@/components/home/why-choose-us"
+import { GoogleMap } from "@/components/home/google-map"
 
 export default function Home() {
   return (
@@ -26,8 +27,10 @@ export default function Home() {
           <WhyChooseUs />
         </section>
 
+        
+
         {/* Choose Your Lifestyle Section */}
-        <section className="py-16 bg-gray-100">
+        {/* <section className="py-16 bg-gray-100">
           <div className="container mx-auto px-4">
             <p className="text-sm text-gray-500 mb-2">Let's find your dream car</p>
             <h2 className="text-3xl font-bold mb-8">CHOOSE YOUR LIFESTYLE</h2>
@@ -141,10 +144,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Locations Section */}
-        <section className="py-16 bg-white">
+        {/* <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
@@ -186,6 +189,10 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </section> */}
+        <section className="bg-white">
+          <h3 className="text-3xl font-bold text-center my-16">Our Location</h3>
+          <GoogleMap />
         </section>
       </main>
     </div>
