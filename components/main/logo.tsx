@@ -46,7 +46,7 @@ export function Logo({ className, size = "md", isScrolled = false, isFooter = fa
     //     !isScrolled && pathname === "/" ? "/logo-white.png" : isDark ? "/logo-white.png" : "/logo.png"
     // }
 
-    logoSrc = isFooter ? '/logo.png' : '/logo-white.png';
+    logoSrc = '/logo-white.png';
   }
 
   return (
