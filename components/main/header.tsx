@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
+import { usePathname } from "next/navigation"
 import { MobileNav } from "./mobile-nav"
 import { Logo } from "./logo"
 
@@ -10,6 +11,10 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const servicesRef = useRef<HTMLDivElement>(null)
   const aboutRef = useRef<HTMLDivElement>(null)
+  const pathname = usePathname()
+
+  // Check if we're on the homepage
+  const isHomePage = pathname === "/"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +39,7 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-dark shadow-md border-b border-dark" : "bg-transparent border-transparent"
+        scrolled || !isHomePage ? "bg-dark shadow-md border-b border-dark" : "bg-transparent border-transparent"
       }`}
       style={{ transitionDelay: scrolled ? "var(--transition-closing-delay)" : "var(--transition-show-delay)" }}
     >
@@ -51,7 +56,7 @@ export function Header() {
 
         {/* Desktop Navigation - only visible on large screens */}
         <nav className="hidden lg:flex items-center justify-end mx-auto space-x-6 text-white text-lg font-medium">
-          <Link href="#" className="hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
+          <Link href="/inventory" className="hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
             Browse Vehicles
           </Link>
           <Link href="#" className="hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">

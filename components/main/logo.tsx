@@ -34,7 +34,7 @@ export function Logo({ className, size = "md", isScrolled = false, isFooter = fa
   const isDark = theme === "dark" || resolvedTheme === "dark"
 
   // Default to white logo until client-side rendering is complete
-  let logoSrc = "/NWM-logo-white.png"
+  let logoSrc = "/logo-white.png"
 
   if (mounted) {
     // if (isFooter) {

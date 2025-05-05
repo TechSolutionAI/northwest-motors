@@ -102,44 +102,63 @@ export default function FeaturedVehicles() {
                 <div className="relative h-48 bg-gray-100">
                   <Image
                     src={'/suzuki-jimny-offroad.png'}
-                    alt={`${vehicle.name} ${index + 1}`}
+                    alt={`${vehicle.make} ${index + 1}`}
                     fill
                     className="object-cover cursor-pointer"
                   />
                 </div>
                 <div className="p-4">
-                  <h3 className="font-bold">
-                    {vehicle.name} <span className="text-xs text-gray-500">{vehicle.year}</span>
-                  </h3>
+                  <div className="flex items-baseline">
+                    <h3 className="text-xl font-bold text-dark">
+                      {vehicle.make} <span className="text-[#8E6F00]">{vehicle.model}</span>{" "}
+                      <span className="text-gray-500 text-sm">{vehicle.year}</span>
+                    </h3>
+                  </div>
+                  <p className="text-sm text-gray-500">{vehicle.trim}</p>
 
-                  <p className="mt-4">
-                    XC
-                  </p>
-
-                  <div className="grid grid-cols-2 gap-2 mt-4">
-                    <div className="flex items-center text-xs">
-                      <div className="w-6 h-6 rounded-fullflex items-center justify-center mr-2">
+                  <div className="grid grid-cols-2 gap-4 mt-4">
+                    <div className="flex items-center">
+                      <div className="w-8 h-8 rounded-fullflex items-center justify-center mr-2">
                         <CircleGauge />
                       </div>
-                      <span>{vehicle.km} km</span>
+                      <div className="text-sm">
+                        {vehicle.km.toLocaleString()} km
+                        <br />
+                        <span className="text-xs text-gray-500">Kilometers</span>
+                      </div>
                     </div>
-                    <div className="flex items-center text-xs">
-                      <div className="w-6 h-6 rounded-full flex items-center justify-center mr-2">
+
+                    <div className="flex items-center">
+                      <div className="w-8 h-8 rounded-fullflex items-center justify-center mr-2">
                         <CarFront />
                       </div>
-                      <span>{vehicle.type}</span>
+                      <div className="text-sm">
+                        {vehicle.transmission}
+                        <br />
+                        <span className="text-xs text-gray-500">Transmission</span>
+                      </div>
                     </div>
-                    <div className="flex items-center text-xs">
-                      <div className="w-6 h-6 rounded-full flex items-center justify-center mr-2">
+
+                    <div className="flex items-center">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center mr-2">
                         <MapPinned />
                       </div>
-                      <span>NorthWest Motors {vehicle.location}</span>
+                      <div className="text-sm">
+                        {vehicle.location}
+                        <br />
+                        <span className="text-xs text-gray-500">Location</span>
+                      </div>
                     </div>
-                    <div className="flex items-center text-xs">
-                      <div className="w-6 h-6 rounded-full flex items-center justify-center mr-2">
+
+                    <div className="flex items-center">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center mr-2">
                         <Fuel />
                       </div>
-                      <span>Petrol</span>
+                      <div className="text-sm">
+                        {vehicle.fuel}
+                        <br />
+                        <span className="text-xs text-gray-500">Fuel</span>
+                      </div>
                     </div>
                   </div>
 
@@ -153,10 +172,10 @@ export default function FeaturedVehicles() {
                   </div>
                 </div>
                 <div className="mt-4 flex justify-center items-center">
-                    <Link href="#" className="flex w-full py-2 justify-center group bg-[#E6E7E8] hover:bg-[#8E6F00] transition-colors duration-300 ease-in">
-                      <span className="self-center font-medium group-hover:text-white">VIEW</span> <MoveRight className="h-8 w-8 ml-4 group-hover:text-white" />
-                    </Link>
-                  </div>
+                  <Link href="#" className="flex w-full py-2 justify-center group bg-[#E6E7E8] hover:bg-[#8E6F00] transition-colors duration-300 ease-in">
+                    <span className="self-center font-medium group-hover:text-white">VIEW</span> <MoveRight className="h-8 w-8 ml-4 group-hover:text-white" />
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
