@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { MoveLeft, MoveRight } from "lucide-react"
 
 interface PaginationProps {
   currentPage: number
@@ -49,12 +49,11 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
       <button
         onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className={`border rounded-md px-4 py-2 flex items-center justify-center ${
-          currentPage === 1 ? "text-gray-400 cursor-not-allowed" : "text-gray-700 hover:bg-gray-100"
-        }`}
+        className={`border rounded-md px-8 py-4 flex items-center justify-center ${currentPage === 1 ? "text-gray-400 cursor-not-allowed" : "text-gray-700 hover:bg-gray-100"
+          }`}
         aria-label="Previous page"
       >
-        <ChevronLeft className="h-5 w-5" />
+        <MoveLeft className="h-5 w-5" />
       </button>
 
       {/* Page numbers */}
@@ -67,9 +66,8 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
           <button
             key={`page-${page}`}
             onClick={() => typeof page === "number" && onPageChange(page)}
-            className={`w-8 h-8 flex items-center justify-center rounded-md ${
-              currentPage === page ? "bg-dark text-white" : "text-gray-700 hover:bg-gray-100"
-            }`}
+            className={`w-8 h-8 flex items-center justify-center rounded-md ${currentPage === page ? "bg-dark text-white" : "text-gray-700 hover:bg-gray-100"
+              }`}
           >
             {page}
           </button>
@@ -80,12 +78,11 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
       <button
         onClick={() => currentPage < totalPages && onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className={`border rounded-md px-4 py-2 flex items-center justify-center ${
-          currentPage === totalPages ? "text-gray-400 cursor-not-allowed" : "text-gray-700 hover:bg-gray-100"
-        }`}
+        className={`border rounded-md px-8 py-4 flex items-center justify-center ${currentPage === totalPages ? "text-gray-400 cursor-not-allowed" : "text-gray-700 hover:bg-gray-100"
+          }`}
         aria-label="Next page"
       >
-        <ChevronRight className="h-5 w-5" />
+        <MoveRight className="h-5 w-5" />
       </button>
     </div>
   )

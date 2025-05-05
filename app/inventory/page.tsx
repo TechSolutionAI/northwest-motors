@@ -28,13 +28,13 @@ export default function BrowseVehicles() {
   return (
     <div className="flex min-h-screen flex-col">
 
-      <main className="flex flex-col md:flex-row pt-16">
+      <main className="flex flex-col md:flex-row">
         {/* Sidebar */}
         <FilterSidebar />
 
         {/* Main content */}
-        <div className="flex-1 p-6">
-          <div className="flex items-center justify-between mb-8">
+        <div className="flex-1 p-8">
+          <div className="flex items-center justify-between my-8">
             <h2 className="text-2xl font-semibold">Showing {vehicles.length} Cars</h2>
 
             <div className="flex items-center">

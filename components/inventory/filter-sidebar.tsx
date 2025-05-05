@@ -3,7 +3,7 @@ import { Input } from "../ui/input"
 
 export default function FilterSidebar() {
   return (
-    <div className="w-full md:w-80 bg-gray-50 p-6 border-r border-gray-200 h-full">
+    <div className="w-full md:w-96 bg-[#E6E7E8] p-6 pt-16 h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto">
       <h2 className="text-2xl text-gray-500 font-light mb-6">Browse Vehicles</h2>
 
       <h1 className="text-4xl font-bold text-gray-800 mb-6">
@@ -12,9 +12,9 @@ export default function FilterSidebar() {
         Dream Car
       </h1>
 
-      <div className="flex mb-6">
-        <button className="bg-gray-300 text-gray-700 px-4 py-2 text-sm font-medium">Save My Search</button>
-        <button className="bg-gray-200 text-gray-700 px-4 py-2 text-sm font-medium ml-2">My Searches</button>
+      <div className="flex flex-col-2 gap-2 mb-6">
+        <button className="bg-gray-500 text-white px-4 py-2 text-sm font-medium w-full">Save My Search</button>
+        <button className="bg-gray-500 text-white px-4 py-2 text-sm font-medium w-full">My Searches</button>
       </div>
 
       <div className="relative mb-6">
