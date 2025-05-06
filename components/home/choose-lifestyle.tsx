@@ -101,83 +101,108 @@ export function MobileCategory({ category, onClicked }: CategoryProps) {
 }
 
 interface CardProps {
-
+    vehicles: Vehicle[],
+    index: number;
 }
 
-export function Card({ }: CardProps) {
-    const vehicle = vehicles[1];
+export function Card({ vehicles, index }: CardProps) {
+
 
     return (
-        <div className="">
-            <div className="grid grid-cols-1 lg:grid-cols-10 gap-10">
-                <div className="lg:col-span-6">
-                    <div className="h-full rounded-md overflow-hidden">
-                        <Image
-                            src="/suzuki-jimny-offroad.png"
-                            alt="Mercedes-Benz GLC"
-                            width={600}
-                            height={400}
-                            className="w-full h-full object-cover"
-                        />
-                    </div>
-                </div>
+        <div>
+            <div className="relative overflow-hidden">
+                <div
+                    className="flex h-auto transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${index * 100}%)` }}
+                >
+                    {vehicles.map((vehicle) => {
+                        return (
+                            <div className="w-full flex-shrink-0">
+                                <div className="grid grid-cols-1 lg:grid-cols-10 gap-10">
+                                    <div className="lg:col-span-6">
+                                        <div className="h-full rounded-md overflow-hidden">
+                                            <Image
+                                                src={vehicle.image}
+                                                alt="Mercedes-Benz GLC"
+                                                width={600}
+                                                height={400}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    </div>
 
-                <div className="lg:col-span-4">
-                    <div className="h-full">
-                        <div className="flex items-baseline">
-                            <h3 className="text-[28px] font-bold text-dark">
-                                {vehicle.make} <span className="text-[#8E6F00]">{vehicle.model}</span>{" "}
-                            </h3>
-                        </div>
+                                    <div className="lg:col-span-4">
+                                        <div className="h-full">
+                                            <div className="flex items-baseline">
+                                                <h3 className="text-[28px] font-bold text-dark">
+                                                    {vehicle.make} <span className="text-[#8E6F00]">{vehicle.model}</span>{" "}
+                                                </h3>
+                                            </div>
 
-                        <p className="text-gray-500 mt-1">X253 GLC300 Wagon 5dr 9G-TRONIC 9sp 4MATIC 2.0T</p>
-                        <p className="text-gray-500 mt-4">YEAR: {vehicle.year}</p>
-                        <p className="font-bold text-xl mt-1">$74,950</p>
+                                            <p className="text-gray-500 mt-1">X253 GLC300 Wagon 5dr 9G-TRONIC 9sp 4MATIC 2.0T</p>
+                                            <p className="text-gray-500 mt-4">YEAR: {vehicle.year}</p>
+                                            <p className="font-bold text-xl mt-1">$74,950</p>
 
-                        <div className="grid grid-cols-2 gap-0 mt-4 border-b border-b-gray-400 pb-8">
-                            <div className="flex items-center">
-                                <div className="w-8 h-8 rounded-fullflex items-center justify-center mr-2">
-                                    <CircleGauge />
-                                </div>
-                                <div className="">
-                                    {vehicle.km.toLocaleString()} km
-                                    <br />
-                                    <span className="text-gray-500">Kilometers</span>
+                                            <div className="grid grid-cols-2 gap-0 mt-4 border-b border-b-gray-400 pb-8">
+                                                <div className="flex items-center">
+                                                    <div className="w-8 h-8 rounded-fullflex items-center justify-center mr-2">
+                                                        <CircleGauge />
+                                                    </div>
+                                                    <div className="">
+                                                        {vehicle.km.toLocaleString()} km
+                                                        <br />
+                                                        <span className="text-gray-500">Kilometers</span>
+                                                    </div>
+                                                </div>
+
+                                                <div className="flex items-center">
+                                                    <div className="w-8 h-8 rounded-fullflex items-center justify-center mr-2">
+                                                        <CarFront />
+                                                    </div>
+                                                    <div className="">
+                                                        {vehicle.transmission}
+                                                        <br />
+                                                        <span className=" text-gray-500">Transmission</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className="flex justify-center w-full border-[1px] border-black mt-8 p-4 cursor-pointer text-center">
+                                                <MessageCircleCode /> <span className="ml-4">Call 03 9832 2345</span>
+                                            </div>
+
+                                            <div className="grid grid-cols-2 gap-0 h-16 mt-8 border-b-4 border-b-[#8E6F00]">
+                                                <Link
+                                                    href="#"
+                                                    className="flex items-center justify-center py-2 bg-[#E6E7E8] hover:text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in"
+                                                >
+                                                    VIEW <MoveRight className="ml-2 h-6 w-6" />
+                                                </Link>
+                                                <Link
+                                                    href="#"
+                                                    className="flex items-center justify-center py-2 bg-[#414042] text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in"
+                                                >
+                                                    ENQUIRE <MoveRight className="ml-2 h-6 w-6" />
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        );
+                    })}
 
-                            <div className="flex items-center">
-                                <div className="w-8 h-8 rounded-fullflex items-center justify-center mr-2">
-                                    <CarFront />
-                                </div>
-                                <div className="">
-                                    {vehicle.transmission}
-                                    <br />
-                                    <span className=" text-gray-500">Transmission</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="flex justify-center w-full border-[1px] border-black mt-8 p-4 cursor-pointer text-center">
-                            <MessageCircleCode /> <span className="ml-4">Call 03 9832 2345</span>
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-0 h-16 mt-8 border-b-4 border-b-[#8E6F00]">
-                            <Link
-                                href="#"
-                                className="flex items-center justify-center py-2 bg-[#E6E7E8] hover:text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in"
-                            >
-                                VIEW <MoveRight className="ml-2 h-6 w-6" />
-                            </Link>
-                            <Link
-                                href="#"
-                                className="flex items-center justify-center py-2 bg-[#414042] text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in"
-                            >
-                                ENQUIRE <MoveRight className="ml-2 h-6 w-6" />
-                            </Link>
-                        </div>
-                    </div>
                 </div>
+            </div>
+            {/* Progress line */}
+            <div className="mt-4 flex space-x-1">
+                {[0, 1, 2, 3, 4].map((ixd) => (
+                    <div
+                        key={ixd}
+                        className={`h-[3px] flex-1 rounded-full transition-all duration-300 ${ixd === index ? "bg-[#8E6F00]" : "bg-gray-400"
+                            }`}
+                    />
+                ))}
             </div>
         </div>
     );
@@ -186,10 +211,22 @@ export function Card({ }: CardProps) {
 export function ChooseLifeStyle() {
 
     const [selectedCategory, setSelectedCategory] = useState(LIFESTYLE_CATEGORIES[0]);
+    const [slideIndex, setSlideIndex] = useState(0);
+
+    const slideVihcles = vehicles.slice(0, 5);
 
     const handleCategorySelect = (category: any) => {
         setSelectedCategory(category)
     }
+
+    const handleNextSlide = () => {
+        setSlideIndex((prev) => (prev === 4 ? 0 : prev + 1))
+    }
+
+    const handlePrevSlide = () => {
+        setSlideIndex((prev) => (prev === 0 ? 4 : prev - 1))
+    }
+
 
     return (
         <div className="container mx-auto px-4">
@@ -205,18 +242,17 @@ export function ChooseLifeStyle() {
                     <MobileCategory category={selectedCategory} onClicked={handleCategorySelect} />
                 </div>
                 <div className="col-span-6 mt-8 lg:mt-0">
-                    <Card />
+                    <Card vehicles={slideVihcles} index={slideIndex} />
                 </div>
             </div>
 
             <div className="mt-6 flex justify-end items-center">
-                <div className="text-sm text-black mr-4">1 | 5</div>
+                <div className="mr-4">{slideIndex + 1} | 5</div>
                 <div className="flex space-x-2">
                     <button
                         className="px-4  py-2 border rounded-md group border-[#414042] hover:bg-[#414042] transition-colors ease-in duration-450"
                         onClick={() => {
-                            const slider = document.getElementById("vehicle-slider")
-                            if (slider) slider.scrollLeft -= 300
+                            handlePrevSlide();
                         }}
                     >
                         <MoveLeft className="h-8 w-8 group-hover:text-white" />
@@ -224,8 +260,7 @@ export function ChooseLifeStyle() {
                     <button
                         className="px-4 py-2 border rounded-md group border-[#414042] hover:bg-[#414042] transition-colors ease-in duration-450"
                         onClick={() => {
-                            const slider = document.getElementById("vehicle-slider")
-                            if (slider) slider.scrollLeft += 300
+                            handleNextSlide();
                         }}
                     >
                         <MoveRight className="h-8 w-8 group-hover:text-white" />

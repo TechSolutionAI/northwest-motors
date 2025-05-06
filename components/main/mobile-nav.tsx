@@ -43,9 +43,8 @@ export function MobileNav() {
 
       {/* Mobile menu drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-4/5 max-w-sm bg-dark z-50 transform transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-full w-4/5 max-w-sm bg-dark z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="flex justify-between items-center p-4 border-b border-gray-700">
           <Image src="/logo-white.png" alt="NorthWest Motors" width={150} height={40} className="h-8 w-auto" />
@@ -54,7 +53,7 @@ export function MobileNav() {
           </button>
         </div>
 
-        <nav className="p-8 text-white text-2xl font-medium">
+        <nav className="p-8 text-white text-2xl">
           <ul className="space-y-4">
             <li>
               <Link href="#" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>

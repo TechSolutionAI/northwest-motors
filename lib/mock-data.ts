@@ -48,7 +48,7 @@ export const vehicles: Vehicle[] = [
     price: 36450,
     weeklyPayment: 178.28,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car1.jpg",
   },
   {
     id: 2,
@@ -63,7 +63,7 @@ export const vehicles: Vehicle[] = [
     price: 39950,
     weeklyPayment: 195.4,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car2.jpg",
   },
   {
     id: 3,
@@ -78,7 +78,7 @@ export const vehicles: Vehicle[] = [
     price: 36990,
     weeklyPayment: 180.92,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car3.jpg",
   },
   {
     id: 4,
@@ -93,7 +93,7 @@ export const vehicles: Vehicle[] = [
     price: 42500,
     weeklyPayment: 207.82,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car4.jpg",
   },
   {
     id: 5,
@@ -108,7 +108,7 @@ export const vehicles: Vehicle[] = [
     price: 39800,
     weeklyPayment: 194.67,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car5.jpg",
   },
   {
     id: 6,
@@ -123,7 +123,7 @@ export const vehicles: Vehicle[] = [
     price: 56700,
     weeklyPayment: 277.25,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car-placeholder.png",
   },
   {
     id: 7,
@@ -138,7 +138,7 @@ export const vehicles: Vehicle[] = [
     price: 89500,
     weeklyPayment: 437.65,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car-placeholder.png",
   },
   {
     id: 8,
@@ -153,7 +153,7 @@ export const vehicles: Vehicle[] = [
     price: 76800,
     weeklyPayment: 375.68,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car-placeholder.png",
   },
   {
     id: 9,
@@ -168,7 +168,7 @@ export const vehicles: Vehicle[] = [
     price: 68900,
     weeklyPayment: 337.05,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car-placeholder.png",
   },
   {
     id: 10,
@@ -183,7 +183,7 @@ export const vehicles: Vehicle[] = [
     price: 62400,
     weeklyPayment: 305.25,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car-placeholder.png",
   },
   {
     id: 11,
@@ -198,7 +198,7 @@ export const vehicles: Vehicle[] = [
     price: 72500,
     weeklyPayment: 354.65,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car-placeholder.png",
   },
   {
     id: 12,
@@ -213,7 +213,7 @@ export const vehicles: Vehicle[] = [
     price: 84900,
     weeklyPayment: 415.25,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car-placeholder.png",
   },
   {
     id: 13,
@@ -228,7 +228,7 @@ export const vehicles: Vehicle[] = [
     price: 65800,
     weeklyPayment: 321.85,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car-placeholder.png",
   },
   {
     id: 14,
@@ -243,7 +243,7 @@ export const vehicles: Vehicle[] = [
     price: 92500,
     weeklyPayment: 452.45,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car-placeholder.png",
   },
   {
     id: 15,
@@ -258,7 +258,7 @@ export const vehicles: Vehicle[] = [
     price: 58900,
     weeklyPayment: 288.15,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car-placeholder.png",
   },
   {
     id: 16,
@@ -273,7 +273,7 @@ export const vehicles: Vehicle[] = [
     price: 42900,
     weeklyPayment: 209.85,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car-placeholder.png",
   },
   {
     id: 17,
@@ -288,7 +288,7 @@ export const vehicles: Vehicle[] = [
     price: 39500,
     weeklyPayment: 193.15,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car-placeholder.png",
   },
   {
     id: 18,
@@ -303,7 +303,7 @@ export const vehicles: Vehicle[] = [
     price: 41800,
     weeklyPayment: 204.45,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car-placeholder.png",
   },
   {
     id: 19,
@@ -318,7 +318,7 @@ export const vehicles: Vehicle[] = [
     price: 45900,
     weeklyPayment: 224.55,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car-placeholder.png",
   },
   {
     id: 20,
@@ -333,6 +333,6 @@ export const vehicles: Vehicle[] = [
     price: 43500,
     weeklyPayment: 212.75,
     comparisonRate: 10,
-    image: "/suzuki-jimny-offroad.png",
+    image: "/car-placeholder.png",
   },
 ]
