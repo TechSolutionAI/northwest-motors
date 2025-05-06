@@ -19,6 +19,11 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Exo", "sans-serif"],
+        exo: ["Exo", "sans-serif"],
+        krona: ["Krona One", "sans-serif"],
+      },
       colors: {
         white: "#fff",
         dark: "#222",

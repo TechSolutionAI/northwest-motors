@@ -1,5 +1,4 @@
 import type React from "react"
-import { Inter } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/main/header"
 import { Footer } from "@/components/main/footer"
@@ -8,8 +7,6 @@ import { LanguageProvider } from "@/contexts/language-context"
 import { ScrollToTop } from "@/components/main/scroll-to-top"
 import { AccessibilityWidget } from "@/components/main/accessiblity-widget"
 import { UserwayStyles } from "@/components/main/userway-styles"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Northwest Motors - Premium Vehicles",
@@ -24,16 +21,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className="font-exo">
         {/* <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}> */}
-          <LanguageProvider>
-            <Header />
-            <main className="pt-16">{children}</main>
-            <Footer />
-            <ScrollToTop />
-            <AccessibilityWidget size="medium" />
-            <UserwayStyles />
-          </LanguageProvider>
+        <LanguageProvider>
+          <Header />
+          <main className="pt-16">{children}</main>
+          <Footer />
+          <ScrollToTop />
+          <AccessibilityWidget size="medium" />
+          <UserwayStyles />
+        </LanguageProvider>
         {/* </ThemeProvider> */}
       </body>
     </html>
