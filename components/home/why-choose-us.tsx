@@ -1,32 +1,32 @@
 import { CreditCard, Globe, Star, ThumbsUp } from "lucide-react";
 
-export function WhyChooseUs () {
+export function WhyChooseUs() {
 
     return (
         <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-16">Why NorthWest Motors?</h2>
-            <div className="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 gap-8">
+            <h2 className="text-5xl font-krona text-center mb-16">Why NorthWest Motors?</h2>
+            <div className="grid lg:grid-cols-2 grid-cols-1 lg:grid-cols-4 gap-8">
                 <div className="flex flex-col items-center px-4 py-8 border rounded-lg">
-                    <CreditCard className="h-10 w-10"/>
+                    <CreditCard className="h-10 w-10" />
                     <h3 className="mt-4 text-lg font-medium">Credit Financing</h3>
                     <p className="mt-4">Good Credit, Bad Credit, First Time Buyer? With relations with multiple lenders, we are bound to get you financed!</p>
                 </div>
                 <div className="flex flex-col items-center px-4 py-8 border rounded-lg">
-                    <Globe className="h-10 w-10"/>
+                    <Globe className="h-10 w-10" />
                     <h3 className="mt-4 text-lg font-medium">Quality Brands</h3>
                     <p className="mt-4">We make sure to only stock vehicles that are known for their reliability and dependability.</p>
                 </div>
                 <div className="flex flex-col items-center px-4 py-8 border rounded-lg">
-                    <Star className="h-10 w-10"/>
+                    <Star className="h-10 w-10" />
                     <h3 className="mt-4 text-lg font-medium">Trusted Dealer</h3>
                     <p className="mt-4">With repeat customers and high consumer feedback, we make it easy to purchase your next vehicle.</p>
                 </div>
                 <div className="flex flex-col items-center px-4 py-8 border rounded-lg">
-                    <ThumbsUp className="h-10 w-10"/>
+                    <ThumbsUp className="h-10 w-10" />
                     <h3 className="mt-4 text-lg font-medium">Best Car Services</h3>
                     <p className="mt-4">Keep your vehicles running longer. Our full service center will help you keep your car in tip top shape.</p>
                 </div>
             </div>
-          </div>
+        </div>
     );
 }

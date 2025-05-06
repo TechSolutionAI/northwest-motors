@@ -22,7 +22,7 @@ export function Footer() {
             <p className="text-sm">Your trusted source for quality vehicles.</p>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-bold">{ "Quick Links"}</h3>
+            <h3 className="text-sm font-bold">{"Quick Links"}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/" className="hover:text-gray-500">
@@ -98,7 +98,7 @@ export function Footer() {
         </div>
         <div className="mt-8 border-t border-border pt-8 text-center text-sm">
           <p>
-            { `© ${currentYear} Northwest Motors. All rights reserved.`}
+            {`© ${currentYear} Northwest Motors. All rights reserved.`}
           </p>
         </div>
       </div>

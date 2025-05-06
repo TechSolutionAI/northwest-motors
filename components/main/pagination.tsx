@@ -44,30 +44,30 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
   }
 
   return (
-    <div className="flex items-center space-x-1 md:space-x-2">
+    <div className="flex items-center space-x-1 lg:space-x-2">
       {/* Previous page button */}
       <button
         onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className={`border rounded-md px-2 md:px-4 py-1 md:py-2 flex items-center justify-center ${currentPage === 1 ? "text-gray-400 cursor-not-allowed" : "text-gray-700 hover:bg-gray-100"
+        className={`border rounded-md px-2 lg:px-4 py-1 lg:py-2 flex items-center justify-center ${currentPage === 1 ? "text-gray-400 cursor-not-allowed" : "text-gray-700 hover:bg-gray-100"
           }`}
         aria-label="Previous page"
       >
-        <MoveLeft className="h-4 w-4 md:h-5 md:w-5" />
+        <MoveLeft className="h-4 w-4 lg:h-5 lg:w-5" />
       </button>
 
       {/* Page numbers - hide some on very small screens */}
-      <div className="hidden xs:flex items-center space-x-1 md:space-x-2">
+      <div className="hidden xs:flex items-center space-x-1 lg:space-x-2">
         {getPageNumbers().map((page, index) =>
           page === "..." ? (
-            <span key={`ellipsis-${index}`} className="px-1 md:px-2">
+            <span key={`ellipsis-${index}`} className="px-1 lg:px-2">
               ...
             </span>
           ) : (
             <button
               key={`page-${page}`}
               onClick={() => typeof page === "number" && onPageChange(page)}
-              className={`w-6 h-6 md:w-8 md:h-8 flex items-center justify-center rounded-md ${currentPage === page ? "bg-dark text-white" : "text-gray-700 hover:bg-gray-100"
+              className={`w-6 h-6 lg:w-8 lg:h-8 flex items-center justify-center rounded-md ${currentPage === page ? "bg-dark text-white" : "text-gray-700 hover:bg-gray-100"
                 }`}
             >
               {page}
@@ -87,11 +87,11 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
       <button
         onClick={() => currentPage < totalPages && onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className={`border rounded-md px-2 md:px-4 py-1 md:py-2 flex items-center justify-center ${currentPage === totalPages ? "text-gray-400 cursor-not-allowed" : "text-gray-700 hover:bg-gray-100"
+        className={`border rounded-md px-2 lg:px-4 py-1 lg:py-2 flex items-center justify-center ${currentPage === totalPages ? "text-gray-400 cursor-not-allowed" : "text-gray-700 hover:bg-gray-100"
           }`}
         aria-label="Next page"
       >
-        <MoveRight className="h-4 w-4 md:h-5 md:w-5" />
+        <MoveRight className="h-4 w-4 lg:h-5 lg:w-5" />
       </button>
     </div>
   )

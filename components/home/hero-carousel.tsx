@@ -58,7 +58,7 @@ export function HeroCarousel() {
 
   return (
     <div
-      className="relative h-[70vh] overflow-hidden -mt-20"
+      className="relative h-[80vh] overflow-hidden -mt-20"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -84,10 +84,10 @@ export function HeroCarousel() {
 
       {/* Search Form Container */}
       <div className="absolute inset-0 z-20 flex items-center justify-center">
-        <div className="w-[90%] px-4">
+        <div className="w-[80%] px-4">
           <div className="bg-[#231F20BF] px-8 py-12 rounded-lg shadow-lg">
-            <h2 className="text-4xl font-bold text-center mb-8 text-white">
-              {"Find Your Dream Car"}
+            <h2 className="text-5xl text-center mb-8 text-white">
+              {"Find your dream car"}
             </h2>
             <SearchForm simplified />
             <div className="text-white mt-4">

@@ -38,16 +38,15 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || !isHomePage ? "bg-dark shadow-md border-b border-dark" : "bg-transparent border-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || !isHomePage ? "bg-white shadow-md border-b border-dark" : "bg-transparent border-transparent"
+        }`}
       style={{ transitionDelay: scrolled ? "var(--transition-closing-delay)" : "var(--transition-show-delay)" }}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         {/* Logo - only visible on large screens */}
         <div className="">
           <Link href="/" className="flex items-center">
-            <Logo/>
+            <Logo />
           </Link>
         </div>
 
@@ -55,7 +54,7 @@ export function Header() {
         <div className="lg:hidden"></div>
 
         {/* Desktop Navigation - only visible on large screens */}
-        <nav className="hidden lg:flex items-center justify-end mx-auto space-x-6 text-white text-lg font-medium">
+        <nav className="hidden lg:flex items-center justify-end space-x-6 text-black text-lg">
           <Link href="/inventory" className="hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
             Browse Vehicles
           </Link>
@@ -71,7 +70,7 @@ export function Header() {
             {/* Invisible area to prevent gap between button and dropdown */}
             <div className="absolute -bottom-2 left-0 h-2 w-full"></div>
 
-            <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-dark py-1 z-50 transition-all duration-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+            <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white text-black py-1 z-50 transition-all duration-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
               <Link href="#" className="block px-4 py-2 hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
                 Concierge
               </Link>
@@ -89,7 +88,7 @@ export function Header() {
             {/* Invisible area to prevent gap between button and dropdown */}
             <div className="absolute -bottom-2 left-0 h-2 w-full"></div>
 
-            <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-dark py-1 z-50 transition-all duration-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+            <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white text-black py-1 z-50 transition-all duration-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
               <Link href="#" className="block px-4 py-2 hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
                 Locations
               </Link>

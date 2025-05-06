@@ -36,9 +36,9 @@ export default function BrowseVehicles() {
   return (
     <div className="flex min-h-screen flex-col">
 
-      <main className="flex flex-col md:flex-row">
+      <main className="flex flex-col lg:flex-row">
         {/* Mobile filter toggle button */}
-        <div className="md:hidden sticky mt-8 z-10 bg-white p-4 border-b border-gray-200 flex justify-between items-center">
+        <div className="lg:hidden sticky mt-8 z-10 bg-white p-4 border-b border-gray-200 flex justify-between items-center">
           <h2 className="text-lg font-semibold">Showing {vehicles.length} Cars</h2>
           <button
             onClick={toggleMobileFilters}
@@ -66,7 +66,7 @@ export default function BrowseVehicles() {
           </div>
 
           {/* Vehicle grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 gap-6">
             {currentVehicles.map((vehicle) => (
               <VehicleCard key={vehicle.id} vehicle={vehicle} />
             ))}

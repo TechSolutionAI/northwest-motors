@@ -12,9 +12,9 @@ export default function FilterSidebar({ showMobileFilters, toggleMobileFilters }
   return (
     <div
       className={`${showMobileFilters ? "block" : "hidden"
-        } md:block w-full md:w-80 bg-gray-50 p-6 border-r border-gray-200 md:h-[calc(100vh-4rem)] md:sticky md:top-16 overflow-y-auto z-20`}
+        } lg:block w-full lg:w-80 bg-gray-50 p-6 border-r border-gray-200 lg:h-[calc(100vh-4rem)] lg:sticky lg:top-16 overflow-y-auto z-20`}
     >
-      <div className="flex justify-between items-center md:hidden mb-4">
+      <div className="flex justify-between items-center lg:hidden mb-4">
         <h2 className="text-xl font-semibold">Filters</h2>
         <button onClick={toggleMobileFilters} className="text-gray-500 p-2" aria-label="Close filters">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +31,7 @@ export default function FilterSidebar({ showMobileFilters, toggleMobileFilters }
 
       <h2 className="text-2xl text-gray-500 font-light mb-4">Browse Vehicles</h2>
 
-      <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+      <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
         Find Your
         <br />
         Dream Car
@@ -70,7 +70,7 @@ export default function FilterSidebar({ showMobileFilters, toggleMobileFilters }
         ))}
       </div>
 
-      <div className="mt-6 md:hidden">
+      <div className="mt-6 lg:hidden">
         <button onClick={toggleMobileFilters} className="w-full bg-dark text-white py-3 rounded-md">
           Apply Filters
         </button>

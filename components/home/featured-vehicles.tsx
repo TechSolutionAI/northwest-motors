@@ -3,7 +3,7 @@
 import { useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { CarFront, ChevronLeft, ChevronRight, CircleGauge, Fuel, MapPinned, MoveLeft, MoveRight } from "lucide-react"
+import { CarFront, CircleGauge, Fuel, MapPinned, MoveLeft, MoveRight } from "lucide-react"
 import { vehicles } from "@/lib/mock-data"
 
 
@@ -20,7 +20,7 @@ export default function FeaturedVehicles() {
           if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 100) {
             slider.scrollTo({ left: 0, behavior: "smooth" })
           } else {
-            slider.scrollBy({ left: 300, behavior: "smooth" })
+            slider.scrollBy({ left: 500, behavior: "smooth" })
           }
         }
       }, 5000) // Auto-scroll every 5 seconds
@@ -64,22 +64,22 @@ export default function FeaturedVehicles() {
       </style>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-4xl font-bold">Explore our newest vehicles in stock</h2>
+          <h2 className="text-[40px] font-krona">Explore our newest vehicles in stock</h2>
           <div className="flex space-x-2">
             <button
-              className="px-8 py-4 border rounded-md group border-[#414042] hover:bg-[#414042] transition-colors ease-in duration-450"
+              className="px-4  py-2 border rounded-md group border-[#414042] hover:bg-[#414042] transition-colors ease-in duration-450"
               onClick={() => {
                 const slider = document.getElementById("vehicle-slider")
-                if (slider) slider.scrollLeft -= 300
+                if (slider) slider.scrollLeft -= 500
               }}
             >
               <MoveLeft className="h-8 w-8 group-hover:text-white" />
             </button>
             <button
-              className="px-8 py-4 border rounded-md group border-[#414042] hover:bg-[#414042] transition-colors ease-in duration-450"
+              className="px-4 py-2 border rounded-md group border-[#414042] hover:bg-[#414042] transition-colors ease-in duration-450"
               onClick={() => {
                 const slider = document.getElementById("vehicle-slider")
-                if (slider) slider.scrollLeft += 300
+                if (slider) slider.scrollLeft += 500
               }}
             >
               <MoveRight className="h-8 w-8 group-hover:text-white" />
@@ -96,7 +96,7 @@ export default function FeaturedVehicles() {
             <div
               key={index}
               className="flex-none w-full sm:w-1/2 lg:w-1/4 px-3 snap-start"
-              style={{ minWidth: "280px" }}
+              style={{ minWidth: "400px" }}
             >
               <div className="border rounded-md overflow-hidden mb-6 bg-[#F3F3F3] border-b-4 border-b-[#8E6F00]">
                 <div className="relative h-48 bg-gray-100">
