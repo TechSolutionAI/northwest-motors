@@ -1,20 +1,45 @@
+"use client"
+
 import { ChevronDown, Search } from "lucide-react"
-import { Input } from "../ui/input"
+import { Input } from "@/components/ui/input"
 
-export default function FilterSidebar() {
+interface FilterSidebarProps {
+  showMobileFilters: boolean
+  toggleMobileFilters: () => void
+}
+
+export default function FilterSidebar({ showMobileFilters, toggleMobileFilters }: FilterSidebarProps) {
   return (
-    <div className="w-full md:w-96 bg-[#E6E7E8] p-6 pt-16 h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto">
-      <h2 className="text-2xl text-gray-500 font-light mb-6">Browse Vehicles</h2>
+    <div
+      className={`${showMobileFilters ? "block" : "hidden"
+        } md:block w-full md:w-80 bg-gray-50 p-6 border-r border-gray-200 md:h-[calc(100vh-4rem)] md:sticky md:top-16 overflow-y-auto z-20`}
+    >
+      <div className="flex justify-between items-center md:hidden mb-4">
+        <h2 className="text-xl font-semibold">Filters</h2>
+        <button onClick={toggleMobileFilters} className="text-gray-500 p-2" aria-label="Close filters">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M18 6L6 18M6 6L18 18"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
 
-      <h1 className="text-4xl font-bold text-gray-800 mb-6">
+      <h2 className="text-2xl text-gray-500 font-light mb-4">Browse Vehicles</h2>
+
+      <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
         Find Your
         <br />
         Dream Car
       </h1>
 
-      <div className="flex flex-col-2 gap-2 mb-6">
-        <button className="bg-gray-500 text-white px-4 py-2 text-sm font-medium w-full">Save My Search</button>
-        <button className="bg-gray-500 text-white px-4 py-2 text-sm font-medium w-full">My Searches</button>
+      <div className="flex mb-6">
+        <button className="bg-gray-300 text-gray-700 px-3 py-2 text-sm font-medium">Save My Search</button>
+        <button className="bg-gray-200 text-gray-700 px-3 py-2 text-sm font-medium ml-2">My Searches</button>
       </div>
 
       <div className="relative mb-6">
@@ -34,7 +59,7 @@ export default function FilterSidebar() {
         ))}
       </div>
 
-      <div className="mt-8 pt-4 border-t border-gray-200">
+      <div className="mt-6 pt-4 border-t border-gray-200">
         {["Price", "Location", "Odometer", "Transmission"].map((filter) => (
           <div key={filter} className="relative mb-4">
             <button className="w-full flex items-center justify-between border border-gray-300 bg-white px-4 py-2 text-left">
@@ -43,6 +68,12 @@ export default function FilterSidebar() {
             </button>
           </div>
         ))}
+      </div>
+
+      <div className="mt-6 md:hidden">
+        <button onClick={toggleMobileFilters} className="w-full bg-dark text-white py-3 rounded-md">
+          Apply Filters
+        </button>
       </div>
     </div>
   )

@@ -1,7 +1,3 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { HeroCarousel } from "@/components/home/hero-carousel"
 import FeaturedVehicles from "@/components/home/featured-vehicles"
 import { WhyChooseUs } from "@/components/home/why-choose-us"
@@ -27,7 +23,7 @@ export default function Home() {
           <WhyChooseUs />
         </section>
 
-        
+
 
         {/* Choose Your Lifestyle Section */}
         {/* <section className="py-16 bg-gray-100">

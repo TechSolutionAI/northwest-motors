@@ -14,6 +14,14 @@ export default function BrowseVehicles() {
   const [currentPage, setCurrentPage] = useState(1)
   const vehiclesPerPage = 9
 
+  // Mobile filter sidebar state
+  const [showMobileFilters, setShowMobileFilters] = useState(false)
+
+  // Toggle mobile filters
+  const toggleMobileFilters = () => {
+    setShowMobileFilters(!showMobileFilters)
+  }
+
   // Calculate total pages
   const totalPages = Math.ceil(vehicles.length / vehiclesPerPage)
 
@@ -29,8 +37,19 @@ export default function BrowseVehicles() {
     <div className="flex min-h-screen flex-col">
 
       <main className="flex flex-col md:flex-row">
+        {/* Mobile filter toggle button */}
+        <div className="md:hidden sticky mt-8 z-10 bg-white p-4 border-b border-gray-200 flex justify-between items-center">
+          <h2 className="text-lg font-semibold">Showing {vehicles.length} Cars</h2>
+          <button
+            onClick={toggleMobileFilters}
+            className="bg-dark text-white px-4 py-2 rounded-md flex items-center text-sm"
+          >
+            {showMobileFilters ? "Hide Filters" : "Show Filters"}
+            <ChevronDown className={`ml-2 h-4 w-4 transition-transform ${showMobileFilters ? "rotate-180" : ""}`} />
+          </button>
+        </div>
         {/* Sidebar */}
-        <FilterSidebar />
+        <FilterSidebar showMobileFilters={showMobileFilters} toggleMobileFilters={toggleMobileFilters} />
 
         {/* Main content */}
         <div className="flex-1 p-8">

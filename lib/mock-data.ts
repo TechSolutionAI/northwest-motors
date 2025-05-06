@@ -1,40 +1,40 @@
 export const makeOptions = [
-    { value: "alfa-romeo", label: "ALFA ROMEO", stock: 1 },
-    { value: "aston-martin", label: "ASTON MARTIN", stock: 1 },
-    { value: "audi", label: "AUDI", stock: 44 },
-    { value: "bmw", label: "BMW", stock: 72 },
-    { value: "chevrolet", label: "CHEVROLET", stock: 7 },
-    { value: "daihatsu", label: "DAIHATSU", stock: 1 },
-    { value: "ford", label: "FORD", stock: 9 },
-    { value: "honda", label: "HONDA", stock: 18 },
-    { value: "toyota", label: "TOYOTA", stock: 24 },
-    { value: "nissan", label: "NISSAN", stock: 9 },
-    { value: "mercedes", label: "MERCEDES", stock: 5 },
-  ]
-  
-export  const modelOptions = [
-    { value: "camry", label: "CAMRY", stock: 8 },
-    { value: "corolla", label: "COROLLA", stock: 6 },
-    { value: "civic", label: "CIVIC", stock: 7 },
-    { value: "accord", label: "ACCORD", stock: 5 },
-    { value: "f150", label: "F-150", stock: 9 },
-    { value: "silverado", label: "SILVERADO", stock: 6 },
-    { value: "altima", label: "ALTIMA", stock: 4 },
-  ]
-  
-export  const locationOptions = [
-    { value: "seattle", label: "SEATTLE, WA", stock: 42 },
-    { value: "portland", label: "PORTLAND, OR", stock: 35 },
-    { value: "spokane", label: "SPOKANE, WA", stock: 18 },
-    { value: "boise", label: "BOISE, ID", stock: 15 },
-    { value: "vancouver", label: "VANCOUVER, WA", stock: 12 },
-  ]
+  { value: "alfa-romeo", label: "ALFA ROMEO", stock: 1 },
+  { value: "aston-martin", label: "ASTON MARTIN", stock: 1 },
+  { value: "audi", label: "AUDI", stock: 44 },
+  { value: "bmw", label: "BMW", stock: 72 },
+  { value: "chevrolet", label: "CHEVROLET", stock: 7 },
+  { value: "daihatsu", label: "DAIHATSU", stock: 1 },
+  { value: "ford", label: "FORD", stock: 9 },
+  { value: "honda", label: "HONDA", stock: 18 },
+  { value: "toyota", label: "TOYOTA", stock: 24 },
+  { value: "nissan", label: "NISSAN", stock: 9 },
+  { value: "mercedes", label: "MERCEDES", stock: 5 },
+]
 
-  
+export const modelOptions = [
+  { value: "camry", label: "CAMRY", stock: 8 },
+  { value: "corolla", label: "COROLLA", stock: 6 },
+  { value: "civic", label: "CIVIC", stock: 7 },
+  { value: "accord", label: "ACCORD", stock: 5 },
+  { value: "f150", label: "F-150", stock: 9 },
+  { value: "silverado", label: "SILVERADO", stock: 6 },
+  { value: "altima", label: "ALTIMA", stock: 4 },
+]
+
+export const locationOptions = [
+  { value: "seattle", label: "SEATTLE, WA", stock: 42 },
+  { value: "portland", label: "PORTLAND, OR", stock: 35 },
+  { value: "spokane", label: "SPOKANE, WA", stock: 18 },
+  { value: "boise", label: "BOISE, ID", stock: 15 },
+  { value: "vancouver", label: "VANCOUVER, WA", stock: 12 },
+]
+
+
 
 
 // Sample vehicle data
-export const vehicles = [
+export const vehicles: Vehicle[] = [
   {
     id: 1,
     make: "Suzuki",
