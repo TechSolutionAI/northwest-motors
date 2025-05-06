@@ -5,7 +5,7 @@ export function WhyChooseUs() {
     return (
         <div className="container mx-auto px-4">
             <h2 className="text-5xl font-krona text-center mb-16">Why NorthWest Motors?</h2>
-            <div className="grid lg:grid-cols-2 grid-cols-1 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div className="flex flex-col items-center px-4 py-8 border rounded-lg">
                     <CreditCard className="h-10 w-10" />
                     <h3 className="mt-4 text-lg font-medium">Credit Financing</h3>
