@@ -32,7 +32,7 @@ export function MobileNav() {
       {/* Hamburger button */}
       <button
         onClick={toggleMenu}
-        className="text-white p-2 focus:outline-none"
+        className="p-2 focus:outline-none"
         aria-label={isOpen ? "Close menu" : "Open menu"}
       >
         {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -56,7 +56,7 @@ export function MobileNav() {
         <nav className="p-8 text-white text-2xl">
           <ul className="space-y-4">
             <li>
-              <Link href="#" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>
+              <Link href="/inventory" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>
                 Browse Vehicles
               </Link>
             </li>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Menu } from "lucide-react"
 import { vehicles } from "@/lib/mock-data"
 import FilterSidebar from "@/components/inventory/filter-sidebar"
 import VehicleCard from "@/components/inventory/vehicle-card"
@@ -48,6 +48,12 @@ export default function BrowseVehicles() {
   // Toggle mobile filters
   const toggleMobileFilters = () => {
     setShowMobileFilters(!showMobileFilters)
+    // When opening filters, prevent body scrolling
+    if (!showMobileFilters) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
   }
 
   // Calculate total pages
@@ -71,38 +77,46 @@ export default function BrowseVehicles() {
   return (
     <div className="flex min-h-screen flex-col">
 
-      <main className="flex flex-col lg:flex-row">
+      <main className="flex flex-col md:flex-row">
         {/* Mobile filter toggle button */}
-        <div className="lg:hidden sticky mt-8 z-10 bg-white p-4 border-b border-gray-200 flex justify-between items-center">
-          <h2 className="text-lg font-semibold">Showing {sortedVehicles.length} Cars</h2>
-          <button
-            onClick={toggleMobileFilters}
-            className="bg-dark text-white px-4 py-2 rounded-md flex items-center text-sm"
-          >
-            {showMobileFilters ? "Hide Filters" : "Show Filters"}
-            <ChevronDown className={`ml-2 h-4 w-4 transition-transform ${showMobileFilters ? "rotate-180" : ""}`} />
-          </button>
+        <div className="md:hidden sticky mt-8 z-10 bg-white p-4  flex flex-col">
+          <div className="mx-4">
+            <h2 className="text-lg text-gray-500">Browse Vehicles</h2>
+            <h1 className="text-2xl my-4">
+              Find Your Dream Car
+            </h1>
+          </div>
+          <div className="flex justify-between">
+            <div
+              onClick={toggleMobileFilters}
+              className="cursor-pointer border text-dark px-8 py-2 rounded-md flex items-center"
+            >
+              <Menu className="h-4 w-4 text-[#8E6F00]" />
+              <span className="ml-4">All Filters</span>
+            </div>
+
+            {/* Mobile sort - only visible on mobile */}
+            <div className="">
+              <SortDropdown selectedOption={sortOption} onOptionSelect={handleSortChange} />
+            </div>
+
+          </div>
         </div>
         {/* Sidebar */}
         <FilterSidebar showMobileFilters={showMobileFilters} toggleMobileFilters={toggleMobileFilters} />
 
         {/* Main content */}
         <div className="flex-1 p-8">
-          <div className="flex items-center justify-between my-8">
-            <h2 className="text-2xl font-semibold">Showing {sortedVehicles.length} Cars</h2>
+          <div className="flex items-center justify-between md:my-8">
+            <h2 className="text-2xl hidden md:block">Showing {sortedVehicles.length} Cars</h2>
 
-            <div className="flex items-center">
+            <div className="hidden md:flex items-center">
               <SortDropdown selectedOption={sortOption} onOptionSelect={handleSortChange} />
             </div>
           </div>
 
-          {/* Mobile sort - only visible on mobile */}
-          <div className="flex lg:hidden items-center justify-end mb-4">
-            <SortDropdown selectedOption={sortOption} onOptionSelect={handleSortChange} />
-          </div>
-
           {/* Vehicle grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
             {currentVehicles.map((vehicle) => (
               <VehicleCard key={vehicle.id} vehicle={vehicle} />
             ))}
