@@ -30,7 +30,29 @@ export const locationOptions = [
   { value: "vancouver", label: "VANCOUVER, WA", stock: 12 },
 ]
 
+export const yearOptions = [
+  { value: "2025", label: "2025", stock: 3 },
+  { value: "2024", label: "2024", stock: 15 },
+  { value: "2023", label: "2023", stock: 42 },
+  { value: "2022", label: "2022", stock: 56 },
+  { value: "2021", label: "2021", stock: 38 },
+  { value: "2020", label: "2020", stock: 29 },
+  { value: "2019", label: "2019", stock: 24 },
+  { value: "2018", label: "2018", stock: 18 },
+  { value: "2017", label: "2017", stock: 12 },
+  { value: "2016", label: "2016", stock: 8 },
+]
 
+export const bodyOptions = [
+  { value: "suv", label: "SUV", stock: 87 },
+  { value: "sedan", label: "SEDAN", stock: 64 },
+  { value: "hatchback", label: "HATCHBACK", stock: 32 },
+  { value: "coupe", label: "COUPE", stock: 18 },
+  { value: "convertible", label: "CONVERTIBLE", stock: 9 },
+  { value: "wagon", label: "WAGON", stock: 7 },
+  { value: "truck", label: "TRUCK", stock: 15 },
+  { value: "van", label: "VAN", stock: 6 },
+]
 
 
 // Sample vehicle data
