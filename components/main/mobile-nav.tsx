@@ -61,7 +61,7 @@ export function MobileNav() {
               </Link>
             </li>
             <li>
-              <Link href="#" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>
+              <Link href="/sell" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>
                 Sell your car
               </Link>
             </li>

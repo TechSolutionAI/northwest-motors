@@ -58,7 +58,7 @@ export function Header() {
           <Link href="/inventory" className="hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
             Browse Vehicles
           </Link>
-          <Link href="#" className="hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
+          <Link href="/sell" className="hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
             Sell your car
           </Link>
 
