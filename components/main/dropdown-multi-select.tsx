@@ -10,14 +10,14 @@ interface OptionType {
     stock?: number
 }
 
-interface FilterDropdownProps {
+interface DropdownMultiSelectProps {
     title: string
     options: OptionType[]
     selectedValues: string[]
     onChange: (values: string[]) => void
 }
 
-export default function FilterDropdown({ title, options, selectedValues, onChange }: FilterDropdownProps) {
+export default function DropdownMultiSelect({ title, options, selectedValues, onChange }: DropdownMultiSelectProps) {
     const [isOpen, setIsOpen] = useState(false)
     const dropdownRef = useRef<HTMLDivElement>(null)
 
@@ -50,21 +50,24 @@ export default function FilterDropdown({ title, options, selectedValues, onChang
     // Get selected options for display
     const selectedOptions = options.filter((option) => selectedValues.includes(option.value))
 
+    // Create a display string for selected options
+    const selectedDisplay = selectedOptions.length > 0 ? selectedOptions.map((option) => option.label).join(", ") : ""
+
     return (
         <div className="relative mb-4" ref={dropdownRef}>
             <div
                 onClick={toggleDropdown}
                 className="border border-input rounded-md  bg-white h-16 px-4 flex items-center justify-between cursor-pointer"
             >
-                <div className="flex flex-col">
+                <div className="flex flex-col w-full overflow-hidden">
                     <span className="font-medium text-gray-700">{title}</span>
                     {selectedOptions.length > 0 && (
-                        <span className="text-xs text-gray-500 mt-1">
-                            {selectedOptions.map((option) => option.label).join(", ")}
+                        <span className="text-xs text-gray-500 mt-1 truncate" title={selectedDisplay}>
+                            {selectedDisplay}
                         </span>
                     )}
                 </div>
-                {isOpen ? <MoveUp className="h-4 w-4 text-[#8E6F00]" /> : <MoveDown className="h-4 w-4 text-[#8E6F00]" />}
+                {isOpen ? <MoveUp className="h-4 w-4 flex-shrink-0 text-[#8E6F00]" /> : <MoveDown className="h-4 w-4 flex-shrink-0 text-[#8E6F00]" />}
             </div>
 
             {isOpen && (
@@ -81,7 +84,7 @@ export default function FilterDropdown({ title, options, selectedValues, onChang
                                     onCheckedChange={() => handleSelect(option.value)}
                                     className="mr-3"
                                 />
-                                <span className="ml-2 font-medium">{option.label}</span>
+                                <span className="ml-2">{option.label}</span>
                             </div>
                             {option.stock !== undefined && <span className="text-xs text-gray-500">({option.stock})</span>}
                         </label>

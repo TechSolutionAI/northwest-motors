@@ -105,13 +105,3 @@ export const EMPLOYER_TYPES = [
   { value: "Self-Employed", label: "Self-Employed" },
   { value: "Cash Income", label: "Cash Income" },
 ]
-
-
-// Lifestyle Vehicle
-export const LIFESTYLE_CATEGORIES = [
-  { index: 1, name: "Family" },
-  { index: 2, name: "Tradie" },
-  { index: 3, name: "Green" },
-  { index: 4, name: "Performance" },
-  { index: 5, name: "Midsize Cruisers" },
-];

@@ -3,10 +3,9 @@
 import { CarFront, CircleGauge, MessageCircleCode, MoveDown, MoveLeft, MoveRight, MoveUp } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { LIFESTYLE_CATEGORIES } from "@/lib/cosntants";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { vehicles } from "@/lib/mock-data";
+import { lifestyleOptions, vehicles } from "@/lib/mock-data";
 
 
 interface CategoryProps {
@@ -23,15 +22,15 @@ export function Category({ category, onClicked }: CategoryProps) {
     return (
 
         <div >
-            {LIFESTYLE_CATEGORIES.map((cat) => (
-                <div key={cat.index}
+            {lifestyleOptions.map((cat) => (
+                <div key={cat.value}
                     className={cn(
                         "flex py-4 items-center cursor-pointer text-gray-700 hover:text-gray-900 px-4",
-                        cat.index == category.index ? "border-l-2 border-[#8E6F00]" : "border-none",
+                        cat.value === category.value ? "border-l-2 border-[#8E6F00]" : "border-none",
                     )}
                     onClick={() => { handleCategorySelect(cat) }}>
-                    <span>{cat.name}</span>
-                    {cat.index == category.index && <MoveRight className="ml-2 h-4 w-4" />}
+                    <span>{cat.label}</span>
+                    {cat.value === category.value && <MoveRight className="ml-2 h-4 w-4" />}
                 </div>
             ))}
         </div>
@@ -83,14 +82,14 @@ export function MobileCategory({ category, onClicked }: CategoryProps) {
             {isOpen && (
                 <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-md shadow-lg">
                     <div className="py-1">
-                        {LIFESTYLE_CATEGORIES.map((cat) => (
+                        {lifestyleOptions.map((cat) => (
                             <button
-                                key={cat.index}
+                                key={cat.value}
                                 onClick={() => handleCategorySelect(cat)}
-                                className={`block w-full text-left px-4 py-2 hover:bg-gray-100 ${cat.index === category.index ? "font-medium text-dark" : "text-gray-700"
+                                className={`block w-full text-left px-4 py-2 hover:bg-gray-100 ${cat.value === category.value ? "font-medium text-dark" : "text-gray-700"
                                     }`}
                             >
-                                {cat.name}
+                                {cat.label}
                             </button>
                         ))}
                     </div>
@@ -210,7 +209,7 @@ export function Card({ vehicles, index }: CardProps) {
 
 export function ChooseLifeStyle() {
 
-    const [selectedCategory, setSelectedCategory] = useState(LIFESTYLE_CATEGORIES[0]);
+    const [selectedCategory, setSelectedCategory] = useState(lifestyleOptions[0]);
     const [slideIndex, setSlideIndex] = useState(0);
 
     const slideVihcles = vehicles.slice(0, 5);

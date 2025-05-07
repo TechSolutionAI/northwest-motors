@@ -54,6 +54,180 @@ export const bodyOptions = [
   { value: "van", label: "VAN", stock: 6 },
 ]
 
+export const priceOptions = [
+  { value: "0", label: "$0" },
+  { value: "1000", label: "$1,000" },
+  { value: "5000", label: "$5,000" },
+  { value: "10000", label: "$10,000" },
+  { value: "20000", label: "$20,000" },
+  { value: "30000", label: "$30,000" },
+  { value: "40000", label: "$40,000" },
+  { value: "50000", label: "$50,000" },
+  { value: "60000", label: "$60,000" },
+  { value: "70000", label: "$70,000" },
+  { value: "80000", label: "$80,000" },
+  { value: "90000", label: "$90,000" },
+  { value: "100000", label: "$100,000" },
+  { value: "150000", label: "$150,000" },
+  { value: "200000", label: "$200,000" },
+  { value: "250000", label: "$250,000" },
+  { value: "300000", label: "$300,000" },
+  { value: "500000", label: "$500,000" },
+  { value: "750000", label: "$750,000" },
+  { value: "1000000", label: "$1,000,000" },
+]
+
+export const dealershipOptions = [
+  { value: "all", label: "All Dealerships", stock: 4 },
+  { value: "northwest-seattle", label: "NorthWest Motors Seattle", stock: 12 },
+  { value: "northwest-portland", label: "NorthWest Motors Portland", stock: 2 },
+  { value: "northwest-sanfrancisco", label: "NorthWest Motors San Francisco", stock: 1 },
+  { value: "northwest-losangeles", label: "NorthWest Motors Los Angeles", stock: 5 },
+  { value: "premium-auto", label: "Premium Auto Group", stock: 3 },
+  { value: "luxury-motors", label: "Luxury Motors", stock: 6 },
+  { value: "city-cars", label: "City Cars", stock: 8 },
+]
+
+export const odometerOptions = [
+  { value: "0", label: "0 Km" },
+  { value: "1000", label: "1,000 Km" },
+  { value: "5000", label: "$5,000 Km" },
+  { value: "10000", label: "10,000 Km" },
+  { value: "20000", label: "20,000 Km" },
+  { value: "30000", label: "30,000 Km" },
+  { value: "40000", label: "40,000 Km" },
+  { value: "50000", label: "50,000 Km" },
+  { value: "60000", label: "60,000 Km" },
+  { value: "70000", label: "70,000 Km" },
+  { value: "80000", label: "80,000 Km" },
+  { value: "90000", label: "90,000 Km" },
+  { value: "100000", label: "100,000 Km" },
+  { value: "150000", label: "150,000 Km" },
+  { value: "200000", label: "200,000 Km" },
+  { value: "250000", label: "250,000 Km" },
+  { value: "300000", label: "300,000 Km" },
+  { value: "500000", label: "500,000 Km" },
+  { value: "750000", label: "750,000 Km" },
+  { value: "1000000", label: "1,000,000 Km" },
+]
+
+export const transmissionOptions = [
+  { value: "automatic", label: "Automatic" },
+  { value: "manual", label: "Manual" },
+  { value: "continually-variable", label: "Continually variable" },
+  { value: "dual-clutch", label: "Dual clutch" },
+  { value: "sequential-manual", label: "Sequential manual" },
+  { value: "semi-automatic", label: "Semi automatic" }
+];
+
+export const fuelOptions = [
+  { value: "petrol", label: "Petrol" },
+  { value: "diesel", label: "Diesel" },
+  { value: "hybrid", label: "Hybrid" },
+  { value: "electric", label: "Electric" }
+];
+
+// Cylinder options
+export const cylinderOptions = [
+  { value: "3", label: "3 Cylinder", stock: 12 },
+  { value: "4", label: "4 Cylinder", stock: 87 },
+  { value: "6", label: "6 Cylinder", stock: 45 },
+  { value: "8", label: "8 Cylinder", stock: 23 },
+  { value: "10", label: "10 Cylinder", stock: 5 },
+  { value: "12", label: "12 Cylinder", stock: 3 },
+]
+
+// Engine Size options
+export const engineSizeOptions = [
+  { value: "1000", label: "1.0 L", stock: 8 },
+  { value: "1200", label: "1.2 L", stock: 12 },
+  { value: "1500", label: "1.5 L", stock: 18 },
+  { value: "1600", label: "1.6 L", stock: 24 },
+  { value: "1800", label: "1.8 L", stock: 32 },
+  { value: "2000", label: "2.0 L", stock: 45 },
+  { value: "2500", label: "2.5 L", stock: 38 },
+  { value: "3000", label: "3.0 L", stock: 29 },
+  { value: "3500", label: "3.5 L", stock: 22 },
+  { value: "4000", label: "4.0 L", stock: 15 },
+  { value: "5000", label: "5.0 L", stock: 9 },
+  { value: "6000", label: "6.0 L+", stock: 5 },
+]
+
+// Fuel Economy options
+export const fuelEconomyOptions = [
+  { value: "4", label: "4L/100km or less", stock: 15 },
+  { value: "5", label: "5L/100km or less", stock: 28 },
+  { value: "6", label: "6L/100km or less", stock: 42 },
+  { value: "7", label: "7L/100km or less", stock: 56 },
+  { value: "8", label: "8L/100km or less", stock: 68 },
+  { value: "9", label: "9L/100km or less", stock: 75 },
+  { value: "10", label: "10L/100km or less", stock: 82 },
+  { value: "12", label: "12L/100km or less", stock: 95 },
+]
+
+// Tow capacity options
+export const towOptions = [
+  { value: "750", label: "750 kg" },
+  { value: "1500", label: "1,500 kg" },
+  { value: "2000", label: "2,000 kg" },
+  { value: "2500", label: "2,500 kg" },
+  { value: "3000", label: "3,000 kg" },
+  { value: "3500", label: "3,500 kg" },
+  { value: "3750", label: "3,750 kg" },
+]
+
+// Torque options
+export const torqueOptions = [
+  { value: "200", label: "200 Nm" },
+  { value: "400", label: "400 Nm" },
+  { value: "600", label: "600 Nm" },
+  { value: "800", label: "800 Nm" },
+  { value: "1000", label: "1,000 Nm" },
+]
+
+// Doors options
+export const doorsOptions = [
+  { value: "2", label: "2 Doors", stock: 18 },
+  { value: "3", label: "3 Doors", stock: 12 },
+  { value: "4", label: "4 Doors", stock: 95 },
+  { value: "5", label: "5 Doors", stock: 85 },
+]
+
+// Seats options
+export const seatsOptions = [
+  { value: "2", label: "2 Seats", stock: 8 },
+  { value: "4", label: "4 Seats", stock: 25 },
+  { value: "5", label: "5 Seats", stock: 105 },
+  { value: "6", label: "6 Seats", stock: 15 },
+  { value: "7", label: "7 Seats", stock: 28 },
+  { value: "8", label: "8+ Seats", stock: 12 },
+]
+
+// Lifestyle options
+export const lifestyleOptions = [
+  { value: "family", label: "Family", stock: 68 },
+  { value: "tradie", label: "Tradie", stock: 45 },
+  { value: "green", label: "Green", stock: 32 },
+  { value: "performance", label: "Performance", stock: 28 },
+  { value: "midsize-cruisers", label: "Midsize Cruisers", stock: 22 },
+]
+
+// Colour options
+export const colourOptions = [
+  { value: "black", label: "Black", stock: 48 },
+  { value: "white", label: "White", stock: 52 },
+  { value: "silver", label: "Silver", stock: 38 },
+  { value: "grey", label: "Grey", stock: 35 },
+  { value: "blue", label: "Blue", stock: 28 },
+  { value: "red", label: "Red", stock: 22 },
+  { value: "green", label: "Green", stock: 12 },
+  { value: "yellow", label: "Yellow", stock: 5 },
+  { value: "orange", label: "Orange", stock: 4 },
+  { value: "brown", label: "Brown", stock: 8 },
+  { value: "purple", label: "Purple", stock: 2 },
+  { value: "gold", label: "Gold", stock: 3 },
+]
+
 
 // Sample vehicle data
 export const vehicles: Vehicle[] = [

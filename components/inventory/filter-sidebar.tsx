@@ -3,8 +3,15 @@
 import { ChevronDown, Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
-import FilterDropdown from "../main/filter-dropdown"
-import { bodyOptions, makeOptions, modelOptions, yearOptions } from "@/lib/mock-data"
+import DropdownMultiSelect from "../main/dropdown-multi-select"
+import { bodyOptions, fuelOptions, locationOptions, makeOptions, modelOptions, transmissionOptions, yearOptions } from "@/lib/mock-data"
+import CollapsibleFilterSection from "./collapsible-filter-section"
+import PriceRangeFilter from "./price-range-filter"
+import LocationFilter from "./location-filter"
+import OdometerRangeFilter from "./odometer-range-filter"
+import TransmissionFilter from "./transmission-filter"
+import FuelFilter from "./fuel-filter"
+import MoreOptionsFilter from "./more-option-filter"
 
 interface FilterSidebarProps {
   showMobileFilters: boolean
@@ -18,11 +25,21 @@ export default function FilterSidebar({ showMobileFilters, toggleMobileFilters }
   const [selectedModels, setSelectedModels] = useState<string[]>([])
   const [selectedYears, setSelectedYears] = useState<string[]>([])
   const [selectedBodyTypes, setSelectedBodyTypes] = useState<string[]>([])
+  const [minPrice, setMinPrice] = useState("50000")
+  const [maxPrice, setMaxPrice] = useState("500000")
+  const [selectedLocations, setSelectedLocations] = useState<string[]>([])
+  const [selectedDealerships, setSelectedDealerships] = useState<string[]>([])
+  const [minOdometer, setMinOdometer] = useState("0")
+  const [maxOdometer, setMaxOdometer] = useState("10000")
+  const [selectedTransmissions, setSelectedTransmissions] = useState<string[]>([])
+  const [selectedFuels, setSelecteFuels] = useState<string[]>([])
+
+
 
   return (
     <div
       className={`${showMobileFilters ? "block" : "hidden"
-        } lg:block w-[80] bg-gray-50 p-6 border-r border-gray-200 lg:h-[calc(100vh-4rem)] lg:sticky lg:top-16 overflow-y-auto z-20`}
+        } lg:block w-full md:w-[400px] bg-gray-50 p-6 border-r border-gray-200 lg:h-[calc(100vh-4rem)] lg:sticky lg:top-16 overflow-y-auto z-20`}
     >
       <div className="flex justify-between items-center lg:hidden mb-4">
         <h2 className="text-xl font-semibold">Filters</h2>
@@ -57,26 +74,26 @@ export default function FilterSidebar({ showMobileFilters, toggleMobileFilters }
 
       {/* Filter dropdowns */}
       <div className="space-y-4">
-        <FilterDropdown
+        <DropdownMultiSelect
           title="Make"
           options={makeOptions}
           selectedValues={selectedMakes}
           onChange={setSelectedMakes} />
 
-        <FilterDropdown
+        <DropdownMultiSelect
           title="Model"
           options={modelOptions}
           selectedValues={selectedModels}
           onChange={setSelectedModels}
         />
 
-        <FilterDropdown
+        <DropdownMultiSelect
           title="Year"
           options={yearOptions}
           selectedValues={selectedYears}
           onChange={setSelectedYears} />
 
-        <FilterDropdown
+        <DropdownMultiSelect
           title="Body"
           options={bodyOptions}
           selectedValues={selectedBodyTypes}
@@ -84,15 +101,68 @@ export default function FilterSidebar({ showMobileFilters, toggleMobileFilters }
         />
       </div>
 
-      <div className="mt-6 pt-4 border-t border-gray-200">
-        {["Price", "Location", "Odometer", "Transmission"].map((filter) => (
-          <div key={filter} className="relative mb-4">
-            <button className="w-full flex items-center justify-between border border-gray-300 bg-white px-4 py-2 text-left">
-              <span>{filter}</span>
-              <ChevronDown className="h-4 w-4 text-gray-500" />
-            </button>
-          </div>
-        ))}
+      {/* Collapsible Price Filter */}
+      <div className="mt-8 mx-4">
+        <CollapsibleFilterSection title="Price">
+          <PriceRangeFilter
+            minPrice={minPrice}
+            maxPrice={maxPrice}
+            onMinPriceChange={setMinPrice}
+            onMaxPriceChange={setMaxPrice}
+          />
+        </CollapsibleFilterSection>
+      </div>
+
+      {/* Collapsible Location Filter */}
+      <div className="mt-8 mx-4">
+        <CollapsibleFilterSection title="Location">
+          <LocationFilter
+            locations={locationOptions}
+            selectedLocations={selectedLocations}
+            onLocationChange={setSelectedLocations}
+            selectedDealerships={selectedDealerships}
+            onDealershipChange={setSelectedDealerships}
+          />
+        </CollapsibleFilterSection>
+      </div>
+
+      {/* Collapsible Odometer Filter */}
+      <div className="mt-8 mx-4">
+        <CollapsibleFilterSection title="Odometer">
+          <OdometerRangeFilter
+            minOdemeter={minOdometer}
+            maxOdometer={maxOdometer}
+            onMinOdometerChange={setMinOdometer}
+            onMaxOdometerChange={setMaxOdometer}
+          />
+        </CollapsibleFilterSection>
+      </div>
+
+      {/* Collapsible Transmission Filter */}
+      <div className="mt-8 mx-4">
+        <CollapsibleFilterSection title="Transmission">
+          <TransmissionFilter
+            transmissions={transmissionOptions}
+            selectedTransmissions={selectedTransmissions}
+            onTransmissionChange={setSelectedTransmissions}
+          />
+        </CollapsibleFilterSection>
+      </div>
+
+      {/* Collapsible Fuel Filter */}
+      <div className="mt-8 mx-4">
+        <CollapsibleFilterSection title="Fuel">
+          <FuelFilter
+            fuels={fuelOptions}
+            selectedFuels={selectedFuels}
+            onFuelChange={setSelecteFuels}
+          />
+        </CollapsibleFilterSection>
+      </div>
+
+      {/* More Options Filter */}
+      <div className="mt-8 mx-4">
+        <MoreOptionsFilter />
       </div>
 
       <div className="mt-6 lg:hidden">

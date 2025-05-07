@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { MoveRight } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 import { locationOptions, makeOptions, modelOptions } from "@/lib/mock-data"
-import FilterDropdown from "../main/filter-dropdown"
+import DropdownMultiSelect from "../main/dropdown-multi-select"
 
 interface SearchFormProps {
   simplified?: boolean
@@ -50,14 +50,14 @@ export function SearchForm({ simplified = false }: SearchFormProps) {
     <form onSubmit={handleSubmit} className="grid gap-4 lg:grid-cols-4">
       {/* Filter dropdowns */}
       <div className="space-y-2">
-        <FilterDropdown
+        <DropdownMultiSelect
           title="Make"
           options={makeOptions}
           selectedValues={selectedMakes}
           onChange={setSelectedMakes} />
       </div>
       <div className="space-y-2">
-        <FilterDropdown
+        <DropdownMultiSelect
           title="Model"
           options={modelOptions}
           selectedValues={selectedModels}
@@ -65,7 +65,7 @@ export function SearchForm({ simplified = false }: SearchFormProps) {
         />
       </div>
       <div className="space-y-2">
-        <FilterDropdown
+        <DropdownMultiSelect
           title="Location"
           options={locationOptions}
           selectedValues={selectedLocations}
