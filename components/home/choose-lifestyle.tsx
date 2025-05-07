@@ -117,7 +117,7 @@ export function Card({ vehicles, index }: CardProps) {
                 >
                     {vehicles.map((vehicle) => {
                         return (
-                            <div className="w-full flex-shrink-0">
+                            <div key={vehicle.id} className="w-full flex-shrink-0">
                                 <div className="grid grid-cols-1 lg:grid-cols-10 gap-10">
                                     <div className="lg:col-span-6">
                                         <div className="h-full rounded-md overflow-hidden">

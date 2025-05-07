@@ -52,9 +52,9 @@ export default function FilterDropdown({ title, options, selectedValues, onChang
 
     return (
         <div className="relative mb-4" ref={dropdownRef}>
-            <button
+            <div
                 onClick={toggleDropdown}
-                className="w-full flex items-center justify-between border border-gray-300 bg-white px-4 py-2 text-left"
+                className="border border-input rounded-md  bg-white h-16 px-4 flex items-center justify-between cursor-pointer"
             >
                 <div className="flex flex-col">
                     <span className="font-medium text-gray-700">{title}</span>
@@ -65,7 +65,7 @@ export default function FilterDropdown({ title, options, selectedValues, onChang
                     )}
                 </div>
                 {isOpen ? <MoveUp className="h-4 w-4 text-[#8E6F00]" /> : <MoveDown className="h-4 w-4 text-[#8E6F00]" />}
-            </button>
+            </div>
 
             {isOpen && (
                 <div className="absolute z-10 mt-1 w-full bg-white border border-gray-300 shadow-lg max-h-60 overflow-y-auto">
