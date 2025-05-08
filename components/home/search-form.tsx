@@ -6,7 +6,6 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { MoveRight } from "lucide-react"
-import { useLanguage } from "@/contexts/language-context"
 import { locationOptions, makeOptions, modelOptions } from "@/lib/mock-data"
 import DropdownMultiSelect from "../main/dropdown-multi-select"
 
@@ -16,7 +15,6 @@ interface SearchFormProps {
 
 export function SearchForm({ simplified = false }: SearchFormProps) {
   const router = useRouter()
-  const { t } = useLanguage()
 
   // Update state to handle multiple selections
   const [selectedMakes, setSelectedMakes] = useState<string[]>([])

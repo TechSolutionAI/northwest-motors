@@ -76,7 +76,7 @@ export function MobileNav() {
                 </button>
                 {servicesOpen && (
                   <div className="pl-4 pb-2">
-                    <Link href="#" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>
+                    <Link href="/concierge" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>
                       Concierge
                     </Link>
                     <Link href="/finance" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>

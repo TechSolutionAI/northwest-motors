@@ -1,13 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Logo } from "./logo"
-import { useLanguage } from "@/contexts/language-context"
 import { useTheme } from "next-themes"
 
 export function Footer() {
-  const { t } = useLanguage()
   const { theme, resolvedTheme } = useTheme()
   const currentYear = new Date().getFullYear()
 

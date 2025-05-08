@@ -4,14 +4,12 @@ import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { useLanguage } from "@/contexts/language-context"
 import { SearchForm } from "./search-form"
 import Link from "next/link"
 
 export function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
-  const { t } = useLanguage()
 
   // Only render translated content after mounting to avoid hydration mismatch
   useEffect(() => {

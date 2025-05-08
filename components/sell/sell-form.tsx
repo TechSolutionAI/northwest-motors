@@ -87,6 +87,90 @@ export function SellForm() {
 
     const [isSubmitted, setIsSubmitted] = useState(false)
 
+    // Validate individual field and update errors
+    const validateField = (field: string, value: any): string | undefined => {
+        switch (field) {
+            case "licensePlate":
+                if (!value.trim()) return "License plate number is required"
+                if (!/^[A-Za-z0-9]{1,8}$/.test(value.trim())) return "Please enter a valid license plate number"
+                break
+            case "licensePlateState":
+                if (!value) return "State is required"
+                break
+            case "vinNumber":
+                if (!value.trim()) return "VIN number is required"
+                if (!/^[A-HJ-NPR-Za-hj-npr-z0-9]{17}$/.test(value.trim())) return "Please enter a valid 17-character VIN"
+                break
+            case "mileage":
+                if (!value) return "Mileage is required"
+                if (Number.parseInt(value) < 0) return "Mileage cannot be negative"
+                break
+            case "postalCode":
+                if (!value) return "Postal code is required"
+                if (!/^\d{5}$/.test(value)) return "Postal code must be 5 digits"
+                break
+            case "exteriorColor":
+                if (!value) return "Exterior color is required"
+                break
+            case "interiorColor":
+                if (!value) return "Interior color is required"
+                break
+            case "keyCount":
+                if (!value) return "Please select how many keys you have"
+                break
+            case "loanStatus":
+                if (!value) return "Please select your loan status"
+                break
+            case "lienHolder":
+                if ((loanStatus === "loan" || loanStatus === "lease") && !value)
+                    return "Please enter the name of the bank or dealership"
+                break
+            case "remainingBalance":
+                if ((loanStatus === "loan" || loanStatus === "lease") && !value) return "Please enter the remaining balance"
+                break
+            case "vehicleCondition":
+                if (!value) return "Please rate your vehicle's condition"
+                break
+            case "hasCleanTitle":
+                if (!value) return "Please indicate if the vehicle has a clean title"
+                break
+            case "doesRun":
+                if (!value) return "Please indicate if the vehicle runs and drives"
+                break
+            case "hasBeenInAccident":
+                if (!value) return "Please indicate if the vehicle has been in an accident"
+                break
+            case "hasWarningLights":
+                if (!value) return "Please indicate if there are any active warning lights"
+                break
+            case "hasBeenSmoked":
+                if (!value) return "Please indicate if the vehicle has been smoked in"
+                break
+            case "firstName":
+                if (!value.trim()) return "First name is required"
+                break
+            case "lastName":
+                if (!value.trim()) return "Last name is required"
+                break
+            case "email":
+                if (!value.trim()) return "Email address is required"
+                if (!/\S+@\S+\.\S+/.test(value)) return "Please enter a valid email address"
+                break
+            case "phone":
+                if (!value.trim()) return "Phone number is required"
+                if (!/^($$\d{3}$$ \d{3}-\d{4}|\d{10})$/.test(value.replace(/\D/g, "")))
+                    return "Please enter a valid phone number"
+                break
+            case "contactPreference":
+                if (!value) return "Please select a contact preference"
+                break
+            case "photos":
+                if (uploadedPhotos.length === 0) return "Please upload at least one photo of your vehicle"
+                break
+        }
+        return undefined
+    }
+
     // Get available models based on selected make
     const availableModels =
         selectedMake && vehicleData.models[selectedMake as keyof typeof vehicleData.models]
@@ -112,6 +196,194 @@ export function SellForm() {
         selectedDrivetrain ||
         (selectedTrim && availableDrivetrains.length === 0) ||
         (selectedModel && availableTrims.length === 0)
+
+    const handleLicensePlateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value
+        setLicensePlate(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            licensePlate: validateField("licensePlate", value),
+        }))
+    }
+
+    const handleLicensePlateStateChange = (value: string) => {
+        setLicensePlateState(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            licensePlateState: validateField("licensePlateState", value),
+        }))
+    }
+
+    const handleVinNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value.toUpperCase()
+        setVinNumber(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            vinNumber: validateField("vinNumber", value),
+        }))
+    }
+
+    const handleMileageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value
+        setMileage(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            mileage: validateField("mileage", value),
+        }))
+    }
+
+    const handlePostalCodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value.replace(/[^\d]/g, "").slice(0, 5)
+        setPostalCode(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            postalCode: validateField("postalCode", value),
+        }))
+    }
+
+    const handleExteriorColorChange = (value: string) => {
+        setExteriorColor(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            exteriorColor: validateField("exteriorColor", value),
+        }))
+    }
+
+    const handleInteriorColorChange = (value: string) => {
+        setInteriorColor(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            interiorColor: validateField("interiorColor", value),
+        }))
+    }
+
+    const handleKeyCountChange = (value: string) => {
+        setKeyCount(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            keyCount: validateField("keyCount", value),
+        }))
+    }
+
+    const handleLoanStatusChange = (value: string) => {
+        setLoanStatus(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            loanStatus: validateField("loanStatus", value),
+        }))
+
+        // Clear lienHolder and remainingBalance errors if "none" is selected
+        if (value === "none") {
+            setFormErrors((prev) => ({
+                ...prev,
+                lienHolder: undefined,
+                remainingBalance: undefined,
+            }))
+        }
+    }
+
+    const handleLienHolderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value
+        setLienHolder(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            lienHolder: validateField("lienHolder", value),
+        }))
+    }
+
+    const handleRemainingBalanceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value.replace(/[^\d.]/g, "")
+        setRemainingBalance(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            remainingBalance: validateField("remainingBalance", value),
+        }))
+    }
+
+    // Vehicle condition handlers
+    const handleVehicleConditionChange = (value: string) => {
+        setVehicleCondition(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            vehicleCondition: validateField("vehicleCondition", value),
+        }))
+    }
+
+    const handleCleanTitleChange = (value: string) => {
+        setHasCleanTitle(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            hasCleanTitle: validateField("hasCleanTitle", value),
+        }))
+    }
+
+    const handleDoesRunChange = (value: string) => {
+        setDoesRun(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            doesRun: validateField("doesRun", value),
+        }))
+    }
+
+    const handleAccidentHistoryChange = (value: string) => {
+        setHasBeenInAccident(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            hasBeenInAccident: validateField("hasBeenInAccident", value),
+        }))
+    }
+
+    const handleWarningLightsChange = (value: string) => {
+        setHasWarningLights(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            hasWarningLights: validateField("hasWarningLights", value),
+        }))
+    }
+
+    const handleSmokedInChange = (value: string) => {
+        setHasBeenSmoked(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            hasBeenSmoked: validateField("hasBeenSmoked", value),
+        }))
+    }
+
+    // Contact information handlers
+    const handleFirstNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value
+        setFirstName(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            firstName: validateField("firstName", value),
+        }))
+    }
+
+    const handleLastNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value
+        setLastName(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            lastName: validateField("lastName", value),
+        }))
+    }
+
+    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value
+        setEmail(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            email: validateField("email", value),
+        }))
+    }
+
+    const handleContactPreferenceChange = (value: string) => {
+        setContactPreference(value)
+        setFormErrors((prev) => ({
+            ...prev,
+            contactPreference: validateField("contactPreference", value),
+        }))
+    }
 
     const handleContinue = () => {
         if (expandedSection === 1) {
@@ -324,7 +596,7 @@ export function SellForm() {
             // Validate phone
             if (!phone.trim()) {
                 errors.phone = "Phone number is required"
-            } else if (!/^$$\d{3}$$ \d{3}-\d{4}$/.test(phone) && !/^\d{10}$/.test(phone.replace(/\D/g, ""))) {
+            } else if (!/^($$\d{3}$$ \d{3}-\d{4}|\d{10})$/.test(phone.replace(/\D/g, ""))) {
                 errors.phone = "Please enter a valid phone number"
             }
 
@@ -370,7 +642,16 @@ export function SellForm() {
     const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files.length > 0) {
             const newFiles = Array.from(e.target.files)
-            setUploadedPhotos((prev) => [...prev, ...newFiles])
+            const updatedPhotos = [...uploadedPhotos, ...newFiles]
+            setUploadedPhotos(updatedPhotos)
+
+            // Clear photo error if photos are uploaded
+            if (updatedPhotos.length > 0) {
+                setFormErrors((prev) => ({
+                    ...prev,
+                    photos: undefined,
+                }))
+            }
         }
     }
 
@@ -385,6 +666,12 @@ export function SellForm() {
                 }
             }
             setPhone(formattedValue)
+
+            // Validate phone
+            setFormErrors((prev) => ({
+                ...prev,
+                phone: validateField("phone", formattedValue),
+            }))
         }
     }
 
@@ -455,7 +742,7 @@ export function SellForm() {
                             className={`w-full p-2 border ${formErrors.mileage ? "border-red-500" : "border-border"} rounded-md`}
                             placeholder="Exact Mileage"
                             value={mileage}
-                            onChange={(e) => setMileage(e.target.value)}
+                            onChange={handleMileageChange}
                             min="0"
                             required
                         />
@@ -471,7 +758,7 @@ export function SellForm() {
                             className={`w-full p-2 border ${formErrors.postalCode ? "border-red-500" : "border-border"} rounded-md`}
                             placeholder="_____"
                             value={postalCode}
-                            onChange={(e) => setPostalCode(e.target.value.replace(/[^\d]/g, "").slice(0, 5))}
+                            onChange={handlePostalCodeChange}
                             maxLength={5}
                             required
                         />
@@ -485,7 +772,7 @@ export function SellForm() {
                         <DropdownSelect
                             options={colourOptions}
                             value={exteriorColor}
-                            onChange={setExteriorColor}
+                            onChange={handleExteriorColorChange}
                             placeholder="[Select]"
                             className={formErrors.exteriorColor ? "border-red-500" : ""}
                         />
@@ -499,7 +786,7 @@ export function SellForm() {
                         <DropdownSelect
                             options={colourOptions}
                             value={interiorColor}
-                            onChange={setInteriorColor}
+                            onChange={handleInteriorColorChange}
                             placeholder="[Select]"
                             className={formErrors.interiorColor ? "border-red-500" : ""}
                         />
@@ -511,7 +798,7 @@ export function SellForm() {
                     <label className="block mb-2 text-sm font-medium">
                         How many keys do you have? <span className="text-red-500">*</span>
                     </label>
-                    <Tabs value={keyCount} onValueChange={setKeyCount} className="w-full p-0">
+                    <Tabs value={keyCount} onValueChange={handleKeyCountChange} className="w-full p-0">
                         <TabsList
                             className={`grid grid-cols-2 w-full rounded-lg overflow-hidden border ${formErrors.keyCount ? "border-red-500" : "border-border"} [&>*]:px-0 p-0 bg-gray-100`}
                         >
@@ -536,7 +823,7 @@ export function SellForm() {
                     <label className="block mb-2 text-sm font-medium">
                         Do you have a loan or lease on the vehicle? <span className="text-red-500">*</span>
                     </label>
-                    <Tabs value={loanStatus} onValueChange={setLoanStatus} className="w-full">
+                    <Tabs value={loanStatus} onValueChange={handleLoanStatusChange} className="w-full">
                         <TabsList
                             className={`grid grid-cols-3 w-full rounded-lg overflow-hidden border ${formErrors.loanStatus ? "border-red-500" : "border-border"} [&>*]:px-0 p-0 bg-gray-100`}
                         >
@@ -574,7 +861,7 @@ export function SellForm() {
                                 className={`w-full p-2 border ${formErrors.lienHolder ? "border-red-500" : "border-border"} rounded-md`}
                                 placeholder="Name of bank or dealership"
                                 value={lienHolder}
-                                onChange={(e) => setLienHolder(e.target.value)}
+                                onChange={handleLienHolderChange}
                                 required
                             />
                             {formErrors.lienHolder && <p className="text-red-500 text-xs mt-1">{formErrors.lienHolder}</p>}
@@ -593,7 +880,7 @@ export function SellForm() {
                                     className={`w-full p-2 pl-7 border ${formErrors.remainingBalance ? "border-red-500" : "border-border"} rounded-md`}
                                     placeholder="Loan Amount"
                                     value={remainingBalance}
-                                    onChange={(e) => setRemainingBalance(e.target.value.replace(/[^\d.]/g, ""))}
+                                    onChange={handleRemainingBalanceChange}
                                     required
                                 />
                             </div>
@@ -614,7 +901,7 @@ export function SellForm() {
                     <label className="block mb-2 text-sm font-medium">
                         How would you rate your vehicle overall? <span className="text-red-500">*</span>
                     </label>
-                    <RadioGroup value={vehicleCondition} onValueChange={setVehicleCondition} className="space-y-3">
+                    <RadioGroup value={vehicleCondition} onValueChange={handleVehicleConditionChange} className="space-y-3">
                         <div className="flex items-center space-x-2">
                             <RadioGroupItem value="like-new" id="like-new" />
                             <label htmlFor="like-new" className="text-sm">
@@ -641,7 +928,7 @@ export function SellForm() {
                     <label className="block mb-2 text-sm font-medium">
                         Does the vehicle have a clean title? <span className="text-red-500">*</span>
                     </label>
-                    <Tabs value={hasCleanTitle} onValueChange={setHasCleanTitle} className="w-full">
+                    <Tabs value={hasCleanTitle} onValueChange={handleCleanTitleChange} className="w-full">
                         <TabsList className="grid grid-cols-2 w-full rounded-lg overflow-hidden border border-border [&>*]:px-0 p-0 bg-gray-10">
                             <TabsTrigger
                                 value="yes"
@@ -664,7 +951,7 @@ export function SellForm() {
                     <label className="block mb-2 text-sm font-medium">
                         Does your vehicle run and drive? <span className="text-red-500">*</span>
                     </label>
-                    <Tabs value={doesRun} onValueChange={setDoesRun} className="w-full">
+                    <Tabs value={doesRun} onValueChange={handleDoesRunChange} className="w-full">
                         <TabsList className="grid grid-cols-2 w-full rounded-lg overflow-hidden border border-border [&>*]:px-0 p-0 bg-gray-100">
                             <TabsTrigger
                                 value="yes"
@@ -687,7 +974,7 @@ export function SellForm() {
                     <label className="block mb-2 text-sm font-medium">
                         Has your vehicle been in an accident? <span className="text-red-500">*</span>
                     </label>
-                    <Tabs value={hasBeenInAccident} onValueChange={setHasBeenInAccident} className="w-full">
+                    <Tabs value={hasBeenInAccident} onValueChange={handleAccidentHistoryChange} className="w-full">
                         <TabsList className="grid grid-cols-2 w-full rounded-lg overflow-hidden border border-border [&>*]:px-0 p-0 bg-gray-100">
                             <TabsTrigger
                                 value="yes"
@@ -710,7 +997,7 @@ export function SellForm() {
                     <label className="block mb-2 text-sm font-medium">
                         Are there any active warning or service lights? <span className="text-red-500">*</span>
                     </label>
-                    <Tabs value={hasWarningLights} onValueChange={setHasWarningLights} className="w-full">
+                    <Tabs value={hasWarningLights} onValueChange={handleWarningLightsChange} className="w-full">
                         <TabsList className="grid grid-cols-2 w-full rounded-lg overflow-hidden border border-border [&>*]:px-0 p-0 bg-gray-100">
                             <TabsTrigger
                                 value="yes"
@@ -733,7 +1020,7 @@ export function SellForm() {
                     <label className="block mb-2 text-sm font-medium">
                         Has the vehicle been smoked in? <span className="text-red-500">*</span>
                     </label>
-                    <Tabs value={hasBeenSmoked} onValueChange={setHasBeenSmoked} className="w-full">
+                    <Tabs value={hasBeenSmoked} onValueChange={handleSmokedInChange} className="w-full">
                         <TabsList className="grid grid-cols-2 w-full rounded-lg overflow-hidden border border-border [&>*]:px-0 p-0 bg-gray-100">
                             <TabsTrigger
                                 value="yes"
@@ -934,7 +1221,7 @@ export function SellForm() {
                             className={`w-full p-2 border ${formErrors.firstName ? "border-red-500" : "border-border"} rounded-md`}
                             placeholder="First"
                             value={firstName}
-                            onChange={(e) => setFirstName(e.target.value)}
+                            onChange={handleFirstNameChange}
                             required
                         />
                         {formErrors.firstName && <p className="text-red-500 text-xs mt-1">{formErrors.firstName}</p>}
@@ -949,7 +1236,7 @@ export function SellForm() {
                             className={`w-full p-2 border ${formErrors.lastName ? "border-red-500" : "border-border"} rounded-md`}
                             placeholder="Last"
                             value={lastName}
-                            onChange={(e) => setLastName(e.target.value)}
+                            onChange={handleLastNameChange}
                             required
                         />
                         {formErrors.lastName && <p className="text-red-500 text-xs mt-1">{formErrors.lastName}</p>}
@@ -966,7 +1253,7 @@ export function SellForm() {
                             className={`w-full p-2 border ${formErrors.email ? "border-red-500" : "border-border"} rounded-md`}
                             placeholder="you@email.com"
                             value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={handleEmailChange}
                             required
                         />
                         {formErrors.email && <p className="text-red-500 text-xs mt-1">{formErrors.email}</p>}
@@ -992,7 +1279,7 @@ export function SellForm() {
                     <label className="block mb-2 text-sm font-medium">
                         What is the best way to contact you? <span className="text-red-500">*</span>
                     </label>
-                    <RadioGroup value={contactPreference} onValueChange={setContactPreference} className="space-y-3">
+                    <RadioGroup value={contactPreference} onValueChange={handleContactPreferenceChange} className="space-y-3">
                         <div className="flex items-center space-x-2">
                             <RadioGroupItem value="email" id="contact-email" />
                             <label htmlFor="contact-email" className="text-sm">
@@ -1057,7 +1344,11 @@ export function SellForm() {
                 {/* Reset Button - only shown after first step and before submission */}
                 {currentStep > 1 && !isSubmitted && (
                     <div className="p-6 border-b border-border">
-                        <Button variant="outline" onClick={resetAllFields} className="flex items-center hover:text-white hover:bg-[#8E6F00]">
+                        <Button
+                            variant="outline"
+                            onClick={resetAllFields}
+                            className="flex items-center hover:text-white hover:bg-[#8E6F00]"
+                        >
                             <MoveLeft className="mr-2 h-4 w-4" />
                             Start Over
                         </Button>
@@ -1068,9 +1359,7 @@ export function SellForm() {
                 {isSubmitted && (
                     <div className="p-6 text-center">
                         <h3 className="text-xl font-medium text-green-600 mb-4">Thank You For Your Submission!</h3>
-                        <p className="text-gray-700mb-6">
-                            We've received your vehicle information and will be in touch shortly.
-                        </p>
+                        <p className="text-gray-700mb-6">We've received your vehicle information and will be in touch shortly.</p>
                         <Button
                             onClick={() => {
                                 resetAllFields()
@@ -1232,7 +1521,7 @@ export function SellForm() {
                                                     className={`w-full p-2 border ${formErrors.licensePlate ? "border-red-500" : "border-border"} rounded-md`}
                                                     placeholder="Enter license plate number"
                                                     value={licensePlate}
-                                                    onChange={(e) => setLicensePlate(e.target.value)}
+                                                    onChange={handleLicensePlateChange}
                                                     maxLength={8}
                                                 />
                                                 {formErrors.licensePlate && (
@@ -1246,7 +1535,7 @@ export function SellForm() {
                                                 <DropdownSelect
                                                     options={US_STATES}
                                                     value={licensePlateState}
-                                                    onChange={setLicensePlateState}
+                                                    onChange={handleLicensePlateStateChange}
                                                     placeholder="Select State"
                                                     className={formErrors.licensePlateState ? "border-red-500" : ""}
                                                 />
@@ -1267,14 +1556,18 @@ export function SellForm() {
                                                 className={`w-full p-2 border ${formErrors.vinNumber ? "border-red-500" : "border-border"} rounded-md`}
                                                 placeholder="Enter 17-digit VIN number"
                                                 value={vinNumber}
-                                                onChange={(e) => setVinNumber(e.target.value.toUpperCase())}
+                                                onChange={handleVinNumberChange}
                                                 maxLength={17}
                                             />
                                             {formErrors.vinNumber && <p className="text-red-500 text-xs mt-1">{formErrors.vinNumber}</p>}
                                         </div>
                                     )}
 
-                                    <Button onClick={handleContinue} className="w-full md:w-auto hover:text-white hover:bg-[#8E6F00]" disabled={!isFormValid()}>
+                                    <Button
+                                        onClick={handleContinue}
+                                        className="w-full md:w-auto hover:text-white hover:bg-[#8E6F00]"
+                                        disabled={!isFormValid()}
+                                    >
                                         Continue <MoveRight className="ml-2 h-4 w-4" />
                                     </Button>
                                 </>

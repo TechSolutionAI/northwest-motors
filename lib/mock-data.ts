@@ -117,15 +117,15 @@ export const transmissionOptions = [
   { value: "continually-variable", label: "Continually variable" },
   { value: "dual-clutch", label: "Dual clutch" },
   { value: "sequential-manual", label: "Sequential manual" },
-  { value: "semi-automatic", label: "Semi automatic" }
-];
+  { value: "semi-automatic", label: "Semi automatic" },
+]
 
 export const fuelOptions = [
   { value: "petrol", label: "Petrol" },
   { value: "diesel", label: "Diesel" },
   { value: "hybrid", label: "Hybrid" },
-  { value: "electric", label: "Electric" }
-];
+  { value: "electric", label: "Electric" },
+]
 
 // Cylinder options
 export const cylinderOptions = [
@@ -236,9 +236,25 @@ export const loanYearOptions = [
   { value: "5 Years", label: "5 Years" },
   { value: "6 Years", label: "6 Years" },
   { value: "7 Years", label: "7 Years" },
-];
+]
 
 // Sample vehicle data
+export interface Vehicle {
+  id: number
+  make: string
+  model: string
+  year: number
+  trim: string
+  km: number
+  transmission: string
+  location: string
+  fuel: string
+  price: number
+  weeklyPayment: number
+  comparisonRate: number
+  image: string
+}
+
 export const vehicles: Vehicle[] = [
   {
     id: 1,
@@ -542,7 +558,6 @@ export const vehicles: Vehicle[] = [
   },
 ]
 
-
 // Expanded mock data with makes, models, and trim levels
 export const vehicleData = {
   makes: [
@@ -703,3 +718,35 @@ export const vehicleData = {
     "4Runner": ["2WD", "4WD", "AWD"],
   },
 }
+
+// Concierge form options
+export const carTypeOptions = [
+  { value: "sedan", label: "Sedan" },
+  { value: "suv", label: "SUV" },
+  { value: "truck", label: "Truck" },
+  { value: "coupe", label: "Coupe" },
+  { value: "convertible", label: "Convertible" },
+  { value: "hatchback", label: "Hatchback" },
+  { value: "wagon", label: "Wagon" },
+  { value: "van", label: "Van" },
+  { value: "hybrid", label: "Hybrid" },
+  { value: "electric", label: "Electric" },
+]
+
+export const timelineOptions = [
+  { value: "now", label: "Now" },
+  { value: "1month", label: "1 month" },
+  { value: "2months", label: "2 months" },
+  { value: "3months", label: "3 months" },
+]
+
+export const yesNoOptions = [
+  { value: "yes", label: "Yes" },
+  { value: "no", label: "No" },
+]
+
+export const contactPreferenceOptions = [
+  { value: "email", label: "Email" },
+  { value: "phone", label: "Phone" },
+  { value: "text", label: "Text" },
+]

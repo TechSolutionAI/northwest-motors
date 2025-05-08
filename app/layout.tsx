@@ -1,4 +1,5 @@
 import type React from "react"
+import { exo, kronaOne } from "./fonts"
 import "./globals.css"
 import { Header } from "@/components/main/header"
 import { Footer } from "@/components/main/footer"
@@ -11,7 +12,6 @@ import { UserwayStyles } from "@/components/main/userway-styles"
 export const metadata = {
   title: "Northwest Motors - Premium Vehicles",
   description: "Find your perfect vehicle with Northwest Motors",
-  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -21,16 +21,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-exo">
+      <body className={`${exo.variable} ${kronaOne.variable} font-sans`}>
         {/* <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}> */}
-        <LanguageProvider>
-          <Header />
-          <main className="pt-16">{children}</main>
-          <Footer />
-          <ScrollToTop />
-          <AccessibilityWidget size="medium" />
-          <UserwayStyles />
-        </LanguageProvider>
+        {/* <LanguageProvider> */}
+        <Header />
+        <main className="pt-16">{children}</main>
+        <Footer />
+        <ScrollToTop />
+        <AccessibilityWidget size="medium" />
+        <UserwayStyles />
+        {/* </LanguageProvider> */}
         {/* </ThemeProvider> */}
       </body>
     </html>
