@@ -8,7 +8,7 @@ export default function HeroSection() {
     return (
         <section className="p-10">
             <h1 className="text-3xl md:text-4xl mt-4">Sell your car</h1>
-            <h2 className="text-3xl md:text-5xl mt-8">A history dating back to 1985</h2>
+            <h2 className="text-4xl md:text-5xl mt-8">A history dating back to 1985</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
                 <div className="relative h-[500px] overflow-hidden">
@@ -38,7 +38,7 @@ export default function HeroSection() {
                     </p>
 
                     <Button
-                        className="flex items-center justify-center bg-white text-dark hover:bg-gray-200 w-full py-6 text-lg"
+                        className="flex items-center justify-center bg-white text-dark hover:bg-[#8E6F00] hover:text-white w-full py-6 text-lg"
                         onClick={() => document.getElementById("sell-form")?.scrollIntoView({ behavior: "smooth" })}
                     >
                         FILL OUT OUR FORM BELOW

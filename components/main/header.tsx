@@ -74,7 +74,7 @@ export function Header() {
               <Link href="#" className="block px-4 py-2 hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
                 Concierge
               </Link>
-              <Link href="#" className="block px-4 py-2 hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
+              <Link href="/finance" className="block px-4 py-2 hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
                 Finance
               </Link>
             </div>

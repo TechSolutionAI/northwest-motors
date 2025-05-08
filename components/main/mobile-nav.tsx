@@ -79,7 +79,7 @@ export function MobileNav() {
                     <Link href="#" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>
                       Concierge
                     </Link>
-                    <Link href="#" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>
+                    <Link href="/finance" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>
                       Finance
                     </Link>
                   </div>

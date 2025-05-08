@@ -513,17 +513,17 @@ export function SellForm() {
                     </label>
                     <Tabs value={keyCount} onValueChange={setKeyCount} className="w-full p-0">
                         <TabsList
-                            className={`grid grid-cols-2 w-full rounded-lg overflow-hidden border ${formErrors.keyCount ? "border-red-500" : "border-border"} [&>*]:px-0 p-0 bg-gray-100 dark:bg-slate-800`}
+                            className={`grid grid-cols-2 w-full rounded-lg overflow-hidden border ${formErrors.keyCount ? "border-red-500" : "border-border"} [&>*]:px-0 p-0 bg-gray-100`}
                         >
                             <TabsTrigger
                                 value="1"
-                                className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-l-lg border-r border-border"
+                                className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                             >
                                 1
                             </TabsTrigger>
                             <TabsTrigger
                                 value="2"
-                                className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-r-lg"
+                                className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                             >
                                 2+
                             </TabsTrigger>
@@ -538,23 +538,23 @@ export function SellForm() {
                     </label>
                     <Tabs value={loanStatus} onValueChange={setLoanStatus} className="w-full">
                         <TabsList
-                            className={`grid grid-cols-3 w-full rounded-lg overflow-hidden border ${formErrors.loanStatus ? "border-red-500" : "border-border"} [&>*]:px-0 p-0 bg-gray-100 dark:bg-slate-800`}
+                            className={`grid grid-cols-3 w-full rounded-lg overflow-hidden border ${formErrors.loanStatus ? "border-red-500" : "border-border"} [&>*]:px-0 p-0 bg-gray-100`}
                         >
                             <TabsTrigger
                                 value="loan"
-                                className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-l-lg border-r border-border"
+                                className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                             >
                                 Loan
                             </TabsTrigger>
                             <TabsTrigger
                                 value="lease"
-                                className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 border-r border-border"
+                                className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                             >
                                 Lease
                             </TabsTrigger>
                             <TabsTrigger
                                 value="none"
-                                className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-r-lg"
+                                className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                             >
                                 No, I own it
                             </TabsTrigger>
@@ -642,16 +642,16 @@ export function SellForm() {
                         Does the vehicle have a clean title? <span className="text-red-500">*</span>
                     </label>
                     <Tabs value={hasCleanTitle} onValueChange={setHasCleanTitle} className="w-full">
-                        <TabsList className="grid grid-cols-2 w-full rounded-lg overflow-hidden border border-border [&>*]:px-0 p-0 bg-gray-100 dark:bg-slate-800">
+                        <TabsList className="grid grid-cols-2 w-full rounded-lg overflow-hidden border border-border [&>*]:px-0 p-0 bg-gray-10">
                             <TabsTrigger
                                 value="yes"
-                                className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-l-lg border-r border-border"
+                                className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 "
                             >
                                 Yes
                             </TabsTrigger>
                             <TabsTrigger
                                 value="no"
-                                className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-r-lg"
+                                className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                             >
                                 No
                             </TabsTrigger>
@@ -665,16 +665,16 @@ export function SellForm() {
                         Does your vehicle run and drive? <span className="text-red-500">*</span>
                     </label>
                     <Tabs value={doesRun} onValueChange={setDoesRun} className="w-full">
-                        <TabsList className="grid grid-cols-2 w-full rounded-lg overflow-hidden border border-border [&>*]:px-0 p-0 bg-gray-100 dark:bg-slate-800">
+                        <TabsList className="grid grid-cols-2 w-full rounded-lg overflow-hidden border border-border [&>*]:px-0 p-0 bg-gray-100">
                             <TabsTrigger
                                 value="yes"
-                                className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-l-lg border-r border-border"
+                                className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                             >
                                 Yes
                             </TabsTrigger>
                             <TabsTrigger
                                 value="no"
-                                className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-r-lg"
+                                className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-70"
                             >
                                 No
                             </TabsTrigger>
@@ -688,16 +688,16 @@ export function SellForm() {
                         Has your vehicle been in an accident? <span className="text-red-500">*</span>
                     </label>
                     <Tabs value={hasBeenInAccident} onValueChange={setHasBeenInAccident} className="w-full">
-                        <TabsList className="grid grid-cols-2 w-full rounded-lg overflow-hidden border border-border [&>*]:px-0 p-0 bg-gray-100 dark:bg-slate-800">
+                        <TabsList className="grid grid-cols-2 w-full rounded-lg overflow-hidden border border-border [&>*]:px-0 p-0 bg-gray-100">
                             <TabsTrigger
                                 value="yes"
-                                className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-l-lg border-r border-border"
+                                className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                             >
                                 Yes
                             </TabsTrigger>
                             <TabsTrigger
                                 value="no"
-                                className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-r-lg"
+                                className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                             >
                                 No
                             </TabsTrigger>
@@ -711,16 +711,16 @@ export function SellForm() {
                         Are there any active warning or service lights? <span className="text-red-500">*</span>
                     </label>
                     <Tabs value={hasWarningLights} onValueChange={setHasWarningLights} className="w-full">
-                        <TabsList className="grid grid-cols-2 w-full rounded-lg overflow-hidden border border-border [&>*]:px-0 p-0 bg-gray-100 dark:bg-slate-800">
+                        <TabsList className="grid grid-cols-2 w-full rounded-lg overflow-hidden border border-border [&>*]:px-0 p-0 bg-gray-100">
                             <TabsTrigger
                                 value="yes"
-                                className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-l-lg border-r border-border"
+                                className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-70"
                             >
                                 Yes
                             </TabsTrigger>
                             <TabsTrigger
                                 value="no"
-                                className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-r-lg"
+                                className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                             >
                                 No
                             </TabsTrigger>
@@ -734,16 +734,16 @@ export function SellForm() {
                         Has the vehicle been smoked in? <span className="text-red-500">*</span>
                     </label>
                     <Tabs value={hasBeenSmoked} onValueChange={setHasBeenSmoked} className="w-full">
-                        <TabsList className="grid grid-cols-2 w-full rounded-lg overflow-hidden border border-border [&>*]:px-0 p-0 bg-gray-100 dark:bg-slate-800">
+                        <TabsList className="grid grid-cols-2 w-full rounded-lg overflow-hidden border border-border [&>*]:px-0 p-0 bg-gray-100">
                             <TabsTrigger
                                 value="yes"
-                                className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-l-lg border-r border-border"
+                                className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                             >
                                 Yes
                             </TabsTrigger>
                             <TabsTrigger
                                 value="no"
-                                className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-r-lg"
+                                className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                             >
                                 No
                             </TabsTrigger>
@@ -853,10 +853,10 @@ export function SellForm() {
                     <li>Engine bay, including front bumper</li>
                 </ul>
 
-                <div className="mt-6 border border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50 dark:bg-slate-800">
+                <div className="mt-6 border border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50 ">
                     <div className="flex flex-col items-center justify-center">
                         <Upload className="h-12 w-12 text-gray-400 mb-4" />
-                        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                        <p className="text-sm text-gray-500 mb-4">
                             Drag and drop images or click here to select files. Non-image files will be discarded.
                         </p>
                         <input
@@ -902,7 +902,7 @@ export function SellForm() {
                 )}
 
                 <div className="flex justify-between mt-6">
-                    <Button onClick={handleContinue} className="w-full md:w-auto">
+                    <Button onClick={handleContinue} className="w-full md:w-auto hover:text-white hover:bg-[#8E6F00]">
                         Continue <MoveRight className="ml-2 h-4 w-4" />
                     </Button>
                     <Button
@@ -1026,7 +1026,7 @@ export function SellForm() {
                     />
                 </div>
 
-                <Button onClick={handleContinue} className="w-full md:w-auto">
+                <Button onClick={handleContinue} className="w-full md:w-auto hover:text-white hover:bg-[#8E6F00]">
                     Submit
                 </Button>
 
@@ -1057,7 +1057,7 @@ export function SellForm() {
                 {/* Reset Button - only shown after first step and before submission */}
                 {currentStep > 1 && !isSubmitted && (
                     <div className="p-6 border-b border-border">
-                        <Button variant="outline" onClick={resetAllFields} className="flex items-center">
+                        <Button variant="outline" onClick={resetAllFields} className="flex items-center hover:text-white hover:bg-[#8E6F00]">
                             <MoveLeft className="mr-2 h-4 w-4" />
                             Start Over
                         </Button>
@@ -1068,7 +1068,7 @@ export function SellForm() {
                 {isSubmitted && (
                     <div className="p-6 text-center">
                         <h3 className="text-xl font-medium text-green-600 mb-4">Thank You For Your Submission!</h3>
-                        <p className="text-gray-700 dark:text-gray-300 mb-6">
+                        <p className="text-gray-700mb-6">
                             We've received your vehicle information and will be in touch shortly.
                         </p>
                         <Button
@@ -1120,22 +1120,22 @@ export function SellForm() {
                                             className="mb-6 p-0"
                                             onValueChange={setEntryMethod}
                                         >
-                                            <TabsList className="grid grid-cols-3 w-full p-0 max-w-md rounded-lg overflow-hidden border border-border [&>*]:px-0 bg-gray-100 dark:bg-slate-800">
+                                            <TabsList className="grid grid-cols-3 w-full p-0 max-w-md rounded-lg overflow-hidden border border-border [&>*]:px-0 bg-gray-100">
                                                 <TabsTrigger
                                                     value="make-model"
-                                                    className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-l-lg border-r border-border"
+                                                    className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 "
                                                 >
                                                     Make & Model
                                                 </TabsTrigger>
                                                 <TabsTrigger
                                                     value="license-plate"
-                                                    className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 border-r border-border"
+                                                    className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                                                 >
                                                     License Plate
                                                 </TabsTrigger>
                                                 <TabsTrigger
                                                     value="vin"
-                                                    className="h-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 rounded-r-lg"
+                                                    className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                                                 >
                                                     VIN Number
                                                 </TabsTrigger>
@@ -1274,7 +1274,7 @@ export function SellForm() {
                                         </div>
                                     )}
 
-                                    <Button onClick={handleContinue} className="w-full md:w-auto" disabled={!isFormValid()}>
+                                    <Button onClick={handleContinue} className="w-full md:w-auto hover:text-white hover:bg-[#8E6F00]" disabled={!isFormValid()}>
                                         Continue <MoveRight className="ml-2 h-4 w-4" />
                                     </Button>
                                 </>
@@ -1304,7 +1304,7 @@ export function SellForm() {
                                     <div className="w-full border-b border-border mt-4 mb-6"></div>
                                     {renderHistoryConditionForm()}
                                     <div className="mt-6">
-                                        <Button onClick={handleContinue} className="w-full md:w-auto">
+                                        <Button onClick={handleContinue} className="w-full md:w-auto hover:text-white hover:bg-[#8E6F00]">
                                             Continue <MoveRight className="ml-2 h-4 w-4" />
                                         </Button>
                                     </div>

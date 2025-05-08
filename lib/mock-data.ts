@@ -228,6 +228,16 @@ export const colourOptions = [
   { value: "gold", label: "Gold", stock: 3 },
 ]
 
+export const loanYearOptions = [
+  { value: "1 Year", label: "1 Year" },
+  { value: "2 Years", label: "2 Years" },
+  { value: "3 Years", label: "3 Years" },
+  { value: "4 Years", label: "4 Years" },
+  { value: "5 Years", label: "5 Years" },
+  { value: "6 Years", label: "6 Years" },
+  { value: "7 Years", label: "7 Years" },
+];
+
 // Sample vehicle data
 export const vehicles: Vehicle[] = [
   {
