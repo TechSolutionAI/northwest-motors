@@ -10,8 +10,10 @@ export default function Concierge() {
                 {/* Hero Section */}
                 <HeroSection />
 
+                <div className="border mt-10 mb-20"></div>
+
                 {/* Concierge Form Section */}
-                <section className="py-12 px-4">
+                <section className="py-20 px-10">
                     <FormConcierge />
                 </section>
             </main>
