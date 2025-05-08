@@ -272,8 +272,8 @@ export default function FormConcierge() {
     return (
         <div className="w-full max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
             <div className="mb-8">
-                <h2 className="text-3xl font-bold text-primary">Concierge Service</h2>
-                <p className="text-gray-600 mt-2">
+                <h2 className="text-4xl font-bold text-primary">CONCIERGE</h2>
+                <p className="mt-2">
                     Let us know your preferences & how best to reach you by filling out our online form
                 </p>
             </div>
