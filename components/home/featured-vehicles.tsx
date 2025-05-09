@@ -100,12 +100,14 @@ export default function FeaturedVehicles() {
             >
               <div className="border rounded-md overflow-hidden mb-6 bg-[#F3F3F3] border-b-4 border-b-[#8E6F00]">
                 <div className="relative h-48 bg-gray-100">
-                  <Image
-                    src={vehicle.image}
-                    alt={`${vehicle.make} ${index + 1}`}
-                    fill
-                    className="object-cover cursor-pointer"
-                  />
+                  <Link href={`/inventory/${vehicle.id}`} >
+                    <Image
+                      src={vehicle.image}
+                      alt={`${vehicle.make} ${index + 1}`}
+                      fill
+                      className="object-cover cursor-pointer"
+                    />
+                  </Link>
                 </div>
                 <div className="p-4">
                   <div className="flex items-baseline">
@@ -172,7 +174,7 @@ export default function FeaturedVehicles() {
                   </div>
                 </div>
                 <div className="mt-4 flex justify-center items-center">
-                  <Link href="#" className="flex w-full py-4 justify-center group bg-[#E6E7E8] hover:bg-[#8E6F00] transition-colors duration-300 ease-in">
+                  <Link href={`/inventory/${vehicle.id}`} className="flex w-full py-4 justify-center group bg-[#E6E7E8] hover:bg-[#8E6F00] transition-colors duration-300 ease-in">
                     <span className="self-center font-medium group-hover:text-white">VIEW</span> <MoveRight className="h-8 w-8 ml-4 group-hover:text-white" />
                   </Link>
                 </div>

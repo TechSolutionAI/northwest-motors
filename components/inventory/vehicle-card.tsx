@@ -1,36 +1,25 @@
 import Image from "next/image"
 import Link from "next/link"
-import { CarFront, ChevronRight, CircleGauge, Fuel, MapPinned, MoveRight } from "lucide-react"
+import { CarFront, CircleGauge, Fuel, MapPinned, MoveRight } from "lucide-react"
 
 type VehicleCardProps = {
-  vehicle: {
-    id: number
-    make: string
-    model: string
-    year: number
-    trim: string
-    km: number
-    transmission: string
-    location: string
-    fuel: string
-    price: number
-    weeklyPayment: number
-    comparisonRate: number
-    image: string
-  }
+  vehicle: Vehicle
 }
 
 export default function VehicleCard({ vehicle }: VehicleCardProps) {
   return (
     <div className="bg-[#F3F3F3] overflow-hidden">
       <div className="relative h-64">
-        <Image
-          src={vehicle.image || "/placeholder.svg"}
-          alt={`${vehicle.make} ${vehicle.model}`}
-          fill
-          className="object-cover"
-        />
+        <Link href={`/inventory/${vehicle.id}`}>
+          <Image
+            src={vehicle.image || "/placeholder.svg"}
+            alt={`${vehicle.make} ${vehicle.model}`}
+            fill
+            className="object-cover"
+          />
+        </Link>
       </div>
+
 
       <div className="p-4">
         <div className="flex items-baseline">
@@ -102,7 +91,7 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
 
         <div className="grid grid-cols-2 gap-0 h-16 mt-4 -m-4 border-b-4 border-b-[#8E6F00]">
           <Link
-            href={`/vehicles/${vehicle.id}`}
+            href={`/inventory/${vehicle.id}`}
             className="flex items-center justify-center py-2 bg-[#E6E7E8] hover:text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in"
           >
             VIEW <MoveRight className="ml-2 h-6 w-6" />

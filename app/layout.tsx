@@ -6,8 +6,6 @@ import { Footer } from "@/components/main/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/contexts/language-context"
 import { ScrollToTop } from "@/components/main/scroll-to-top"
-import { AccessibilityWidget } from "@/components/main/accessiblity-widget"
-import { UserwayStyles } from "@/components/main/userway-styles"
 
 export const metadata = {
   title: "Northwest Motors - Premium Vehicles",
@@ -28,8 +26,8 @@ export default function RootLayout({
         <main className="pt-16">{children}</main>
         <Footer />
         <ScrollToTop />
-        <AccessibilityWidget size="medium" />
-        <UserwayStyles />
+        {/* <AccessibilityWidget size="medium" /> */}
+        {/* <UserwayStyles /> */}
         {/* </LanguageProvider> */}
         {/* </ThemeProvider> */}
       </body>

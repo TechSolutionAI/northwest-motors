@@ -1,8 +1,8 @@
 "use client"
 
 import HeroSection from "@/components/finance/hero-section"
-import LoanCalculator from "@/components/finance/loan-calculator"
 import ServiceAccordion from "@/components/finance/service-accordion"
+import FinancialLoanCalculator from "@/components/finance/financial-loan-calculator"
 
 export default function Finance() {
     return (
@@ -16,7 +16,7 @@ export default function Finance() {
                 <ServiceAccordion />
 
                 {/* Calculator Section */}
-                <LoanCalculator />
+                <FinancialLoanCalculator />
             </main>
 
         </div>
