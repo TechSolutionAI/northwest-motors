@@ -28,26 +28,26 @@ export default function VehicleDetailPage({ params }: { params: { id: string } }
                 </div>
 
                 {/* Tabs Navigation */}
-                <div>
+                <div className="sticky top-20 z-100">
                     <VehicleInfoNav vehicle={vehicle} />
                 </div>
 
                 {/* About Section */}
-                <div className="bg-white">
+                <div id="about" className="bg-white">
                     <AboutThis vehicle={vehicle} />
                 </div>
 
                 <div className="border border-black"></div>
 
                 {/* Finance Calculator Section */}
-                <div className="">
+                <div id="finance" className="">
                     <VehicleLoanCalculator vehicle={vehicle} />
                 </div>
 
                 <div className="border border-black"></div>
 
                 {/* Location Section */}
-                <div>
+                <div id="location">
                     <VehicleLocation vehicle={vehicle} />
                 </div>
             </div>

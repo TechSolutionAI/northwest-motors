@@ -10,12 +10,12 @@ export default function VehicleGallery({ vehicle }: VehicleGalleryProps) {
     return (
         <div className="relative col-span-2">
             {/* Main Image */}
-            <div className="relative h-[500px] mb-4 bg-gray-100 rounded-md overflow-hidden">
+            <div className="relative h-[500px] lg:h-[600px] xl:h-[700px] mb-4 bg-gray-100 rounded-md overflow-hidden">
                 <Image
                     src={
                         vehicle.image
                             ? vehicle.image
-                            : "/placeholder.svg?height=400&width=600&query=car"
+                            : "/car-placeholder.png"
                     }
                     alt={`${vehicle.make} ${vehicle.model}`}
                     fill
@@ -36,12 +36,12 @@ export default function VehicleGallery({ vehicle }: VehicleGalleryProps) {
             {/* Thumbnails */}
             <div className="grid grid-cols-5 gap-2">
                 {[...Array(5)].map((_, i) => (
-                    <div key={i} className="h-20 bg-gray-100 rounded-md overflow-hidden">
+                    <div key={i} className="bg-gray-100 rounded-md overflow-hidden">
                         <Image
                             src={
                                 vehicle.image
                                     ? vehicle.image
-                                    : `/placeholder.svg?height=80&width=100&query=car+angle+${i + 1}`
+                                    : `/car-placeholder.png`
                             }
                             alt={`${vehicle.make} ${vehicle.model} view ${i + 1}`}
                             width={100}

@@ -50,7 +50,7 @@ export function Logo({ className, size = "md", isScrolled = false, isFooter = fa
   }
 
   return (
-    <div className={cn("relative", sizes[size], className)}>
+    <div className={cn(sizes[size], className)}>
       <Image
         src={logoSrc || "/placeholder.svg"}
         alt="Northwest Motors Logo"
