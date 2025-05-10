@@ -12,7 +12,7 @@ export default function LocationCard() {
                 <Car className="h-5 w-5 mr-4" /> VIEW DEALER LOCATIONS
             </Link>
             <Link
-                href="/locations/1"
+                href="/location/details/1"
                 className="mt-4 p-4 mb-4 flex items-center justify-center bg-[#414042] text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in">
                 <span>LOCATION DETAILS</span>   <MoveRight className="h-5 w-5 ml-4" />
             </Link>
