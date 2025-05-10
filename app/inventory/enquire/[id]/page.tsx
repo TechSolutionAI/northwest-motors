@@ -16,7 +16,7 @@ export default async function EnquirePage({ params }: { params: { id: string } }
     return (
         <main className="">
 
-            <div className="grid grid-cols-1  lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1  lg:grid-cols-3 gap-0 lg:gap-8">
                 {/* Enquire Info */}
                 <div className="col-span-1">
                     <EnquireInfo vehicle={vehicle} />
