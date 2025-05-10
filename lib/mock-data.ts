@@ -769,3 +769,10 @@ export const referralOptions = [
   { value: "advertisement", label: "Advertisement" },
   { value: "other", label: "Other" },
 ]
+
+export const interestOptions = [
+  { value: "seeing-a-vehicle", label: "Seeing a Vehicle" },
+  { value: "finance", label: "Finance" },
+  { value: "traing-in", label: "Trading in" },
+  { value: "selling-my-vehicle", label: "Selling my vehicle" },
+]

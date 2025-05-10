@@ -23,7 +23,7 @@ export default function RootLayout({
         {/* <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}> */}
         {/* <LanguageProvider> */}
         <Header />
-        <main className="pt-16">{children}</main>
+        <main className="pt-20">{children}</main>
         <Footer />
         <ScrollToTop />
         {/* <AccessibilityWidget size="medium" /> */}

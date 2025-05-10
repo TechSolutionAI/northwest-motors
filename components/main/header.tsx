@@ -104,7 +104,7 @@ export function Header() {
             </div>
           </div>
 
-          <Link href="#" className="hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
+          <Link href="/contact" className="hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
             Contact
           </Link>
           <Link href="#" className="hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">

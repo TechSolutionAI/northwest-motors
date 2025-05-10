@@ -20,7 +20,7 @@ export default function FinancialLoanCalculator() {
                                 <span>CALL 1300 341 911</span>
                             </Link>
                             <Link
-                                href=""
+                                href="/contact?type=finance"
                                 className="flex items-center justify-center p-4 bg-[#414042] text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in"
                             >
                                 ENQUIRE <MoveRight className="ml-2 h-6 w-6" />

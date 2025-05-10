@@ -114,7 +114,7 @@ export function MobileNav() {
               </div>
             </li>
             <li>
-              <Link href="#" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>
+              <Link href="/contact" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>
                 Contact
               </Link>
             </li>

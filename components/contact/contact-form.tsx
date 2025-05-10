@@ -1,10 +1,8 @@
 "use client"
 
 import { MoveRight } from "lucide-react";
-import Image from "next/image";
 import { useState } from "react";
-import { Checkbox } from "../ui/checkbox";
-import { referralOptions } from "@/lib/mock-data";
+import { interestOptions } from "@/lib/mock-data";
 import { Textarea } from "../ui/textarea";
 import { Input } from "../ui/input";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input"
@@ -12,20 +10,17 @@ import "react-phone-number-input/style.css"
 import DropdownSelect from "../main/dropdown-select";
 import Link from "next/link";
 
-interface EnquireFormProps {
-    vehicle: Vehicle;
+interface ContactFormProps {
+    type?: string | null
 }
-
-export default function EnquireForm({ vehicle }: EnquireFormProps) {
+export default function ContactForm({ type }: ContactFormProps) {
 
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         phone: "",
         message: "",
-        referral: "",
-        tradeIn: false,
-        financing: false,
+        interest: type || "",
     })
 
     const [errors, setErrors] = useState({
@@ -41,8 +36,6 @@ export default function EnquireForm({ vehicle }: EnquireFormProps) {
         phone: false,
         message: false,
     })
-
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
     // Validate form fields
     const validateField = (name: string, value: string) => {
@@ -101,11 +94,6 @@ export default function EnquireForm({ vehicle }: EnquireFormProps) {
         }
     }
 
-    // Handle checkbox changes
-    const handleCheckboxChange = (name: string, checked: boolean) => {
-        setFormData((prev) => ({ ...prev, [name]: checked }))
-    }
-
     // Handle blur events to validate
     const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target
@@ -123,12 +111,6 @@ export default function EnquireForm({ vehicle }: EnquireFormProps) {
             ...prev,
             phone: validatePhoneNumber(formData.phone),
         }))
-    }
-
-    // Handle referral selection
-    const handleReferralSelect = (value: string) => {
-        setFormData((prev) => ({ ...prev, referral: value }))
-        setIsDropdownOpen(false)
     }
 
     // Handle form submission
@@ -161,9 +143,7 @@ export default function EnquireForm({ vehicle }: EnquireFormProps) {
                 email: "",
                 phone: "",
                 message: "",
-                referral: "",
-                tradeIn: false,
-                financing: false,
+                interest: "",
             })
             setTouched({
                 name: false,
@@ -174,22 +154,10 @@ export default function EnquireForm({ vehicle }: EnquireFormProps) {
         }
     }
 
-    // Find the selected referral option label
-    const selectedReferral = referralOptions.find((option) => option.value === formData.referral)?.label || "SELECT"
-
     return (
         <div className="px-10 py-16">
-            <Image
-                src={vehicle.image || "/car-placeholder.png"}
-                alt={`${vehicle.make} ${vehicle.model}`}
-                width={300}
-                height={300}
-                className="object-cover"
-                priority
-            />
-            <h1 className="mt-8 text-4xl font-krona text-gray-500">ENQUIRE NOW</h1>
-            <p className="mt-8 text-gray-600">Enquire about this specific car today! Leave us a message and one of our specialists will get the wheels rolling for you!
-            </p>
+            <p className="text-5xl mt-8 font-krona">SEND A MESSAGE</p>
+            <p className="mt-8">Enquire today and we will get back to you within 24 hours.</p>
             <form onSubmit={handleSubmit} className="space-y-6 mt-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Name Field */}
@@ -238,7 +206,7 @@ export default function EnquireForm({ vehicle }: EnquireFormProps) {
                             value={formData.phone}
                             onChange={handlePhoneChange}
                             onBlur={handlePhoneBlur}
-                            className="w-full phone-input"
+                            className="w-full phone-input bg-white"
                         />
                     </div>
                     {touched.phone && errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
@@ -261,45 +229,18 @@ export default function EnquireForm({ vehicle }: EnquireFormProps) {
                         {touched.message && errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
                     </div>
 
-                    {/* Referral Dropdown */}
+                    {/* Interest Dropdown */}
                     <div className="space-y-1">
-                        <label htmlFor="referral" className="block text-sm font-medium text-gray-700">
-                            How did you here about us
+                        <label htmlFor="interest" className="block text-sm font-medium text-gray-700">
+                            I'm interested in
                         </label>
                         <DropdownSelect
-                            options={referralOptions}
-                            value={formData.referral}
-                            onChange={(value) => setFormData((prev) => ({ ...prev, referral: value }))}
+                            options={interestOptions}
+                            value={formData.interest}
+                            onChange={(value) => setFormData((prev) => ({ ...prev, interest: value }))}
                             placeholder="SELECT"
                             className="w-full"
                         />
-                    </div>
-                </div>
-
-                {/* Checkboxes */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="flex items-start">
-                        <Checkbox
-                            id="tradeIn"
-                            checked={formData.tradeIn}
-                            onCheckedChange={(checked: boolean) => handleCheckboxChange("tradeIn", checked === true)}
-                            className="h-5 w-5 mt-0.5 border-gray-300 text-[#8E6F00]"
-                        />
-                        <label htmlFor="tradeIn" className="ml-2 text-sm text-gray-700">
-                            I have a vehicle that I want to trade in
-                        </label>
-                    </div>
-
-                    <div className="flex items-start">
-                        <Checkbox
-                            id="financing"
-                            checked={formData.financing}
-                            onCheckedChange={(checked: boolean) => handleCheckboxChange("financing", checked === true)}
-                            className="h-5 w-5 mt-0.5 border-gray-300 text-[#8E6F00]"
-                        />
-                        <label htmlFor="financing" className="ml-2 text-sm text-gray-700">
-                            I'm interested in financing
-                        </label>
                     </div>
                 </div>
 
@@ -314,6 +255,7 @@ export default function EnquireForm({ vehicle }: EnquireFormProps) {
                     </button>
                 </div>
             </form >
+
             <div className="flex flex-col items-end mt-8">
                 <Link
                     href="mailto:info@duttonone.com.au"
