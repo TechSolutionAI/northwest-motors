@@ -89,7 +89,7 @@ export function Header() {
             <div className="absolute -bottom-2 left-0 h-2 w-full"></div>
 
             <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white text-black py-1 z-50 transition-all duration-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
-              <Link href="#" className="block px-4 py-2 hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
+              <Link href="/location" className="block px-4 py-2 hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
                 Locations
               </Link>
               <Link href="#" className="block px-4 py-2 hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">

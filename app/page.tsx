@@ -83,11 +83,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* <section className="bg-white">
-          <h3 className="text-3xl font-bold text-center my-16">Our Location</h3>
-          <GoogleMap />
-        </section> */}
       </main>
     </div>
   )

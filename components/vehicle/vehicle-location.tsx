@@ -60,7 +60,7 @@ export default function VehicleLocation({ vehicle }: VehicleLocationProps) {
 
             <div className="col-span-2 flex flex-col justify-center ml-10 lg:ml-0 my-8">
                 <h2 className="text-3xl text-black"> NorthWest Motors </h2>
-                <div className="pr-10 pt-10">
+                <div className="pr-10 pt-10 h-full">
                     <GoogleMap />
                 </div>
             </div>
