@@ -20,14 +20,14 @@ function ContactPageContent() {
         <main className="min-h-full">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-8">
                 {/* Contact Info */}
-                <div className="col-span-1">
+                <section className="col-span-1">
                     <ContactInfo />
-                </div>
+                </section>
                 {/* Contact Form + Dealer Info */}
-                <div className="col-span-2 bg-gray-100">
+                <section className="col-span-2 bg-gray-100">
                     <ContactForm type={type} />
                     <ContactDealerInfo />
-                </div>
+                </section>
             </div>
         </main>
     )

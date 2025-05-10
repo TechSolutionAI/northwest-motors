@@ -100,7 +100,7 @@ export function MobileNav() {
                     <Link href="/location" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>
                       Locations
                     </Link>
-                    <Link href="#" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>
+                    <Link href="/who-we-are" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>
                       Who we are
                     </Link>
                     <Link href="#" className="block py-2 hover:text-[#8E6F00]" onClick={toggleMenu}>

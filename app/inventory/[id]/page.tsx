@@ -20,36 +20,36 @@ export default async function VehicleDetailPage({ params }: { params: { id: stri
         <main className="bg-gray-100">
             {/* Vehicle Detail Section */}
             <div className="pt-24">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-10">
+                <section className="grid grid-cols-1 md:grid-cols-3 gap-8 px-10">
                     {/* Left Column - Images */}
                     <VehicleGallery vehicle={vehicle} images={carGallery} />
                     {/* Right Column - Vehicle Info */}
                     <VehicleInfo vehicle={vehicle} />
-                </div>
+                </section>
 
                 {/* Tabs Navigation */}
-                <div className="sticky top-20 z-100">
+                <section className="sticky top-20 z-100">
                     <VehicleInfoNav vehicle={vehicle} />
-                </div>
+                </section>
 
                 {/* About Section */}
-                <div id="about" className="bg-white">
+                <section id="about" className="bg-white">
                     <AboutThis vehicle={vehicle} />
-                </div>
+                </section>
 
                 <div className="border border-black"></div>
 
                 {/* Finance Calculator Section */}
-                <div id="finance" className="">
+                <section id="finance" className="">
                     <VehicleLoanCalculator vehicle={vehicle} />
-                </div>
+                </section>
 
                 <div className="border border-black"></div>
 
                 {/* Location Section */}
-                <div id="location">
+                <section id="location">
                     <VehicleLocation vehicle={vehicle} />
-                </div>
+                </section>
             </div>
         </main>
     )

@@ -28,7 +28,7 @@ export default function LocationNavInfo({ index, tabClicked }: LocationNavInfoPr
             </div>
 
             {/* Location list by States */}
-            {index == 0 && <div id="adelaid" className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {index == 0 && <div id="adelaide" className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {[1, 2, 3, 4, 5, 6, 7].map((index) => {
                     return (
                         <div key={index}>

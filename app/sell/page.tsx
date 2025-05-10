@@ -17,7 +17,7 @@ export default function SellPage() {
 
                 {/* Form Section */}
                 <section id="sell-form" className="py-16 text-white">
-                    <div className="container mx-auto px-4 max-w-4xl">
+                    <div className="container">
                         <div className="text-center mb-8">
                             <h2 className="text-3xl font-bold uppercase mb-4">Sell Your Car</h2>
                             <p className="">First, just tell us a little bit about your car through our online form</p>

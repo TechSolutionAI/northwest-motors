@@ -116,11 +116,11 @@ export default function BrowseVehicles() {
           </div>
 
           {/* Vehicle grid */}
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+          <section className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
             {currentVehicles.map((vehicle) => (
               <VehicleCard key={vehicle.id} vehicle={vehicle} />
             ))}
-          </div>
+          </section>
 
           {/* Pagination */}
           <div className="mt-8 flex justify-center">
