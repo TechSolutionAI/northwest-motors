@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 
-import { vehicles } from "@/lib/mock-data"
+import { carGallery, vehicles } from "@/lib/mock-data"
 import VehicleInfo from "@/components/vehicle/vehicle-info"
 import VehicleGallery from "@/components/vehicle/vehicle-gallery"
 import VehicleInfoNav from "@/components/vehicle/vehicle-info-nav"
@@ -22,7 +22,7 @@ export default function VehicleDetailPage({ params }: { params: { id: string } }
             <div className="pt-24">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-10">
                     {/* Left Column - Images */}
-                    <VehicleGallery vehicle={vehicle} />
+                    <VehicleGallery vehicle={vehicle} images={carGallery} />
                     {/* Right Column - Vehicle Info */}
                     <VehicleInfo vehicle={vehicle} />
                 </div>

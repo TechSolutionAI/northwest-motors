@@ -750,3 +750,14 @@ export const contactPreferenceOptions = [
   { value: "phone", label: "Phone" },
   { value: "text", label: "Text" },
 ]
+
+export const carGallery = [
+  '/car1.jpg',
+  '/car2.jpg',
+  '/car3.jpg',
+  '/car4.jpg',
+  '/car5.jpg',
+  '/audi-q5-urban.png',
+  '/black-sports-car-rear.png',
+  '/bmw-x5-suv.png'
+];
