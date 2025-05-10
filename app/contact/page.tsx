@@ -1,12 +1,12 @@
 "use client"
 
+import { Suspense, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
 import ContactDealerInfo from "@/components/contact/contact-dealer-info"
 import ContactForm from "@/components/contact/contact-form"
 import ContactInfo from "@/components/contact/contact-info"
-import { useSearchParams } from "next/navigation"
-import { useEffect } from "react"
 
-export default function ContactPage() {
+function ContactPageContent() {
     const searchParams = useSearchParams()
     const type = searchParams.get("type")
 
@@ -23,12 +23,20 @@ export default function ContactPage() {
                 <div className="col-span-1">
                     <ContactInfo />
                 </div>
-                {/* Contact Form */}
+                {/* Contact Form + Dealer Info */}
                 <div className="col-span-2 bg-gray-100">
                     <ContactForm type={type} />
                     <ContactDealerInfo />
                 </div>
             </div>
         </main>
+    )
+}
+
+export default function ContactPage() {
+    return (
+        <Suspense fallback={<div>Loading contact page...</div>}>
+            <ContactPageContent />
+        </Suspense>
     )
 }
