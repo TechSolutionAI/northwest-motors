@@ -93,7 +93,7 @@ export default function VehicleInfo({ vehicle }: VehicleInfoProps) {
                         ADD TO WISHLIST <MoveRight className="ml-2 h-6 w-6" />
                     </Link>
                     <Link
-                        href=""
+                        href={`/inventory/enquire/${vehicle.id}`}
                         className="flex items-center justify-center p-4 bg-[#414042] 
                                         text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in"
                     >

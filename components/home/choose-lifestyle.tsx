@@ -178,7 +178,7 @@ export function Card({ vehicles, index }: CardProps) {
                                                     VIEW <MoveRight className="ml-2 h-6 w-6" />
                                                 </Link>
                                                 <Link
-                                                    href="#"
+                                                    href={`/inventory/enquire/${vehicle.id}`}
                                                     className="flex items-center justify-center py-2 bg-[#414042] text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in"
                                                 >
                                                     ENQUIRE <MoveRight className="ml-2 h-6 w-6" />

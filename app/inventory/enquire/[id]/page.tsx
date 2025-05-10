@@ -1,0 +1,32 @@
+import { notFound } from "next/navigation"
+
+import { vehicles } from "@/lib/mock-data"
+import EnquireInfo from "@/components/enquire/enquire-info"
+import EnquireForm from "@/components/enquire/enquire-form"
+
+
+export default async function EnquirePage({ params }: { params: { id: string } }) {
+    const vehicleId = Number.parseInt(params.id)
+    const vehicle = vehicles.find((v) => v.id === vehicleId)
+
+    if (!vehicle) {
+        notFound()
+    }
+
+    return (
+        <main className="">
+
+            <div className="grid grid-cols-1  lg:grid-cols-3 gap-8">
+                {/* Enquire Info */}
+                <div className="col-span-1">
+                    <EnquireInfo vehicle={vehicle} />
+                </div>
+                {/* Enquire Form */}
+                <div className="col-span-2">
+                    <EnquireForm vehicle={vehicle} />
+                </div>
+            </div>
+
+        </main>
+    )
+}

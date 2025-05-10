@@ -761,3 +761,11 @@ export const carGallery = [
   '/black-sports-car-rear.png',
   '/bmw-x5-suv.png'
 ];
+
+export const referralOptions = [
+  { value: "search", label: "Search Engine (Google, Bing, etc.)" },
+  { value: "social", label: "Social Media" },
+  { value: "friend", label: "Friend or Family" },
+  { value: "advertisement", label: "Advertisement" },
+  { value: "other", label: "Other" },
+]

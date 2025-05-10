@@ -53,7 +53,7 @@ export default function VehicleLoanCalculator({ vehicle }: VehicleLoanCalculator
                     <span>CALL 1300 341 911</span>
                 </Link>
                 <Link
-                    href=""
+                    href={`/inventory/enquire/${vehicle.id}`}
                     className="flex items-center justify-center p-4 bg-[#414042] 
                     text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in"
                 >

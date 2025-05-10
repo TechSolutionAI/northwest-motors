@@ -8,7 +8,7 @@ import AboutThis from "@/components/vehicle/about-this"
 import VehicleLoanCalculator from "@/components/vehicle/vehicle-loan-calculator"
 import VehicleLocation from "@/components/vehicle/vehicle-location"
 
-export default function VehicleDetailPage({ params }: { params: { id: string } }) {
+export default async function VehicleDetailPage({ params }: { params: { id: string } }) {
     const vehicleId = Number.parseInt(params.id)
     const vehicle = vehicles.find((v) => v.id === vehicleId)
 

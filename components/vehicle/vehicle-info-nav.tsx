@@ -23,7 +23,7 @@ export default function VehicleInfoNav({ vehicle }: VehicleInfoNavProps) {
                     <Link href="#finance" className="px-4 py-2">FINANCE</Link>
                     <Link href="#location" className="px-4 py-2">LOCATION</Link>
                     <Link
-                        href=""
+                        href={`/inventory/enquire/${vehicle.id}`}
                         className="flex items-center justify-center bg-[#414042] px-16 h-full
                                         text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in"
                     >
