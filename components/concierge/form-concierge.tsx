@@ -254,7 +254,7 @@ export default function FormConcierge() {
     // If form is submitted successfully, show thank you message
     if (isSubmitted) {
         return (
-            <div className="w-full max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+            <div className="container mx-auto p-6 bg-white rounded-lg shadow-lg">
                 <div className="text-center py-10">
                     <h2 className="text-3xl font-bold text-primary mb-4">Thank You!</h2>
                     <p className="text-lg mb-6">
@@ -270,7 +270,7 @@ export default function FormConcierge() {
     }
 
     return (
-        <div className="w-full max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+        <div className="container mx-auto p-6 bg-white rounded-lg shadow-lg">
             <div className="mb-8">
                 <h2 className="text-4xl font-bold text-primary">CONCIERGE</h2>
                 <p className="mt-2">
