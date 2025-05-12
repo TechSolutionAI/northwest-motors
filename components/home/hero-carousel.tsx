@@ -70,7 +70,7 @@ export function HeroCarousel() {
           )}
         >
           <Image
-            src={slide.image || "/placeholder.svg"}
+            src={slide.image || "/car-placeholder.png"}
             alt={`Slide ${index + 1}`}
             fill
             className="object-cover"

@@ -175,8 +175,10 @@
   box-shadow: none;
 }
 
-/* styles.css */
-input:focus {
-  outline: none;
-  box-shadow: none; /* Optional, removes glow if present */
+/* Prevent text selection during dragging */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

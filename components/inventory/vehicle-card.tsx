@@ -12,7 +12,7 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
       <div className="relative h-64">
         <Link href={`/inventory/${vehicle.id}`}>
           <Image
-            src={vehicle.image || "/placeholder.svg"}
+            src={vehicle.image || "/car-placeholder.png"}
             alt={`${vehicle.make} ${vehicle.model}`}
             fill
             className="object-cover"
