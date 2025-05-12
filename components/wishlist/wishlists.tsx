@@ -2,14 +2,14 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowRight, ChevronLeft, ChevronRight, Heart } from "lucide-react"
+import { ArrowRight, ChevronLeft, ChevronRight, Heart, MoveRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { vehicles } from "@/lib/mock-data"
 import WishlistItem from "./wishlist-item"
 
 export default function Wishlists() {
     // In a real app, this would come from a database or local storage
-    const [wishlistItems] = useState(vehicles.slice(0, 4))
+    const [wishlistItems] = useState(vehicles.slice(0, 2))
     const [currentPage, setCurrentPage] = useState(1)
     const itemsPerPage = 3
     const totalPages = Math.ceil(wishlistItems.length / itemsPerPage)
@@ -70,9 +70,13 @@ export default function Wishlists() {
                     <Heart className="h-16 w-16 mx-auto mb-4 text-gray-300" />
                     <h2 className="text-2xl font-medium mb-2">Your wishlist is empty</h2>
                     <p className="text-gray-500 mb-6">Browse our inventory and add vehicles to your wishlist</p>
-                    <Button asChild>
-                        <Link href="/inventory">Browse Inventory</Link>
-                    </Button>
+                    <Link
+                        href="/inventory"
+                        className="w-full lg:w-1/2 mx-auto flex items-center justify-center p-4 bg-[#414042] 
+                                        text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in"
+                    >
+                        BROWSE VEHICLES <MoveRight className="ml-2 h-6 w-6" />
+                    </Link>
                 </div>
             )}
 
