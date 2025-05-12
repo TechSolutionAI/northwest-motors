@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Eye, EyeOff, ArrowRight, CheckCircle2, XCircle } from "lucide-react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 // Validation types
 type ValidationError = {
@@ -17,6 +18,9 @@ type ValidationError = {
 }
 
 export function LoginForm() {
+
+    const router = useRouter();
+
     // Toggle password visibility
     const [showPassword, setShowPassword] = useState(false)
     const [showCreatePassword, setShowCreatePassword] = useState(false)
@@ -138,6 +142,8 @@ export function LoginForm() {
         if (isLoginValid) {
             console.log("Login attempt with:", { loginEmail, loginPassword, rememberMe })
             // Handle login logic here
+
+            router.push("/dashboard");
         }
     }
 
