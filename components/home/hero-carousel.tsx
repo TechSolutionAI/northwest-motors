@@ -19,11 +19,11 @@ export function HeroCarousel() {
   const heroSlides = [
     {
       id: 1,
-      image: "https://imagescdn.dealercarsearch.com/DealerImages/19018/saved/770cb937.webp",
+      image: "modern-car-dealership.webp",
     },
     {
       id: 2,
-      image: "https://imagescdn.dealercarsearch.com/DealerImages/19018/saved/79215909.webp",
+      image: "/finance.webp",
     },
     {
       id: 3,
