@@ -12,7 +12,7 @@ export default function HeroSection() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
                 <div className="relative h-[500px] overflow-hidden">
-                    <Image src="/modern-car-dealership.png" alt="NorthWest Motors Building" fill className="object-cover" />
+                    <Image src="/modern-car-dealership.webp" alt="NorthWest Motors Building" fill className="object-cover" />
                 </div>
 
                 <div className="flex flex-col justify-center">

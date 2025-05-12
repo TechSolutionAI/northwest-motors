@@ -180,7 +180,7 @@ export default function EnquireForm({ vehicle }: EnquireFormProps) {
     return (
         <div className="px-10 py-16">
             <Image
-                src={vehicle.image || "/car-placeholder.png"}
+                src={vehicle.image || "/car-placeholder.webp"}
                 alt={`${vehicle.make} ${vehicle.model}`}
                 width={300}
                 height={300}

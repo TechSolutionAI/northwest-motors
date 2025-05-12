@@ -33,7 +33,7 @@ export function CompareResults({ vehicleIds }: CompareResultsProps) {
                     <div key={index} className="border border-gray-200">
                         <div className="relative h-64">
                             <Image
-                                src={vehicle.image || "/car-placeholder.png"}
+                                src={vehicle.image || "/car-placeholder.webp"}
                                 alt={`${vehicle.year} ${vehicle.make} ${vehicle.model}`}
                                 fill
                                 className="object-cover"

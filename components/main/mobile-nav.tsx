@@ -47,7 +47,7 @@ export function MobileNav() {
           }`}
       >
         <div className="flex justify-between items-center p-4 border-b border-gray-700">
-          <Image src="/logo-white.png" alt="NorthWest Motors" width={150} height={40} className="h-8 w-auto" />
+          <Image src="/logo-white.webp" alt="NorthWest Motors" width={150} height={40} className="h-8 w-auto" />
           <button onClick={toggleMenu} className="text-white p-2 focus:outline-none" aria-label="Close menu">
             <X size={24} />
           </button>

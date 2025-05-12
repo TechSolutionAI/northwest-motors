@@ -19,15 +19,15 @@ export function HeroCarousel() {
   const heroSlides = [
     {
       id: 1,
-      image: "https://imagescdn.dealercarsearch.com/DealerImages/19018/saved/770cb937.jpg",
+      image: "https://imagescdn.dealercarsearch.com/DealerImages/19018/saved/770cb937.webp",
     },
     {
       id: 2,
-      image: "https://imagescdn.dealercarsearch.com/DealerImages/19018/saved/79215909.jpg",
+      image: "https://imagescdn.dealercarsearch.com/DealerImages/19018/saved/79215909.webp",
     },
     {
       id: 3,
-      image: "https://imagescdn.dealercarsearch.com/DealerImages/19018/saved/88a48cf5.jpg",
+      image: "https://imagescdn.dealercarsearch.com/DealerImages/19018/saved/88a48cf5.webp",
     },
   ]
 
@@ -70,7 +70,7 @@ export function HeroCarousel() {
           )}
         >
           <Image
-            src={slide.image || "/car-placeholder.png"}
+            src={slide.image || "/car-placeholder.webp"}
             alt={`Slide ${index + 1}`}
             fill
             className="object-cover"

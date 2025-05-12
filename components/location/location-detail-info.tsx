@@ -26,7 +26,7 @@ export default function LocationDetailInfo() {
             </div>
 
             <Image
-                src="/modern-car-dealership.png"
+                src="/modern-car-dealership.webp"
                 alt="Dutton One Moorabbin"
                 height={300}
                 width={300}

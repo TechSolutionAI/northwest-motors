@@ -13,7 +13,7 @@ export function BlogCard({ post, featured = false }: BlogCardProps) {
         <Link href={`/blog/${post.slug}`} key={post.id} className="group block">
             <div className="relative h-48 w-full overflow-hidden">
                 <Image
-                    src={post.coverImage || "/car-placeholder.png"}
+                    src={post.coverImage || "/car-placeholder.webp"}
                     alt={post.title}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"

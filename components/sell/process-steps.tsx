@@ -74,7 +74,7 @@ export default function ProcessSteps() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Left column - Fixed image */}
                     <div className="relative h-[600px] md::sticky md::top-20 self-start">
-                        <Image src="/white-luxury-suv.png" alt="Luxury SUV" fill className="object-cover rounded-md:" />
+                        <Image src="/white-luxury-suv.webp" alt="Luxury SUV" fill className="object-cover rounded-md:" />
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-30"></div>
                     </div>
 

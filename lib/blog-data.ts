@@ -1,41 +1,41 @@
 export interface BlogPost {
-    id: number
-    slug: string
-    title: string
-    excerpt: string
-    content: string
-    coverImage: string
-    author: {
-        name: string
-        avatar: string
-    }
-    category: string
-    tags: string[]
-    publishedAt: string
-    readTime: number
+  id: number
+  slug: string
+  title: string
+  excerpt: string
+  content: string
+  coverImage: string
+  author: {
+    name: string
+    avatar: string
+  }
+  category: string
+  tags: string[]
+  publishedAt: string
+  readTime: number
 }
 
 export interface BlogCategory {
-    name: string
-    slug: string
-    count: number
+  name: string
+  slug: string
+  count: number
 }
 
 export const blogCategories: BlogCategory[] = [
-    { name: "Car Reviews", slug: "car-reviews", count: 4 },
-    { name: "Buying Guide", slug: "buying-guide", count: 3 },
-    { name: "Maintenance", slug: "maintenance", count: 2 },
-    { name: "Industry News", slug: "industry-news", count: 2 },
-    { name: "Lifestyle", slug: "lifestyle", count: 1 },
+  { name: "Car Reviews", slug: "car-reviews", count: 4 },
+  { name: "Buying Guide", slug: "buying-guide", count: 3 },
+  { name: "Maintenance", slug: "maintenance", count: 2 },
+  { name: "Industry News", slug: "industry-news", count: 2 },
+  { name: "Lifestyle", slug: "lifestyle", count: 1 },
 ]
 
 export const blogPosts: BlogPost[] = [
-    {
-        id: 1,
-        slug: "top-10-luxury-cars-2023",
-        title: "Top 10 Luxury Cars to Consider in 2023",
-        excerpt: "Discover the most luxurious and high-performing vehicles that define automotive excellence in 2023.",
-        content: `
+  {
+    id: 1,
+    slug: "top-10-luxury-cars-2023",
+    title: "Top 10 Luxury Cars to Consider in 2023",
+    excerpt: "Discover the most luxurious and high-performing vehicles that define automotive excellence in 2023.",
+    content: `
       <p>The luxury car market continues to evolve with cutting-edge technology, unparalleled comfort, and extraordinary performance. In 2023, manufacturers have raised the bar even higher, introducing models that redefine what we expect from premium vehicles.</p>
       
       <h2>1. Mercedes-Benz S-Class</h2>
@@ -73,23 +73,23 @@ export const blogPosts: BlogPost[] = [
       
       <p>At RM Motors, we offer a curated selection of premium vehicles, including many from this list. Visit our showroom to experience these extraordinary machines in person.</p>
     `,
-        coverImage: "/blog/luxury-cars.jpg",
-        author: {
-            name: "Michael Chen",
-            avatar: "/blog/authors/michael-chen.png",
-        },
-        category: "Car Reviews",
-        tags: ["Luxury", "2023 Models", "Performance"],
-        publishedAt: "2023-06-15",
-        readTime: 8,
+    coverImage: "/blog/luxury-cars.webp",
+    author: {
+      name: "Michael Chen",
+      avatar: "/blog/authors/michael-chen.webp",
     },
-    {
-        id: 2,
-        slug: "electric-vehicle-buying-guide",
-        title: "Complete Guide to Buying Your First Electric Vehicle",
-        excerpt:
-            "Everything you need to know before making the switch to an electric vehicle, from range considerations to charging infrastructure.",
-        content: `
+    category: "Car Reviews",
+    tags: ["Luxury", "2023 Models", "Performance"],
+    publishedAt: "2023-06-15",
+    readTime: 8,
+  },
+  {
+    id: 2,
+    slug: "electric-vehicle-buying-guide",
+    title: "Complete Guide to Buying Your First Electric Vehicle",
+    excerpt:
+      "Everything you need to know before making the switch to an electric vehicle, from range considerations to charging infrastructure.",
+    content: `
       <p>As the automotive industry continues its electric revolution, more drivers are considering making the switch to an electric vehicle (EV). This comprehensive guide will help you navigate the key considerations when purchasing your first EV.</p>
       
       <h2>Understanding EV Range</h2>
@@ -163,23 +163,23 @@ export const blogPosts: BlogPost[] = [
       
       <p>At RM Motors, we offer a wide selection of new and pre-owned electric vehicles, and our EV specialists can help guide you through the process of finding the perfect electric vehicle for your needs.</p>
     `,
-        coverImage: "/blog/electric-vehicle.jpg",
-        author: {
-            name: "Sarah Johnson",
-            avatar: "/blog/authors/sarah-johnson.png",
-        },
-        category: "Buying Guide",
-        tags: ["Electric Vehicles", "Buying Guide", "Sustainability"],
-        publishedAt: "2023-05-22",
-        readTime: 10,
+    coverImage: "/blog/electric-vehicle.webp",
+    author: {
+      name: "Sarah Johnson",
+      avatar: "/blog/authors/sarah-johnson.webp",
     },
-    {
-        id: 3,
-        slug: "essential-car-maintenance-tips",
-        title: "10 Essential Car Maintenance Tips Every Owner Should Know",
-        excerpt:
-            "Simple maintenance practices that can extend your vehicle's life, improve performance, and save you money on costly repairs.",
-        content: `
+    category: "Buying Guide",
+    tags: ["Electric Vehicles", "Buying Guide", "Sustainability"],
+    publishedAt: "2023-05-22",
+    readTime: 10,
+  },
+  {
+    id: 3,
+    slug: "essential-car-maintenance-tips",
+    title: "10 Essential Car Maintenance Tips Every Owner Should Know",
+    excerpt:
+      "Simple maintenance practices that can extend your vehicle's life, improve performance, and save you money on costly repairs.",
+    content: `
       <p>Regular maintenance is the key to keeping your vehicle running smoothly and avoiding expensive repairs down the road. Here are ten essential maintenance tips that every car owner should follow.</p>
       
       <h2>1. Follow Your Service Schedule</h2>
@@ -229,23 +229,23 @@ export const blogPosts: BlogPost[] = [
       
       <p>At RM Motors, our service department offers comprehensive maintenance packages tailored to your vehicle's specific needs. Contact us to schedule your next service appointment and keep your car running at its best.</p>
     `,
-        coverImage: "/blog/car-maintenance.png",
-        author: {
-            name: "David Rodriguez",
-            avatar: "/blog/authors/david-rodriguez.png",
-        },
-        category: "Maintenance",
-        tags: ["Maintenance", "Car Care", "DIY"],
-        publishedAt: "2023-04-10",
-        readTime: 7,
+    coverImage: "/blog/car-maintenance.webp",
+    author: {
+      name: "David Rodriguez",
+      avatar: "/blog/authors/david-rodriguez.webp",
     },
-    {
-        id: 4,
-        slug: "future-of-autonomous-driving",
-        title: "The Future of Autonomous Driving: Where We Are and Where We're Headed",
-        excerpt:
-            "An in-depth look at the current state of self-driving technology and what we can expect in the coming years.",
-        content: `
+    category: "Maintenance",
+    tags: ["Maintenance", "Car Care", "DIY"],
+    publishedAt: "2023-04-10",
+    readTime: 7,
+  },
+  {
+    id: 4,
+    slug: "future-of-autonomous-driving",
+    title: "The Future of Autonomous Driving: Where We Are and Where We're Headed",
+    excerpt:
+      "An in-depth look at the current state of self-driving technology and what we can expect in the coming years.",
+    content: `
       <p>Autonomous driving technology has made remarkable strides in recent years, transforming from science fiction to reality. This article explores the current state of self-driving technology and offers insights into its future development.</p>
       
       <h2>The Six Levels of Autonomy</h2>
@@ -358,23 +358,23 @@ export const blogPosts: BlogPost[] = [
       
       <p>At RM Motors, we offer vehicles with the latest driver assistance technologies, providing a glimpse into the autonomous future while enhancing safety and convenience today. Visit our showroom to experience these advanced systems firsthand.</p>
     `,
-        coverImage: "/blog/autonomous-driving.png",
-        author: {
-            name: "Dr. Emily Wong",
-            avatar: "/blog/authors/emily-wong.png",
-        },
-        category: "Industry News",
-        tags: ["Autonomous Driving", "Technology", "Future Trends"],
-        publishedAt: "2023-03-18",
-        readTime: 12,
+    coverImage: "/blog/autonomous-driving.webp",
+    author: {
+      name: "Dr. Emily Wong",
+      avatar: "/blog/authors/emily-wong.webp",
     },
-    {
-        id: 5,
-        slug: "classic-car-investment-guide",
-        title: "Classic Cars as Investments: A Comprehensive Guide",
-        excerpt:
-            "How to approach classic car collecting as an investment strategy, including which models to watch and factors that affect value.",
-        content: `
+    category: "Industry News",
+    tags: ["Autonomous Driving", "Technology", "Future Trends"],
+    publishedAt: "2023-03-18",
+    readTime: 12,
+  },
+  {
+    id: 5,
+    slug: "classic-car-investment-guide",
+    title: "Classic Cars as Investments: A Comprehensive Guide",
+    excerpt:
+      "How to approach classic car collecting as an investment strategy, including which models to watch and factors that affect value.",
+    content: `
       <p>Classic cars have long been appreciated not just for their beauty and historical significance, but also for their potential as investment vehicles. This guide explores the world of classic car investing, offering insights for both newcomers and experienced collectors.</p>
       
       <h2>Why Classic Cars as Investments?</h2>
@@ -477,23 +477,23 @@ export const blogPosts: BlogPost[] = [
       
       <p>At RM Motors, we occasionally offer investment-grade classics alongside our contemporary inventory. Our specialists can provide guidance on collecting and help you find vehicles with strong investment potential. Contact us to discuss your classic car investment goals.</p>
     `,
-        coverImage: "/blog/classic-cars.png",
-        author: {
-            name: "James Wilson",
-            avatar: "/blog/authors/james-wilson.png",
-        },
-        category: "Buying Guide",
-        tags: ["Classic Cars", "Investment", "Collecting"],
-        publishedAt: "2023-02-05",
-        readTime: 9,
+    coverImage: "/blog/classic-cars.webp",
+    author: {
+      name: "James Wilson",
+      avatar: "/blog/authors/james-wilson.webp",
     },
-    {
-        id: 6,
-        slug: "family-car-buying-guide",
-        title: "The Ultimate Family Car Buying Guide",
-        excerpt:
-            "How to choose the perfect vehicle for your family's needs, from safety features to space considerations and everything in between.",
-        content: `
+    category: "Buying Guide",
+    tags: ["Classic Cars", "Investment", "Collecting"],
+    publishedAt: "2023-02-05",
+    readTime: 9,
+  },
+  {
+    id: 6,
+    slug: "family-car-buying-guide",
+    title: "The Ultimate Family Car Buying Guide",
+    excerpt:
+      "How to choose the perfect vehicle for your family's needs, from safety features to space considerations and everything in between.",
+    content: `
       <p>Selecting the right family car involves balancing numerous factors, from safety and space to technology and budget. This comprehensive guide will help you navigate the process of finding the perfect vehicle for your family's unique needs.</p>
       
       <h2>Assessing Your Family's Needs</h2>
@@ -660,23 +660,23 @@ export const blogPosts: BlogPost[] = [
       
       <p>At RM Motors, we offer a wide selection of family-friendly vehicles and our sales consultants are experienced in helping families find their ideal match. Visit our showroom to explore our family vehicle options and schedule test drives with the models that interest you most.</p>
     `,
-        coverImage: "/blog/family-car.jpg",
-        author: {
-            name: "Lisa Chen",
-            avatar: "/blog/authors/lisa-chen.png",
-        },
-        category: "Buying Guide",
-        tags: ["Family Cars", "SUVs", "Minivans", "Safety"],
-        publishedAt: "2023-01-12",
-        readTime: 11,
+    coverImage: "/blog/family-car.webp",
+    author: {
+      name: "Lisa Chen",
+      avatar: "/blog/authors/lisa-chen.webp",
     },
-    {
-        id: 7,
-        slug: "winter-driving-tips",
-        title: "Essential Winter Driving Tips to Keep You Safe on the Road",
-        excerpt:
-            "Practical advice for navigating winter road conditions safely, from vehicle preparation to driving techniques.",
-        content: `
+    category: "Buying Guide",
+    tags: ["Family Cars", "SUVs", "Minivans", "Safety"],
+    publishedAt: "2023-01-12",
+    readTime: 11,
+  },
+  {
+    id: 7,
+    slug: "winter-driving-tips",
+    title: "Essential Winter Driving Tips to Keep You Safe on the Road",
+    excerpt:
+      "Practical advice for navigating winter road conditions safely, from vehicle preparation to driving techniques.",
+    content: `
       <p>Winter driving presents unique challenges that require special preparation and techniques. Whether you're facing snow, ice, sleet, or just cold temperatures, these tips will help keep you safe on winter roads.</p>
       
       <h2>Preparing Your Vehicle for Winter</h2>
@@ -798,23 +798,23 @@ export const blogPosts: BlogPost[] = [
       
       <p>At RM Motors, we offer winter vehicle inspections and maintenance services to help ensure your vehicle is ready for winter driving. Our service department can assist with winter tire installation, battery testing, and comprehensive winter preparation. Contact us to schedule your winter maintenance appointment.</p>
     `,
-        coverImage: "/blog/winter-driving.png",
-        author: {
-            name: "Robert Johnson",
-            avatar: "/blog/authors/robert-johnson.png",
-        },
-        category: "Maintenance",
-        tags: ["Winter Driving", "Safety", "Maintenance", "Driving Tips"],
-        publishedAt: "2022-12-05",
-        readTime: 10,
+    coverImage: "/blog/winter-driving.webp",
+    author: {
+      name: "Robert Johnson",
+      avatar: "/blog/authors/robert-johnson.webp",
     },
-    {
-        id: 8,
-        slug: "ev-charging-infrastructure",
-        title: "The Evolution of EV Charging Infrastructure: Current State and Future Outlook",
-        excerpt:
-            "An analysis of how electric vehicle charging networks are developing and what to expect in the coming years.",
-        content: `
+    category: "Maintenance",
+    tags: ["Winter Driving", "Safety", "Maintenance", "Driving Tips"],
+    publishedAt: "2022-12-05",
+    readTime: 10,
+  },
+  {
+    id: 8,
+    slug: "ev-charging-infrastructure",
+    title: "The Evolution of EV Charging Infrastructure: Current State and Future Outlook",
+    excerpt:
+      "An analysis of how electric vehicle charging networks are developing and what to expect in the coming years.",
+    content: `
       <p>As electric vehicles (EVs) continue to gain market share, the development of charging infrastructure has become a critical factor in their widespread adoption. This article examines the current state of EV charging networks and explores how they're likely to evolve in the coming years.</p>
       
       <h2>The Current State of EV Charging</h2>
@@ -1028,60 +1028,60 @@ export const blogPosts: BlogPost[] = [
       
       <p>For current and prospective EV owners, understanding these trends can help inform vehicle purchase decisions and charging strategies. At RM Motors, we offer a range of electric vehicles and can provide guidance on home charging solutions and public charging options in your area. Visit our showroom to explore our electric vehicle lineup and discuss your charging needs with our EV specialists.</p>
     `,
-        coverImage: "/blog/ev-charging.png",
-        author: {
-            name: "Dr. Emily Wong",
-            avatar: "/blog/authors/emily-wong.png",
-        },
-        category: "Industry News",
-        tags: ["Electric Vehicles", "Charging Infrastructure", "Future Technology"],
-        publishedAt: "2022-11-14",
-        readTime: 13,
+    coverImage: "/blog/ev-charging.webp",
+    author: {
+      name: "Dr. Emily Wong",
+      avatar: "/blog/authors/emily-wong.webp",
     },
+    category: "Industry News",
+    tags: ["Electric Vehicles", "Charging Infrastructure", "Future Technology"],
+    publishedAt: "2022-11-14",
+    readTime: 13,
+  },
 ]
 
 // Generate placeholder image URLs for blog posts that don't have real images
 for (const post of blogPosts) {
-    if (post.coverImage.startsWith("/blog/")) {
-        post.coverImage = `/car-placeholder.png`
-    }
-    if (post.author.avatar.startsWith("/blog/")) {
-        post.author.avatar = `/user-placeholder.png`
-    }
+  if (post.coverImage.startsWith("/blog/")) {
+    post.coverImage = `/car-placeholder.webp`
+  }
+  if (post.author.avatar.startsWith("/blog/")) {
+    post.author.avatar = `/user-placeholder.webp`
+  }
 }
 
 // Helper function to get recent posts
 export function getRecentPosts(count = 3) {
-    return [...blogPosts]
-        .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-        .slice(0, count)
+  return [...blogPosts]
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .slice(0, count)
 }
 
 // Helper function to get posts by category
 export function getPostsByCategory(category: string) {
-    return blogPosts.filter((post) => post.category === category)
+  return blogPosts.filter((post) => post.category === category)
 }
 
 // Helper function to get post by slug
 export function getPostBySlug(slug: string) {
-    return blogPosts.find((post) => post.slug === slug)
+  return blogPosts.find((post) => post.slug === slug)
 }
 
 // Helper function to get related posts
 export function getRelatedPosts(currentPostId: number, count = 3) {
-    const currentPost = blogPosts.find((post) => post.id === currentPostId)
-    if (!currentPost) return []
+  const currentPost = blogPosts.find((post) => post.id === currentPostId)
+  if (!currentPost) return []
 
-    return blogPosts
-        .filter((post) => post.id !== currentPostId)
-        .sort((a, b) => {
-            // Score posts based on shared categories and tags
-            const aScore =
-                (a.category === currentPost.category ? 2 : 0) + a.tags.filter((tag) => currentPost.tags.includes(tag)).length
-            const bScore =
-                (b.category === currentPost.category ? 2 : 0) + b.tags.filter((tag) => currentPost.tags.includes(tag)).length
+  return blogPosts
+    .filter((post) => post.id !== currentPostId)
+    .sort((a, b) => {
+      // Score posts based on shared categories and tags
+      const aScore =
+        (a.category === currentPost.category ? 2 : 0) + a.tags.filter((tag) => currentPost.tags.includes(tag)).length
+      const bScore =
+        (b.category === currentPost.category ? 2 : 0) + b.tags.filter((tag) => currentPost.tags.includes(tag)).length
 
-            return bScore - aScore
-        })
-        .slice(0, count)
+      return bScore - aScore
+    })
+    .slice(0, count)
 }

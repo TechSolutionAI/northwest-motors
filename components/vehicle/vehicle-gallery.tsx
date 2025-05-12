@@ -18,7 +18,7 @@ export default function VehicleGallery({ vehicle, images = [] }: VehicleGalleryP
     const [isFullscreen, setIsFullscreen] = useState(false)
 
     // Use provided images or fallback to vehicle.image or placeholder
-    const galleryImages = images.length > 0 ? images : [vehicle.image || "/car-placeholder.png"]
+    const galleryImages = images.length > 0 ? images : [vehicle.image || "/car-placeholder.webp"]
 
     const totalImages = galleryImages.length
 
@@ -80,7 +80,7 @@ export default function VehicleGallery({ vehicle, images = [] }: VehicleGalleryP
             {/* Main Image */}
             <div className="relative h-[500px] lg:h-[600px] xl:h-[700px] mb-4 bg-gray-100 rounded-md overflow-hidden">
                 <Image
-                    src={galleryImages[currentImageIndex] || "/car-placeholder.png"}
+                    src={galleryImages[currentImageIndex] || "/car-placeholder.webp"}
                     alt={`${vehicle.make} ${vehicle.model}`}
                     fill
                     className="object-cover"
@@ -145,7 +145,7 @@ export default function VehicleGallery({ vehicle, images = [] }: VehicleGalleryP
                             onClick={() => selectImage(i)}
                         >
                             <Image
-                                src={image || "/car-placeholder.png"}
+                                src={image || "/car-placeholder.webp"}
                                 alt={`${vehicle.make} ${vehicle.model} view ${i + 1}`}
                                 width={150}
                                 height={100}
@@ -164,7 +164,7 @@ export default function VehicleGallery({ vehicle, images = [] }: VehicleGalleryP
                 <DialogContent className="w-[95vw] h-[90vh] p-0 bg-black">
                     <div className="relative w-full h-full flex items-center justify-center">
                         <Image
-                            src={galleryImages[currentImageIndex] || "/car-placeholder.png"}
+                            src={galleryImages[currentImageIndex] || "/car-placeholder.webp"}
                             alt={`${vehicle.make} ${vehicle.model}`}
                             fill
                             className="object-contain"

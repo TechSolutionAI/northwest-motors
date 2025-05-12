@@ -26,7 +26,7 @@ export default function WishlistItem({ vehicle, onRemove }: WishlistItemProps) {
             </div>
             <div className="relative">
                 <Image
-                    src={vehicle.image || "/car-placeholder.png"}
+                    src={vehicle.image || "/car-placeholder.webp"}
                     alt={`${vehicle.year} ${vehicle.make} ${vehicle.model}`}
                     width={600}
                     height={400}

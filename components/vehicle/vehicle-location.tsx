@@ -35,7 +35,7 @@ export default function VehicleLocation({ vehicle }: VehicleLocationProps) {
                 <div className="h-48 bg-gray-200 mb-6">
                     {/* Dealership image would go here */}
                     <Image
-                        src="/modern-car-dealership.png"
+                        src="/modern-car-dealership.webp"
                         alt="NorthWest Motors Dealership"
                         width={384}
                         height={192}

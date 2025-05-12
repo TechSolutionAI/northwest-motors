@@ -17,7 +17,7 @@ export default function LocationCard() {
                 <span>LOCATION DETAILS</span>   <MoveRight className="h-5 w-5 ml-4" />
             </Link>
             <Image
-                src="/modern-car-dealership.png"
+                src="/modern-car-dealership.webp"
                 alt="Dutton One Moorabbin"
                 height={300}
                 width={300}

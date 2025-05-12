@@ -34,19 +34,19 @@ export function Logo({ className, size = "md", isScrolled = false, isFooter = fa
   const isDark = theme === "dark" || resolvedTheme === "dark"
 
   // Default to white logo until client-side rendering is complete
-  let logoSrc = "/logo-white.png"
+  let logoSrc = "/logo-white.webp"
 
   if (mounted) {
     // if (isFooter) {
     //   // In footer, use theme-appropriate logo
-    //   logoSrc = isDark ? "/logo-white.png" : "/logo.png"
+    //   logoSrc = isDark ? "/logo-white.webp" : "/logo.webp"
     // } else {
     //   // For header, use the existing logic
     //   logoSrc =
-    //     !isScrolled && pathname === "/" ? "/logo-white.png" : isDark ? "/logo-white.png" : "/logo.png"
+    //     !isScrolled && pathname === "/" ? "/logo-white.webp" : isDark ? "/logo-white.webp" : "/logo.webp"
     // }
 
-    logoSrc = '/logo.png';
+    logoSrc = '/logo.webp';
   }
 
   return (

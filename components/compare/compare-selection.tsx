@@ -112,7 +112,7 @@ export function CompareSelection() {
                         <div className="relative h-80 bg-gray-100 flex items-center justify-center border border-gray-200">
                             {selectedVehicles[0] !== undefined ? (
                                 <Image
-                                    src={wishlistVehicles.find((v) => v.id === selectedVehicles[0])?.image || "/car-placeholder.png"}
+                                    src={wishlistVehicles.find((v) => v.id === selectedVehicles[0])?.image || "/car-placeholder.webp"}
                                     alt="Selected vehicle 1"
                                     fill
                                     className="object-cover"
@@ -151,7 +151,7 @@ export function CompareSelection() {
                         <div className="relative h-80 bg-gray-100 flex items-center justify-center border border-gray-200">
                             {selectedVehicles[1] !== undefined ? (
                                 <Image
-                                    src={wishlistVehicles.find((v) => v.id === selectedVehicles[1])?.image || "/car-placeholder.png"}
+                                    src={wishlistVehicles.find((v) => v.id === selectedVehicles[1])?.image || "/car-placeholder.webp"}
                                     alt="Selected vehicle 2"
                                     fill
                                     className="object-cover"
@@ -193,7 +193,7 @@ export function CompareSelection() {
                             <div key={vehicle.id} className="relative border border-gray-200">
                                 <div className="relative h-48">
                                     <Image
-                                        src={vehicle.image || "/car-placeholder.png"}
+                                        src={vehicle.image || "/car-placeholder.webp"}
                                         alt={`${vehicle.year} ${vehicle.make} ${vehicle.model}`}
                                         fill
                                         className="object-cover"
