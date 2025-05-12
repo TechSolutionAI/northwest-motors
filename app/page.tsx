@@ -32,7 +32,7 @@ export default function Home() {
           <ChooseLifeStyle />
         </section>
 
-        {/* Who we are and Out Location Section */}
+        {/* Who we are and Our Location Section */}
         <section className="bg-white">
           <div className="">
             <div className="grid grid-cols-1 md:grid-cols-2">
@@ -55,22 +55,18 @@ export default function Home() {
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="border-b cursor-pointer p-3 flex justify-between group">
-                    <Link href="#" className="">Seattle</Link>
-                    <MoveRight className="h-5 w-5 hidden group-hover:block" />
-                  </div>
-                  <div className="border-b cursor-pointer p-3 flex justify-between group">
-                    <Link href="#" className="">Portland</Link>
-                    <MoveRight className="h-5 w-5 hidden group-hover:block" />
-                  </div>
-                  <div className="border-b cursor-pointer p-3 flex justify-between group">
-                    <Link href="#" className="">San Francisco</Link>
-                    <MoveRight className="h-5 w-5 hidden group-hover:block" />
-                  </div>
-                  <div className="border-b cursor-pointer p-3 flex justify-between group">
-                    <Link href="" className="">Los Angeles</Link>
-                    <MoveRight className="h-5 w-5 hidden group-hover:block" />
-                  </div>
+                  <Link href="/location?name=adelaide" className="border-b p-3 flex justify-between group">
+                    Adelaide <MoveRight className="h-5 w-5 hidden group-hover:block" />
+                  </Link>
+                  <Link href="/location?name=sydeny" className="border-b p-3 flex justify-between group">
+                    Sydeny                  <MoveRight className="h-5 w-5 hidden group-hover:block" />
+                  </Link>
+                  <Link href="/location?name=brisbane" className="border-b p-3 flex justify-between group">
+                    Brisbane                  <MoveRight className="h-5 w-5 hidden group-hover:block" />
+                  </Link>
+                  <Link href="/location?name=melbourne" className="border-b p-3 flex justify-between group">
+                    Melbourne                  <MoveRight className="h-5 w-5 hidden group-hover:block" />
+                  </Link>
                 </div>
 
                 <div className="mt-8">
