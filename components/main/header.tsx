@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
-import { ChevronDown, MessageCircleMore, Store } from "lucide-react"
+import { ChevronDown, GitCompare, MessageCircleMore, Store, UserRound } from "lucide-react"
 import { usePathname } from "next/navigation"
 import { MobileNav } from "./mobile-nav"
 import { Logo } from "./logo"
@@ -117,6 +117,7 @@ export function Header() {
 
           <Link
             href="tel:+1300341911"
+            title="1300341911"
             className="flex items-center justify-center">
             <MessageCircleMore className="h-5 w-5 mr-1" />
             <span>Call</span>
@@ -126,8 +127,23 @@ export function Header() {
 
           <Link
             href="/wishlist"
+            title="Wishlist"
             className="flex items-center justify-center">
             <Store className="" />
+          </Link>
+
+          <Link
+            href="/login"
+            title="Account"
+            className="flex items-center justify-center">
+            <UserRound className="" />
+          </Link>
+
+          <Link
+            href="/compare"
+            title="Compare"
+            className="flex items-center justify-center">
+            <GitCompare className="" />
           </Link>
 
         </nav>
