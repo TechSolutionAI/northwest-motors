@@ -54,7 +54,7 @@ export function Header() {
         <div className="lg:hidden"></div>
 
         {/* Desktop Navigation - only visible on large screens */}
-        <nav className="hidden lg:flex items-center justify-end space-x-6 text-black text-lg">
+        <nav className="hidden lg:flex items-center justify-end space-x-4 text-black xl:text-lg">
           <Link href="/inventory" className="hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
             Browse Vehicles
           </Link>
@@ -100,7 +100,7 @@ export function Header() {
               <Link href="#" className="block px-4 py-2 hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
                 Media
               </Link>
-              <Link href="#" className="block px-4 py-2 hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
+              <Link href="/careers" className="block px-4 py-2 hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
                 Careers
               </Link>
             </div>
