@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, MoveRight, Plus } from "lucide-react"
@@ -9,13 +9,45 @@ import { Separator } from "@/components/ui/separator"
 import { vehicles } from "@/lib/mock-data"
 
 export function CompareSelection() {
-    const availableVehicles = vehicles.slice(0, 6)
+    const [wishlistVehicles, setWishlistVehicles] = useState<typeof vehicles>([])
     const [selectedVehicles, setSelectedVehicles] = useState<number[]>([])
     const [currentPage, setCurrentPage] = useState(0)
     const vehiclesPerPage = 3
 
-    const pageCount = Math.ceil(availableVehicles.length / vehiclesPerPage)
-    const displayedVehicles = availableVehicles.slice(currentPage * vehiclesPerPage, (currentPage + 1) * vehiclesPerPage)
+    // Load wishlist from localStorage
+    useEffect(() => {
+        const loadWishlist = () => {
+            try {
+                if (typeof window !== "undefined") {
+                    const wishlistJson = localStorage.getItem("wishlist")
+                    if (wishlistJson) {
+                        const wishlistIds = JSON.parse(wishlistJson) as number[]
+
+                        // Find vehicles that match wishlist IDs
+                        const wishlistItems = vehicles.filter((vehicle) => wishlistIds.includes(vehicle.id))
+
+                        setWishlistVehicles(wishlistItems)
+                    } else {
+                        setWishlistVehicles([])
+                    }
+                }
+            } catch (error) {
+                console.error("Error loading wishlist:", error)
+                setWishlistVehicles([])
+            }
+        }
+
+        loadWishlist()
+
+        // Listen for storage events to update when wishlist changes in other tabs
+        window.addEventListener("storage", loadWishlist)
+        return () => {
+            window.removeEventListener("storage", loadWishlist)
+        }
+    }, [])
+
+    const pageCount = Math.max(1, Math.ceil(wishlistVehicles.length / vehiclesPerPage))
+    const displayedVehicles = wishlistVehicles.slice(currentPage * vehiclesPerPage, (currentPage + 1) * vehiclesPerPage)
 
     const handlePrevious = () => {
         setCurrentPage((prev) => (prev > 0 ? prev - 1 : pageCount - 1))
@@ -55,7 +87,7 @@ export function CompareSelection() {
                     </p>
 
                     <button
-                        className="text-white bg-[#414042]  hover:bg-[#8E6F00] px-8 py-4 rounded-none disabled:bg-gray-300"
+                        className="text-white bg-[#414042] hover:bg-[#8E6F00] px-8 py-4 rounded-none disabled:bg-gray-300"
                         disabled={isCompareDisabled}
                     >
                         {!isCompareDisabled ? (
@@ -80,7 +112,7 @@ export function CompareSelection() {
                         <div className="relative h-80 bg-gray-100 flex items-center justify-center border border-gray-200">
                             {selectedVehicles[0] !== undefined ? (
                                 <Image
-                                    src={availableVehicles.find((v) => v.id === selectedVehicles[0])?.image || "/car-placeholder.png"}
+                                    src={wishlistVehicles.find((v) => v.id === selectedVehicles[0])?.image || "/car-placeholder.png"}
                                     alt="Selected vehicle 1"
                                     fill
                                     className="object-cover"
@@ -93,7 +125,7 @@ export function CompareSelection() {
                             {selectedVehicles[0] !== undefined && (
                                 <div className="p-4">
                                     {(() => {
-                                        const vehicle = availableVehicles.find((v) => v.id === selectedVehicles[0])
+                                        const vehicle = wishlistVehicles.find((v) => v.id === selectedVehicles[0])
                                         return vehicle ? (
                                             <>
                                                 <h2 className="text-xl">
@@ -119,7 +151,7 @@ export function CompareSelection() {
                         <div className="relative h-80 bg-gray-100 flex items-center justify-center border border-gray-200">
                             {selectedVehicles[1] !== undefined ? (
                                 <Image
-                                    src={availableVehicles.find((v) => v.id === selectedVehicles[1])?.image || "/car-placeholder.png"}
+                                    src={wishlistVehicles.find((v) => v.id === selectedVehicles[1])?.image || "/car-placeholder.png"}
                                     alt="Selected vehicle 2"
                                     fill
                                     className="object-cover"
@@ -132,7 +164,7 @@ export function CompareSelection() {
                             {selectedVehicles[1] !== undefined && (
                                 <div className="p-4">
                                     {(() => {
-                                        const vehicle = availableVehicles.find((v) => v.id === selectedVehicles[1])
+                                        const vehicle = wishlistVehicles.find((v) => v.id === selectedVehicles[1])
                                         return vehicle ? (
                                             <>
                                                 <h2 className="text-xl">
@@ -154,45 +186,59 @@ export function CompareSelection() {
 
             <Separator className="my-8" />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                {displayedVehicles.map((vehicle) => (
-                    <div key={vehicle.id} className="relative border border-gray-200">
-                        <div className="relative h-48">
-                            <Image
-                                src={vehicle.image || "/car-placeholder.png"}
-                                alt={`${vehicle.year} ${vehicle.make} ${vehicle.model}`}
-                                fill
-                                className="object-cover"
-                            />
-                            <button
-                                className={`absolute top-2 right-2 p-1 rounded-full ${selectedVehicles.includes(vehicle.id)
-                                    ? "bg-amber-600 text-white"
-                                    : "bg-white text-gray-800 border border-gray-300"
-                                    }`}
-                                onClick={() => toggleVehicleSelection(vehicle.id)}
-                                aria-label={selectedVehicles.includes(vehicle.id) ? "Remove from comparison" : "Add to comparison"}
-                            >
-                                <Plus className="h-5 w-5" />
-                            </button>
-                        </div>
-                        <div className="p-3">
-                            <h3 className="font-medium">
-                                {vehicle.year} {vehicle.make} {vehicle.model}
-                            </h3>
-                            <p className="text-sm text-gray-600">{vehicle.trim}</p>
-                        </div>
+            {wishlistVehicles.length > 0 ? (
+                <>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                        {displayedVehicles.map((vehicle) => (
+                            <div key={vehicle.id} className="relative border border-gray-200">
+                                <div className="relative h-48">
+                                    <Image
+                                        src={vehicle.image || "/car-placeholder.png"}
+                                        alt={`${vehicle.year} ${vehicle.make} ${vehicle.model}`}
+                                        fill
+                                        className="object-cover"
+                                    />
+                                    <button
+                                        className={`absolute top-2 right-2 p-1 rounded-full ${selectedVehicles.includes(vehicle.id)
+                                            ? "bg-amber-600 text-white"
+                                            : "bg-white text-gray-800 border border-gray-300"
+                                            }`}
+                                        onClick={() => toggleVehicleSelection(vehicle.id)}
+                                        aria-label={selectedVehicles.includes(vehicle.id) ? "Remove from comparison" : "Add to comparison"}
+                                    >
+                                        <Plus className="h-5 w-5" />
+                                    </button>
+                                </div>
+                                <div className="p-3">
+                                    <h3 className="font-medium">
+                                        {vehicle.year} {vehicle.make} {vehicle.model}
+                                    </h3>
+                                    <p className="text-sm text-gray-600">{vehicle.trim}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
 
-            <div className="flex justify-center gap-4">
-                <Button variant="outline" className="border-gray-300 rounded-none" onClick={handlePrevious}>
-                    <ArrowLeft className="" />
-                </Button>
-                <Button variant="outline" className="border-gray-300 rounded-none" onClick={handleNext}>
-                    <MoveRight className="" />
-                </Button>
-            </div>
+                    {wishlistVehicles.length > vehiclesPerPage && (
+                        <div className="flex justify-center gap-4">
+                            <Button variant="outline" className="border-gray-300 rounded-none" onClick={handlePrevious}>
+                                <ArrowLeft className="" />
+                            </Button>
+                            <Button variant="outline" className="border-gray-300 rounded-none" onClick={handleNext}>
+                                <MoveRight className="" />
+                            </Button>
+                        </div>
+                    )}
+                </>
+            ) : (
+                <div className="text-center py-12">
+                    <h3 className="text-xl font-medium mb-2">Your wishlist is empty</h3>
+                    <p className="text-gray-600 mb-6">Add vehicles to your wishlist to compare them.</p>
+                    <Button asChild>
+                        <Link href="/inventory">Browse Inventory</Link>
+                    </Button>
+                </div>
+            )}
         </div>
     )
 }

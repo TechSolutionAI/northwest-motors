@@ -1,25 +1,43 @@
+"use client"
+
+import type React from "react"
+
 import Image from "next/image"
 import Link from "next/link"
-import { CarFront, CircleGauge, Fuel, MapPinned, MoveRight } from "lucide-react"
+import { CarFront, CircleGauge, Fuel, MapPinned, MoveRight, Store } from "lucide-react"
+
 
 type VehicleCardProps = {
   vehicle: Vehicle
+  isInWishlist?: boolean
+  onWishlistClick?: (e: React.MouseEvent) => void
 }
 
-export default function VehicleCard({ vehicle }: VehicleCardProps) {
+export default function VehicleCard({ vehicle, isInWishlist, onWishlistClick }: VehicleCardProps) {
   return (
     <div className="bg-[#F3F3F3] overflow-hidden">
       <div className="relative h-64">
         <Link href={`/inventory/${vehicle.id}`}>
           <Image
-            src={vehicle.image || "/car-placeholder.png"}
+            src={vehicle.image || "/placeholder.svg"}
             alt={`${vehicle.make} ${vehicle.model}`}
             fill
             className="object-cover"
           />
         </Link>
-      </div>
 
+        {/* Wishlist button */}
+        {onWishlistClick && (
+          <button
+            onClick={onWishlistClick}
+            className={`absolute bottom-2 right-2 p-2 rounded-full ${isInWishlist ? "bg-[#8E6F00] text-white" : "bg-white text-[#8E6F00]"
+              } hover:bg-[#8E6F00] hover:text-white transition-colors duration-300 shadow-md`}
+            aria-label={isInWishlist ? "Remove from wishlist" : "Add to wishlist"}
+          >
+            <Store className={`h-5 w-5 ${isInWishlist ? "fill-current" : ""}`} />
+          </button>
+        )}
+      </div>
 
       <div className="p-4">
         <div className="flex items-baseline">
@@ -97,7 +115,7 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
             VIEW <MoveRight className="ml-2 h-6 w-6" />
           </Link>
           <Link
-            href={`/inventory/enquire/${vehicle.id}`}
+            href={`/enquire/${vehicle.id}`}
             className="flex items-center justify-center py-2 bg-[#414042] text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in"
           >
             ENQUIRE <MoveRight className="ml-2 h-6 w-6" />

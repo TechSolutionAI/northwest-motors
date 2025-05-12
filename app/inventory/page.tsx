@@ -1,16 +1,16 @@
 "use client"
 
-import { useMemo, useState } from "react"
-import { ChevronDown, Menu } from "lucide-react"
+import type React from "react"
+
+import { useState, useEffect, useMemo } from "react"
+import { Menu } from "lucide-react"
 import { vehicles } from "@/lib/mock-data"
 import FilterSidebar from "@/components/inventory/filter-sidebar"
 import VehicleCard from "@/components/inventory/vehicle-card"
 import Pagination from "@/components/main/pagination"
 import SortDropdown from "@/components/inventory/sort-dropdown"
 
-
 export default function BrowseVehicles() {
-
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1)
   const vehiclesPerPage = 9
@@ -20,6 +20,42 @@ export default function BrowseVehicles() {
 
   // Sort state
   const [sortOption, setSortOption] = useState("year-high-to-low")
+
+  // Wishlist state
+  const [wishlist, setWishlist] = useState<number[]>([])
+
+  // Effect to load wishlist from localStorage on component mount
+  useEffect(() => {
+    const savedWishlist = localStorage.getItem("wishlist")
+    if (savedWishlist) {
+      setWishlist(JSON.parse(savedWishlist))
+    }
+  }, [])
+
+  // Function to handle wishlist toggle
+  const toggleWishlist = (vehicleId: number, event: React.MouseEvent) => {
+    event.preventDefault()
+    event.stopPropagation()
+
+    const newWishlist = wishlist.includes(vehicleId)
+      ? wishlist.filter((id) => id !== vehicleId)
+      : [...wishlist, vehicleId]
+
+    setWishlist(newWishlist)
+    localStorage.setItem("wishlist", JSON.stringify(newWishlist))
+  }
+
+  // Toggle mobile filters
+  const toggleMobileFilters = () => {
+    setShowMobileFilters(!showMobileFilters)
+    // When opening filters, prevent body scrolling
+    if (!showMobileFilters) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+  }
+
   // Sort vehicles based on selected option
   const sortedVehicles = useMemo(() => {
     const sorted = [...vehicles]
@@ -45,17 +81,6 @@ export default function BrowseVehicles() {
     }
   }, [sortOption])
 
-  // Toggle mobile filters
-  const toggleMobileFilters = () => {
-    setShowMobileFilters(!showMobileFilters)
-    // When opening filters, prevent body scrolling
-    if (!showMobileFilters) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = ""
-    }
-  }
-
   // Calculate total pages
   const totalPages = Math.ceil(sortedVehicles.length / vehiclesPerPage)
 
@@ -76,15 +101,12 @@ export default function BrowseVehicles() {
 
   return (
     <div className="flex min-h-screen flex-col">
-
       <main className="flex flex-col md:flex-row">
         {/* Mobile filter toggle button */}
         <div className="md:hidden sticky mt-8 z-10 bg-white p-4  flex flex-col">
           <div className="mx-4">
             <h2 className="text-lg text-gray-500">Browse Vehicles</h2>
-            <h1 className="text-2xl my-4">
-              Find Your Dream Car
-            </h1>
+            <h1 className="text-2xl my-4">Find Your Dream Car</h1>
           </div>
           <div className="flex justify-between">
             <div
@@ -99,7 +121,6 @@ export default function BrowseVehicles() {
             <div className="">
               <SortDropdown selectedOption={sortOption} onOptionSelect={handleSortChange} />
             </div>
-
           </div>
         </div>
         {/* Sidebar */}
@@ -118,7 +139,12 @@ export default function BrowseVehicles() {
           {/* Vehicle grid */}
           <section className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
             {currentVehicles.map((vehicle) => (
-              <VehicleCard key={vehicle.id} vehicle={vehicle} />
+              <VehicleCard
+                key={vehicle.id}
+                vehicle={vehicle}
+                isInWishlist={wishlist.includes(vehicle.id)}
+                onWishlistClick={(e) => toggleWishlist(vehicle.id, e)}
+              />
             ))}
           </section>
 
