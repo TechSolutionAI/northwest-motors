@@ -110,21 +110,6 @@ export function HeroCarousel() {
       >
         <ChevronRight className="h-6 w-6" />
       </button>
-
-      {/* Indicator Dots */}
-      <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2">
-        {heroSlides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={cn(
-              "h-2.5 w-2.5 rounded-full transition-colors",
-              index === currentSlide ? "bg-white" : "bg-white/50 hover:bg-white/75",
-            )}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
     </div>
   )
 }

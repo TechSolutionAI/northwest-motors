@@ -140,8 +140,8 @@ export function Card({ vehicles, index }: CardProps) {
                                                 </h3>
                                             </div>
 
-                                            <p className="text-gray-500 mt-1">X253 GLC300 Wagon 5dr 9G-TRONIC 9sp 4MATIC 2.0T</p>
-                                            <p className="text-gray-500 mt-4">YEAR: {vehicle.year}</p>
+                                            <p className="text-gray-700 mt-1">X253 GLC300 Wagon 5dr 9G-TRONIC 9sp 4MATIC 2.0T</p>
+                                            <p className="text-gray-700 mt-4">YEAR: {vehicle.year}</p>
                                             <p className="font-bold text-xl mt-1">$74,950</p>
 
                                             <div className="grid grid-cols-2 gap-0 mt-4 border-b border-b-gray-400 pb-8">
@@ -152,7 +152,7 @@ export function Card({ vehicles, index }: CardProps) {
                                                     <div className="">
                                                         {vehicle.km.toLocaleString()} km
                                                         <br />
-                                                        <span className="text-gray-500">Kilometers</span>
+                                                        <span className="text-gray-700">Kilometers</span>
                                                     </div>
                                                 </div>
 
@@ -163,7 +163,7 @@ export function Card({ vehicles, index }: CardProps) {
                                                     <div className="">
                                                         {vehicle.transmission}
                                                         <br />
-                                                        <span className=" text-gray-500">Transmission</span>
+                                                        <span className=" text-gray-700">Transmission</span>
                                                     </div>
                                                 </div>
                                             </div>

@@ -53,7 +53,7 @@ export function EnquiryHistoryContent() {
                     <div className="text-center py-12 bg-gray-50 rounded-lg">
                         <MessageSquare className="h-12 w-12 mx-auto text-gray-400 mb-4" />
                         <h2 className="text-xl font-medium text-gray-600 mb-2">No enquiries yet</h2>
-                        <p className="text-gray-500 mb-6">You haven't made any vehicle enquiries.</p>
+                        <p className="text-gray-700 mb-6">You haven't made any vehicle enquiries.</p>
                         <Link
                             href="/inventory"
                             className="inline-flex items-center bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-700 transition-colors"
@@ -89,7 +89,7 @@ export function EnquiryHistoryContent() {
                                             </span>
                                         </div>
 
-                                        <p className="text-gray-500 text-sm mb-4">Enquiry date: {enquiry.date}</p>
+                                        <p className="text-gray-700 text-sm mb-4">Enquiry date: {enquiry.date}</p>
 
                                         <div className="bg-gray-50 p-3 rounded-md mb-4">
                                             <p className="text-gray-600">{enquiry.message}</p>

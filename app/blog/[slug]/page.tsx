@@ -51,7 +51,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             <article className="mx-auto max-w-3xl">
                 <h1 className="mb-4 text-3xl font-medium md:text-4xl">{post.title}</h1>
 
-                <div className="mb-6 flex items-center text-sm text-gray-500">
+                <div className="mb-6 flex items-center text-sm text-gray-700">
                     <span>{formattedDate}</span>
                     <span className="mx-2">•</span>
                     <span>{post.readTime} min read</span>
@@ -76,7 +76,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                     </div>
                     <div className="ml-4">
                         <p className="font-medium">{post.author.name}</p>
-                        <p className="text-sm text-gray-500">Author</p>
+                        <p className="text-sm text-gray-700">Author</p>
                     </div>
                 </div>
             </article>
@@ -96,7 +96,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                                     />
                                 </div>
                                 <h3 className="mt-3 text-lg font-medium">{relatedPost.title}</h3>
-                                <p className="mt-1 text-sm text-gray-500">
+                                <p className="mt-1 text-sm text-gray-700">
                                     {new Date(relatedPost.publishedAt).toLocaleDateString("en-US", {
                                         day: "2-digit",
                                         month: "2-digit",

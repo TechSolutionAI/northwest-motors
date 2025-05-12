@@ -13,13 +13,13 @@ export default function VehicleInfo({ vehicle }: VehicleInfoProps) {
                 <h1 className="text-3xl font-bold">
                     <span className="text-black">{vehicle.make}</span>{" "}
                     <span className="text-[#8E6F00]">{vehicle.model}</span>{" "}
-                    <span className="text-gray-500 text-xl">{vehicle.year}</span>
+                    <span className="text-gray-700 text-xl">{vehicle.year}</span>
                 </h1>
                 <p className="text-lg font-medium mt-1">{vehicle.trim}</p>
                 <div className="mt-2">
                     <p className="text-2xl font-bold">
                         ${vehicle.price.toLocaleString()}{" "}
-                        <span className="text-sm font-normal text-gray-500">Exc. Gov. Charges</span>
+                        <span className="text-sm font-normal text-gray-700">Exc. Gov. Charges</span>
                     </p>
                 </div>
             </div>
@@ -32,28 +32,28 @@ export default function VehicleInfo({ vehicle }: VehicleInfoProps) {
                     <CircleGauge className="mr-3" />
                     <div>
                         <p className="text-lg font-bold">{vehicle.km.toLocaleString()}</p>
-                        <p className="text-xs text-gray-500">KILOMETERS</p>
+                        <p className="text-xs text-gray-700">KILOMETERS</p>
                     </div>
                 </div>
                 <div className="flex items-center">
                     <CarFront className="mr-3" />
                     <div>
                         <p className="text-lg font-bold">{vehicle.transmission}</p>
-                        <p className="text-xs text-gray-500">TRANSMISSION</p>
+                        <p className="text-xs text-gray-700">TRANSMISSION</p>
                     </div>
                 </div>
                 <div className="flex items-center">
                     <Fuel className="mr-3" />
                     <div>
                         <p className="text-lg font-bold">{vehicle.fuel}</p>
-                        <p className="text-xs text-gray-500">FUEL</p>
+                        <p className="text-xs text-gray-700">FUEL</p>
                     </div>
                 </div>
                 <div className="flex items-center">
                     <Car className="mr-3" />
                     <div>
                         <p className="text-lg font-bold">Wagon</p>
-                        <p className="text-xs text-gray-500">BODY TYPE</p>
+                        <p className="text-xs text-gray-700">BODY TYPE</p>
                     </div>
                 </div>
             </div>
@@ -66,15 +66,15 @@ export default function VehicleInfo({ vehicle }: VehicleInfoProps) {
                 <div className="flex justify-between items-center mb-4">
                     <div>
                         <p className="text-lg font-bold">${vehicle.weeklyPayment.toFixed(2)}</p>
-                        <p className="text-xs text-gray-500">Per Week</p>
+                        <p className="text-xs text-gray-700">Per Week</p>
                     </div>
                     <div>
                         <p className="text-lg font-bold">{vehicle.comparisonRate}%</p>
-                        <p className="text-xs text-gray-500">p.a Comparison Rate</p>
+                        <p className="text-xs text-gray-700">p.a Comparison Rate</p>
                     </div>
                     <div>
                         <p className="text-lg font-bold">5 Year Term</p>
-                        <p className="text-xs text-gray-500"></p>
+                        <p className="text-xs text-gray-700"></p>
                     </div>
                 </div>
                 <Link
@@ -105,7 +105,7 @@ export default function VehicleInfo({ vehicle }: VehicleInfoProps) {
             {/* Location */}
             <div className="">
                 <div className="bg-gray-200 p-4 flex flex-col justify-center items-center">
-                    <p className="text-lg font-bold text-gray-500">THIS VEHICLE IS LOCATED AT</p>
+                    <p className="text-lg font-bold text-gray-700">THIS VEHICLE IS LOCATED AT</p>
                     <p className="text-lg font-bold">Dutton One Box Hill</p>
 
                 </div>

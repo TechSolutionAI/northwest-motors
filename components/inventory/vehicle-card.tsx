@@ -43,10 +43,10 @@ export default function VehicleCard({ vehicle, isInWishlist, onWishlistClick }: 
         <div className="flex items-baseline">
           <h3 className="text-xl font-bold text-dark">
             {vehicle.make} <span className="text-[#8E6F00]">{vehicle.model}</span>{" "}
-            <span className="text-gray-500 text-sm">{vehicle.year}</span>
+            <span className="text-gray-700 text-sm">{vehicle.year}</span>
           </h3>
         </div>
-        <p className="text-sm text-gray-500">{vehicle.trim}</p>
+        <p className="text-sm text-gray-700">{vehicle.trim}</p>
 
         <div className="grid grid-cols-2 gap-4 mt-4">
           <div className="flex items-center">
@@ -56,7 +56,7 @@ export default function VehicleCard({ vehicle, isInWishlist, onWishlistClick }: 
             <div className="text-sm">
               {vehicle.km.toLocaleString()} km
               <br />
-              <span className="text-xs text-gray-500">Kilometers</span>
+              <span className="text-xs text-gray-700">Kilometers</span>
             </div>
           </div>
 
@@ -67,7 +67,7 @@ export default function VehicleCard({ vehicle, isInWishlist, onWishlistClick }: 
             <div className="text-sm">
               {vehicle.transmission}
               <br />
-              <span className="text-xs text-gray-500">Transmission</span>
+              <span className="text-xs text-gray-700">Transmission</span>
             </div>
           </div>
 
@@ -78,7 +78,7 @@ export default function VehicleCard({ vehicle, isInWishlist, onWishlistClick }: 
             <div className="text-sm">
               {vehicle.location}
               <br />
-              <span className="text-xs text-gray-500">Location</span>
+              <span className="text-xs text-gray-700">Location</span>
             </div>
           </div>
 
@@ -89,7 +89,7 @@ export default function VehicleCard({ vehicle, isInWishlist, onWishlistClick }: 
             <div className="text-sm">
               {vehicle.fuel}
               <br />
-              <span className="text-xs text-gray-500">Fuel</span>
+              <span className="text-xs text-gray-700">Fuel</span>
             </div>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function VehicleCard({ vehicle, isInWishlist, onWishlistClick }: 
 
         <div className="">
           <span className="text-2xl font-bold">${vehicle.price.toLocaleString()}</span>
-          <span className="text-xs ml-2 text-gray-500">*Exc. Gov. Charges</span>
+          <span className="text-xs ml-2 text-gray-700">*Exc. Gov. Charges</span>
         </div>
 
         <div className="items-center justify-between mt-8 text-sm bg-white px-4 py-4">

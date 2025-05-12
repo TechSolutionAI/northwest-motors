@@ -50,7 +50,7 @@ export function SavedSearchesContent() {
                     <div className="text-center py-12 bg-gray-50 rounded-lg">
                         <Search className="h-12 w-12 mx-auto text-gray-400 mb-4" />
                         <h2 className="text-xl font-medium text-gray-600 mb-2">No saved searches</h2>
-                        <p className="text-gray-500 mb-6">You haven't saved any vehicle searches yet.</p>
+                        <p className="text-gray-700 mb-6">You haven't saved any vehicle searches yet.</p>
                         <Link
                             href="/inventory"
                             className="inline-flex items-center bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-700 transition-colors"
@@ -65,7 +65,7 @@ export function SavedSearchesContent() {
                                 <div className="flex justify-between items-start mb-4">
                                     <div>
                                         <h2 className="text-xl font-medium">{search.name}</h2>
-                                        <p className="text-gray-500 text-sm">Saved on {search.date}</p>
+                                        <p className="text-gray-700 text-sm">Saved on {search.date}</p>
                                     </div>
                                     <button
                                         onClick={() => handleDelete(search.id)}
@@ -79,7 +79,7 @@ export function SavedSearchesContent() {
                                 <p className="text-gray-600 mb-4">{search.criteria}</p>
 
                                 <div className="flex justify-between items-center">
-                                    <span className="text-gray-500">{search.results} vehicles match your criteria</span>
+                                    <span className="text-gray-700">{search.results} vehicles match your criteria</span>
                                     <Link
                                         href={`/inventory?saved=${search.id}`}
                                         className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors"

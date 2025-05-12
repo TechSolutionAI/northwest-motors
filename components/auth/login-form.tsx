@@ -227,7 +227,7 @@ export function LoginForm() {
                                 type="button"
                                 aria-label="Show or hide password"
                                 onClick={() => setShowPassword(!showPassword)}
-                                className="absolute right-0 top-3 text-gray-500"
+                                className="absolute right-0 top-3 text-gray-700"
                             >
                                 {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                             </button>

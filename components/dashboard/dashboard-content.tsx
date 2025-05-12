@@ -28,7 +28,7 @@ export function DashboardContent() {
                         className="flex items-center justify-between p-4 border-b border-gray-200 group"
                     >
                         <div className="flex items-center">
-                            <LockKeyhole className="h-5 w-5 text-gray-500 mr-4" />
+                            <LockKeyhole className="h-5 w-5 text-gray-700 mr-4" />
                             <span className="text-lg">Change my password</span>
                         </div>
                         <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-gray-600 transition-colors" />
@@ -39,7 +39,7 @@ export function DashboardContent() {
                         className="flex items-center justify-between p-4 border-b border-gray-200 group"
                     >
                         <div className="flex items-center">
-                            <Search className="h-5 w-5 text-gray-500 mr-4" />
+                            <Search className="h-5 w-5 text-gray-700 mr-4" />
                             <span className="text-lg">Saved Searches</span>
                         </div>
                         <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-gray-600 transition-colors" />
@@ -50,7 +50,7 @@ export function DashboardContent() {
                         className="flex items-center justify-between p-4 border-b border-gray-200 group"
                     >
                         <div className="flex items-center">
-                            <MessageSquare className="h-5 w-5 text-gray-500 mr-4" />
+                            <MessageSquare className="h-5 w-5 text-gray-700 mr-4" />
                             <span className="text-lg">Enquiry History</span>
                         </div>
                         <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-gray-600 transition-colors" />

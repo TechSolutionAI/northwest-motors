@@ -166,7 +166,7 @@ export default function FilterSidebar({ showMobileFilters, toggleMobileFilters }
       >
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-3xl font-bold">Filters</h2>
-          <button onClick={toggleMobileFilters} className="text-gray-500 p-2" aria-label="Close filters">
+          <button onClick={toggleMobileFilters} className="text-gray-700 p-2" aria-label="Close filters">
             <X />
           </button>
         </div>

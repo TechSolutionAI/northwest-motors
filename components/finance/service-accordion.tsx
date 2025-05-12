@@ -75,7 +75,7 @@ export default function ServiceAccordion() {
                                     <h3 className="text-[32px] font-bold">{item.title}</h3>
                                 </div>
                                 <MoveDown
-                                    className={`h-5 w-5 text-gray-500 transition-transform duration-200 ${openItem === item.id ? "transform rotate-180" : ""
+                                    className={`h-5 w-5 text-gray-700 transition-transform duration-200 ${openItem === item.id ? "transform rotate-180" : ""
                                         }`}
                                 />
                             </button>

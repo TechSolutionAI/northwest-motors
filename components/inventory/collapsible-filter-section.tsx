@@ -23,8 +23,8 @@ export default function CollapsibleFilterSection({
             <div className="flex items-center justify-between cursor-pointer py-2" onClick={() => setIsOpen(!isOpen)}>
                 <h3 className="font-bold">{title}</h3>
                 {isOpen ?
-                    <MoveUp className="h-4 w-4 text-gray-500" /> :
-                    <MoveDown className="h-4 w-4 text-gray-500" />}
+                    <MoveUp className="h-4 w-4 text-gray-700" /> :
+                    <MoveDown className="h-4 w-4 text-gray-700" />}
             </div>
 
             {isOpen && <div className="mt-3">{children}</div>}

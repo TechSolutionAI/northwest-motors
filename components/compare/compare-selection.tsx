@@ -118,7 +118,7 @@ export function CompareSelection() {
                                     className="object-cover"
                                 />
                             ) : (
-                                <p className="text-gray-500">Press + on the vehicle to compare</p>
+                                <p className="text-gray-700">Press + on the vehicle to compare</p>
                             )}
                         </div>
                         <div className="h-32 bg-gray-100 border border-gray-200">
@@ -157,7 +157,7 @@ export function CompareSelection() {
                                     className="object-cover"
                                 />
                             ) : (
-                                <p className="text-gray-500">Press + on the vehicle to compare</p>
+                                <p className="text-gray-700">Press + on the vehicle to compare</p>
                             )}
                         </div>
                         <div className="h-32 bg-gray-100 border border-gray-200">

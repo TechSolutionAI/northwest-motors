@@ -105,7 +105,7 @@ export default function BrowseVehicles() {
         {/* Mobile filter toggle button */}
         <div className="md:hidden sticky mt-8 z-10 bg-white p-4  flex flex-col">
           <div className="mx-4">
-            <h2 className="text-lg text-gray-500">Browse Vehicles</h2>
+            <h2 className="text-lg text-gray-700">Browse Vehicles</h2>
             <h1 className="text-2xl my-4">Find Your Dream Car</h1>
           </div>
           <div className="flex justify-between">

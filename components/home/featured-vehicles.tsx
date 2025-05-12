@@ -115,10 +115,10 @@ export default function FeaturedVehicles() {
                   <div className="flex items-baseline">
                     <h3 className="text-xl font-bold text-dark">
                       {vehicle.make} <span className="text-[#8E6F00]">{vehicle.model}</span>{" "}
-                      <span className="text-gray-500 text-sm">{vehicle.year}</span>
+                      <span className="text-gray-700 text-sm">{vehicle.year}</span>
                     </h3>
                   </div>
-                  <p className="text-sm text-gray-500">{vehicle.trim}</p>
+                  <p className="text-sm text-gray-700">{vehicle.trim}</p>
 
                   <div className="grid grid-cols-2 gap-4 mt-4">
                     <div className="flex items-center">
@@ -128,7 +128,7 @@ export default function FeaturedVehicles() {
                       <div className="text-sm">
                         {vehicle.km.toLocaleString()} km
                         <br />
-                        <span className="text-xs text-gray-500">Kilometers</span>
+                        <span className="text-xs text-gray-700">Kilometers</span>
                       </div>
                     </div>
 
@@ -139,7 +139,7 @@ export default function FeaturedVehicles() {
                       <div className="text-sm">
                         {vehicle.transmission}
                         <br />
-                        <span className="text-xs text-gray-500">Transmission</span>
+                        <span className="text-xs text-gray-700">Transmission</span>
                       </div>
                     </div>
 
@@ -150,7 +150,7 @@ export default function FeaturedVehicles() {
                       <div className="text-sm">
                         {vehicle.location}
                         <br />
-                        <span className="text-xs text-gray-500">Location</span>
+                        <span className="text-xs text-gray-700">Location</span>
                       </div>
                     </div>
 
@@ -161,7 +161,7 @@ export default function FeaturedVehicles() {
                       <div className="text-sm">
                         {vehicle.fuel}
                         <br />
-                        <span className="text-xs text-gray-500">Fuel</span>
+                        <span className="text-xs text-gray-700">Fuel</span>
                       </div>
                     </div>
                   </div>
@@ -171,7 +171,7 @@ export default function FeaturedVehicles() {
                   <div className="mt-4">
                     <p className="font-bold text-lg">
                       ${vehicle.price.toLocaleString()}{" "}
-                      <span className="text-xs font-normal text-gray-500">Inc. Gov. Charges</span>
+                      <span className="text-xs font-normal text-gray-700">Inc. Gov. Charges</span>
                     </p>
                   </div>
                 </div>

@@ -260,12 +260,12 @@ export default function ContactForm({ type }: ContactFormProps) {
             <div className="flex flex-col items-end mt-8">
                 <Link
                     href="mailto:info@duttonone.com.au"
-                    className="text-3xl text-gray-500">
+                    className="text-3xl text-gray-700">
                     <span>info@duttonone.com.au</span>
                 </Link>
                 <Link
                     href="tel:+1300341911"
-                    className="mt-2 text-5xl font-krona text-gray-500">
+                    className="mt-2 text-5xl font-krona text-gray-700">
                     <span>+1300 341 911</span>
                 </Link>
             </div>

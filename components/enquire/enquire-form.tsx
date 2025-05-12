@@ -187,7 +187,7 @@ export default function EnquireForm({ vehicle }: EnquireFormProps) {
                 className="object-cover"
                 priority
             />
-            <h1 className="mt-8 text-4xl font-krona text-gray-500">ENQUIRE NOW</h1>
+            <h1 className="mt-8 text-4xl font-krona text-gray-700">ENQUIRE NOW</h1>
             <p className="mt-8 text-gray-600">Enquire about this specific car today! Leave us a message and one of our specialists will get the wheels rolling for you!
             </p>
             <form onSubmit={handleSubmit} className="space-y-6 mt-8">
@@ -318,12 +318,12 @@ export default function EnquireForm({ vehicle }: EnquireFormProps) {
             <div className="flex flex-col items-end mt-8">
                 <Link
                     href="mailto:info@duttonone.com.au"
-                    className="text-3xl text-gray-500">
+                    className="text-3xl text-gray-700">
                     <span>info@duttonone.com.au</span>
                 </Link>
                 <Link
                     href="tel:+1300341911"
-                    className="mt-2 text-5xl font-krona text-gray-500">
+                    className="mt-2 text-5xl font-krona text-gray-700">
                     <span>+1300 341 911</span>
                 </Link>
             </div>

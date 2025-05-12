@@ -438,12 +438,12 @@ export default function CareerForm() {
                                         type="button"
                                         aria-label="Remove resume"
                                         onClick={removeResumeFile}
-                                        className="text-gray-500 hover:text-gray-700 text-sm ml-2"
+                                        className="text-gray-700 hover:text-gray-700 text-sm ml-2"
                                     >
                                         Remove
                                     </button>
                                 </div>
-                                <p className="text-xs text-gray-500">{formatFileSize(resumeFile.size)}</p>
+                                <p className="text-xs text-gray-700">{formatFileSize(resumeFile.size)}</p>
 
                                 {resumeError.size && <p className="text-red-500 text-xs mt-1">{resumeError.size}</p>}
                                 {resumeError.type && <p className="text-red-500 text-xs mt-1">{resumeError.type}</p>}
@@ -452,7 +452,7 @@ export default function CareerForm() {
 
                         {!resumeFile && (
                             <>
-                                <p className="text-xs text-gray-500 mt-1">Accepted formats: PDF, DOC, DOCX (max 5MB)</p>
+                                <p className="text-xs text-gray-700 mt-1">Accepted formats: PDF, DOC, DOCX (max 5MB)</p>
                                 {touched.resume && resumeError.required && (
                                     <p className="text-red-500 text-xs mt-1">{resumeError.required}</p>
                                 )}
@@ -502,12 +502,12 @@ export default function CareerForm() {
                                         aria-label="Remove cover letter"
                                         type="button"
                                         onClick={removeCoverLetterFile}
-                                        className="text-gray-500 hover:text-gray-700 text-sm ml-2"
+                                        className="text-gray-700 hover:text-gray-700 text-sm ml-2"
                                     >
                                         Remove
                                     </button>
                                 </div>
-                                <p className="text-xs text-gray-500">{formatFileSize(coverLetterFile.size)}</p>
+                                <p className="text-xs text-gray-700">{formatFileSize(coverLetterFile.size)}</p>
 
                                 {coverLetterError.size && <p className="text-red-500 text-xs mt-1">{coverLetterError.size}</p>}
                                 {coverLetterError.type && <p className="text-red-500 text-xs mt-1">{coverLetterError.type}</p>}
@@ -516,7 +516,7 @@ export default function CareerForm() {
 
                         {!coverLetterFile && (
                             <>
-                                <p className="text-xs text-gray-500 mt-1">Accepted formats: PDF, DOC, DOCX (max 5MB)</p>
+                                <p className="text-xs text-gray-700 mt-1">Accepted formats: PDF, DOC, DOCX (max 5MB)</p>
                                 {touched.coverLetter && coverLetterError.required && (
                                     <p className="text-red-500 text-xs mt-1">{coverLetterError.required}</p>
                                 )}
@@ -539,10 +539,10 @@ export default function CareerForm() {
             </form>
 
             <div className="flex flex-col items-end mt-8">
-                <Link href="mailto:info@duttonone.com.au" className="text-3xl text-gray-500">
+                <Link href="mailto:info@duttonone.com.au" className="text-3xl text-gray-700">
                     <span>info@duttonone.com.au</span>
                 </Link>
-                <Link href="tel:+1300341911" className="mt-2 text-5xl font-krona text-gray-500">
+                <Link href="tel:+1300341911" className="mt-2 text-5xl font-krona text-gray-700">
                     <span>+1300 341 911</span>
                 </Link>
             </div>

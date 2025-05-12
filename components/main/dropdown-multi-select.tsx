@@ -62,7 +62,7 @@ export default function DropdownMultiSelect({ title, options, selectedValues, on
                 <div className="flex flex-col w-full overflow-hidden">
                     <span className="font-medium text-gray-700">{title}</span>
                     {selectedOptions.length > 0 && (
-                        <span className="text-xs text-gray-500 mt-1 truncate" title={selectedDisplay}>
+                        <span className="text-xs text-gray-700 mt-1 truncate" title={selectedDisplay}>
                             {selectedDisplay}
                         </span>
                     )}
@@ -86,7 +86,7 @@ export default function DropdownMultiSelect({ title, options, selectedValues, on
                                 />
                                 <span className="ml-2">{option.label}</span>
                             </div>
-                            {option.stock !== undefined && <span className="text-xs text-gray-500">({option.stock})</span>}
+                            {option.stock !== undefined && <span className="text-xs text-gray-700">({option.stock})</span>}
                         </label>
                     ))}
                 </div>

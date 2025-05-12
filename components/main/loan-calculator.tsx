@@ -231,7 +231,7 @@ export default function LoanCalculator({ vehicle = null, onCalcLoan = () => { } 
                         <div>
                             <div className="flex justify-between items-center">
                                 <h3 className="text-2xl font-bold">Max Repayments ($)</h3>
-                                <span className="text-gray-500 cursor-help" title="The maximum repayment amount based on your loan details">
+                                <span className="text-gray-700 cursor-help" title="The maximum repayment amount based on your loan details">
                                     ⓘ
                                 </span>
                             </div>

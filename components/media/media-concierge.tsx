@@ -25,10 +25,10 @@ export default function MediaConcierge() {
 
 
             <div className="flex flex-col items-center mt-24">
-                <Link href="tel:+1300341911" className="mt-2 text-2xl font-krona text-gray-500">
+                <Link href="tel:+1300341911" className="mt-2 text-2xl font-krona text-gray-700">
                     <span>+1300 341 911</span>
                 </Link>
-                <Link href="mailto:info@duttonone.com.au" className="text-2xl mt-2 text-gray-500">
+                <Link href="mailto:info@duttonone.com.au" className="text-2xl mt-2 text-gray-700">
                     <span>info@duttonone.com.au</span>
                 </Link>
             </div>

@@ -873,7 +873,7 @@ export function SellForm() {
                             </label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                    <span className="text-gray-500">$</span>
+                                    <span className="text-gray-700">$</span>
                                 </div>
                                 <input
                                     type="text"
@@ -1143,7 +1143,7 @@ export function SellForm() {
                 <div className="mt-6 border border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50 ">
                     <div className="flex flex-col items-center justify-center">
                         <Upload className="h-12 w-12 text-gray-400 mb-4" />
-                        <p className="text-sm text-gray-500 mb-4">
+                        <p className="text-sm text-gray-700 mb-4">
                             Drag and drop images or click here to select files. Non-image files will be discarded.
                         </p>
                         <input
@@ -1318,7 +1318,7 @@ export function SellForm() {
                     Submit
                 </Button>
 
-                <p className="text-xs text-gray-500 mt-4">
+                <p className="text-xs text-gray-700 mt-4">
                     If you have entered a cell phone number, or another number that you later convert to a cell phone number, you
                     agree that we may contact you at this number. You also agree to receive calls and messages such as,
                     pre-recorded messages, calls and messages from automated dialing systems, or text messages. Normal cell phone

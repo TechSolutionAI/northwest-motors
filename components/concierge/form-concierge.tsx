@@ -289,13 +289,13 @@ export default function FormConcierge() {
                                     ? "bg-primary text-white"
                                     : currentStep > step
                                         ? "bg-[#8E6F00] text-white"
-                                        : "bg-gray-200 text-gray-500",
+                                        : "bg-gray-200 text-gray-700",
                             )}
                         >
                             {step}
                         </div>
                         <div className="ml-2">
-                            <span className={cn("text-sm font-medium", currentStep === step ? "text-primary" : "text-gray-500")}>
+                            <span className={cn("text-sm font-medium", currentStep === step ? "text-primary" : "text-gray-700")}>
                                 {step === 1 ? "Car Details" : step === 2 ? "Contact Info" : "Review"}
                             </span>
                         </div>
@@ -537,42 +537,42 @@ export default function FormConcierge() {
                             <h4 className="font-medium text-lg mb-3">Car Details</h4>
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    <p className="text-sm text-gray-500">Budget</p>
+                                    <p className="text-sm text-gray-700">Budget</p>
                                     <p className="font-medium">${formData.budget}</p>
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-500">Car Type</p>
+                                    <p className="text-sm text-gray-700">Car Type</p>
                                     <p className="font-medium">{formData.carType}</p>
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-500">Make</p>
+                                    <p className="text-sm text-gray-700">Make</p>
                                     <p className="font-medium">{formData.carMake}</p>
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-500">Model</p>
+                                    <p className="text-sm text-gray-700">Model</p>
                                     <p className="font-medium">{formData.carModel}</p>
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-500">Preferred Color</p>
+                                    <p className="text-sm text-gray-700">Preferred Color</p>
                                     <p className="font-medium">{formData.color || "No preference"}</p>
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-500">Timeline</p>
+                                    <p className="text-sm text-gray-700">Timeline</p>
                                     <p className="font-medium">{formData.timeline}</p>
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-500">Financing Interest</p>
+                                    <p className="text-sm text-gray-700">Financing Interest</p>
                                     <p className="font-medium">{formData.financing}</p>
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-500">Trade-in Vehicle</p>
+                                    <p className="text-sm text-gray-700">Trade-in Vehicle</p>
                                     <p className="font-medium">{formData.tradeIn}</p>
                                 </div>
                             </div>
 
                             {formData.features && (
                                 <div className="mt-4">
-                                    <p className="text-sm text-gray-500">Desired Features</p>
+                                    <p className="text-sm text-gray-700">Desired Features</p>
                                     <p className="font-medium">{formData.features}</p>
                                 </div>
                             )}
@@ -582,32 +582,32 @@ export default function FormConcierge() {
                             <h4 className="font-medium text-lg mb-3">Contact Information</h4>
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    <p className="text-sm text-gray-500">Name</p>
+                                    <p className="text-sm text-gray-700">Name</p>
                                     <p className="font-medium">{formData.name}</p>
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-500">Email</p>
+                                    <p className="text-sm text-gray-700">Email</p>
                                     <p className="font-medium">{formData.email}</p>
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-500">Phone</p>
+                                    <p className="text-sm text-gray-700">Phone</p>
                                     <p className="font-medium">{formData.phone}</p>
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-500">Preferred Contact</p>
+                                    <p className="text-sm text-gray-700">Preferred Contact</p>
                                     <p className="font-medium">{formData.contactPreference}</p>
                                 </div>
                             </div>
 
                             {formData.comments && (
                                 <div className="mt-4">
-                                    <p className="text-sm text-gray-500">Additional Comments</p>
+                                    <p className="text-sm text-gray-700">Additional Comments</p>
                                     <p className="font-medium">{formData.comments}</p>
                                 </div>
                             )}
                         </div>
 
-                        <div className="text-sm text-gray-500">
+                        <div className="text-sm text-gray-700">
                             <p>
                                 By submitting this form, you agree to be contacted by our concierge team regarding your vehicle
                                 preferences.
@@ -650,7 +650,7 @@ export default function FormConcierge() {
 
             {/* Step indicator */}
             <div className="flex justify-center mt-8">
-                <div className="text-sm text-gray-500">Step {currentStep} of 3</div>
+                <div className="text-sm text-gray-700">Step {currentStep} of 3</div>
             </div>
         </div>
     )
