@@ -67,6 +67,7 @@ export default function FeaturedVehicles() {
           <h2 className="text-[40px] font-krona">Explore our newest vehicles in stock</h2>
           <div className="flex space-x-2">
             <button
+              aria-label="Previous"
               className="px-4  py-2 border rounded-md group border-[#414042] hover:bg-[#414042] transition-colors ease-in duration-450"
               onClick={() => {
                 const slider = document.getElementById("vehicle-slider")
@@ -76,6 +77,7 @@ export default function FeaturedVehicles() {
               <MoveLeft className="h-8 w-8 group-hover:text-white" />
             </button>
             <button
+              aria-label="Next"
               className="px-4 py-2 border rounded-md group border-[#414042] hover:bg-[#414042] transition-colors ease-in duration-450"
               onClick={() => {
                 const slider = document.getElementById("vehicle-slider")

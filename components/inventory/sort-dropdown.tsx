@@ -91,6 +91,7 @@ export default function SortDropdown({ selectedOption, onOptionSelect }: SortDro
         <div className="relative" ref={dropdownRef}>
             {/* Dropdown button - same for both mobile and desktop */}
             <button
+                aria-label="Show sort fields"
                 onClick={toggleDropdown}
                 className="flex items-center justify-between border px-8 py-2 rounded-md min-w-[180px]"
             >

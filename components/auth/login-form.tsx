@@ -225,6 +225,7 @@ export function LoginForm() {
                             />
                             <button
                                 type="button"
+                                aria-label="Show or hide password"
                                 onClick={() => setShowPassword(!showPassword)}
                                 className="absolute right-0 top-3 text-gray-500"
                             >
@@ -255,6 +256,7 @@ export function LoginForm() {
 
                     <button
                         type="submit"
+                        aria-label="Login"
                         className="w-full mt-4 p-4 mb-4 flex items-center justify-center bg-[#414042] text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in cursor-pointer"
                         disabled={!isLoginValid}
                     >
@@ -339,6 +341,7 @@ export function LoginForm() {
                             />
                             <button
                                 type="button"
+                                aria-label="Show or hide password"
                                 onClick={() => setShowCreatePassword(!showCreatePassword)}
                                 className="absolute right-0 top-3 text-gray-400"
                             >
@@ -365,6 +368,7 @@ export function LoginForm() {
                             />
                             <button
                                 type="button"
+                                aria-label="Show or hide password"
                                 onClick={() => setShowRepeatPassword(!showRepeatPassword)}
                                 className="absolute right-0 top-3 text-gray-400"
                             >
@@ -378,6 +382,7 @@ export function LoginForm() {
 
                     <button
                         type="submit"
+                        aria-label="Create"
                         className="w-full mt-4 p-4 mb-4 flex items-center justify-center bg-[#414042] text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in cursor-pointer"
                         disabled={!isRegisterValid}
                     >

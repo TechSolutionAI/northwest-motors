@@ -33,6 +33,7 @@ export default function WishlistItem({ vehicle, onRemove }: WishlistItemProps) {
                     className="w-full h-64 object-cover"
                 />
                 <Button
+                    aria-label="Remove from wishlist"
                     className="absolute bottom-2 right-2 bg-[#8E6F00] text-white hover:bg-[#6b5300]"
                     onClick={handleRemoveFromWishlist}
                 >

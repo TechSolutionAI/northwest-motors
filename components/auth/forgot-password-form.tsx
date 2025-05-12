@@ -97,6 +97,7 @@ export function ForgotPasswordForm() {
 
                 <button
                     type="submit"
+                    aria-label="Submit"
                     className="w-full mt-4 p-4 mb-4 flex items-center justify-center bg-[#414042] text-white hover:bg-[#8E6F00] transition-colors duration-300 ease-in cursor-pointer" disabled={!isValid && touched}
                 >
                     Send Reset Link <ArrowRight className="ml-2 h-4 w-4" />

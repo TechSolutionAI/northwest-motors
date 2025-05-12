@@ -307,6 +307,7 @@ export default function EnquireForm({ vehicle }: EnquireFormProps) {
                 <div>
                     <button
                         type="submit"
+                        aria-label="Submit"
                         className="w-full lg:w-1/2 inline-flex items-center justify-center p-4 bg-[#414042]  text-white hover:bg-[#8E6F00] transition-colors duration-300"
                     >
                         <span className="mr-2">SUBMIT</span>

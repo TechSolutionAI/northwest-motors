@@ -64,6 +64,7 @@ export default function ServiceAccordion() {
                     {accordionItems.map((item) => (
                         <div key={item.id} className="border-b border-gray-200">
                             <button
+                                aria-label="Show content"
                                 className="py-6 w-full flex items-center justify-between text-left"
                                 onClick={() => toggleItem(item.id)}
                                 aria-expanded={openItem === item.id}

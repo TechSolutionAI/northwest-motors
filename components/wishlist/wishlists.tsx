@@ -111,6 +111,7 @@ export default function Wishlists() {
                     {totalPages > 1 && (
                         <div className="flex justify-center items-center gap-2 mb-16">
                             <Button
+                                aria-label="Previous"
                                 variant="outline"
                                 size="icon"
                                 onClick={handlePrevPage}
@@ -121,6 +122,7 @@ export default function Wishlists() {
                             </Button>
                             <span className="px-4 py-2">{currentPage}</span>
                             <Button
+                                aria-label="Next"
                                 variant="outline"
                                 size="icon"
                                 onClick={handleNextPage}

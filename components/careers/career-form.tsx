@@ -407,6 +407,7 @@ export default function CareerForm() {
                         </div>
                         <button
                             type="button"
+                            aria-label="Upload resume"
                             onClick={triggerResumeUpload}
                             className={`bg-white px-4 py-2 w-full ${(touched.resume && !resumeFile) || Object.keys(resumeError).length > 0 ? "border-red-500 border" : ""
                                 }`}
@@ -435,6 +436,7 @@ export default function CareerForm() {
                                     </div>
                                     <button
                                         type="button"
+                                        aria-label="Remove resume"
                                         onClick={removeResumeFile}
                                         className="text-gray-500 hover:text-gray-700 text-sm ml-2"
                                     >
@@ -467,6 +469,7 @@ export default function CareerForm() {
                         </div>
                         <button
                             type="button"
+                            aria-label="Upload cover letter"
                             onClick={triggerCoverLetterUpload}
                             className={`bg-white px-4 py-2 w-full ${(touched.coverLetter && !coverLetterFile) || Object.keys(coverLetterError).length > 0
                                 ? "border-red-500 border"
@@ -496,6 +499,7 @@ export default function CareerForm() {
                                         <p className="text-sm truncate max-w-[200px]">{coverLetterFile.name}</p>
                                     </div>
                                     <button
+                                        aria-label="Remove cover letter"
                                         type="button"
                                         onClick={removeCoverLetterFile}
                                         className="text-gray-500 hover:text-gray-700 text-sm ml-2"
@@ -525,6 +529,7 @@ export default function CareerForm() {
                 <div>
                     <button
                         type="submit"
+                        aria-label="Submit"
                         className={`w-full lg:w-1/2 inline-flex items-center justify-center p-4  bg-[#414042] hover:bg-[#8E6F00] text-white transition-colors duration-300`}
                     >
                         <span className="mr-2">SUBMIT</span>

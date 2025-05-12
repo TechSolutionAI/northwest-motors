@@ -71,6 +71,7 @@ export function MobileCategory({ category, onClicked }: CategoryProps) {
         <div className="relative" ref={dropdownRef}>
             {/* Dropdown header */}
             <button
+                aria-label="Toggle"
                 onClick={toggleDropdown}
                 className="flex items-center justify-between w-full px-4 py-3 bg-white border border-gray-200 rounded-md focus:outline-none"
             >
@@ -84,6 +85,7 @@ export function MobileCategory({ category, onClicked }: CategoryProps) {
                     <div className="py-1">
                         {lifestyleOptions.map((cat) => (
                             <button
+                                aria-label={cat.label}
                                 key={cat.value}
                                 onClick={() => handleCategorySelect(cat)}
                                 className={`block w-full text-left px-4 py-2 hover:bg-gray-100 ${cat.value === category.value ? "font-medium text-dark" : "text-gray-700"
@@ -249,6 +251,7 @@ export function ChooseLifeStyle() {
                 <div className="mr-4">{slideIndex + 1} | 5</div>
                 <div className="flex space-x-2">
                     <button
+                        aria-label="Previous"
                         className="px-4  py-2 border rounded-md group border-[#414042] hover:bg-[#414042] transition-colors ease-in duration-450"
                         onClick={() => {
                             handlePrevSlide();
@@ -257,6 +260,7 @@ export function ChooseLifeStyle() {
                         <MoveLeft className="h-8 w-8 group-hover:text-white" />
                     </button>
                     <button
+                        aria-label="Next"
                         className="px-4 py-2 border rounded-md group border-[#414042] hover:bg-[#414042] transition-colors ease-in duration-450"
                         onClick={() => {
                             handleNextSlide();

@@ -84,6 +84,7 @@ export function ChangePasswordForm() {
                             />
                             <button
                                 type="button"
+                                aria-label="Show or hide password"
                                 onClick={() => setShowCurrentPassword(!showCurrentPassword)}
                                 className="absolute right-2 top-2 text-gray-400"
                             >
@@ -105,6 +106,7 @@ export function ChangePasswordForm() {
                             />
                             <button
                                 type="button"
+                                aria-label="Show or hide password"
                                 onClick={() => setShowNewPassword(!showNewPassword)}
                                 className="absolute right-2 top-2 text-gray-400"
                             >
@@ -126,6 +128,7 @@ export function ChangePasswordForm() {
                             />
                             <button
                                 type="button"
+                                aria-label="Show or hide password"
                                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                                 className="absolute right-2 top-2 text-gray-400"
                             >
@@ -138,6 +141,7 @@ export function ChangePasswordForm() {
                     <div>
                         <button
                             type="submit"
+                            aria-label="Submit"
                             className="bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-700 transition-colors"
                         >
                             Update Password

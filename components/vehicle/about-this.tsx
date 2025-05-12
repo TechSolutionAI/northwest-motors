@@ -102,7 +102,7 @@ export default function AboutThis({ vehicle }: AboutThisPros) {
                         </p>
                     )}
                 </div>
-                <button className="text-[#8E6F00] font-medium flex items-center" onClick={() => setIsExpanded(!isExpanded)}>
+                <button aria-label={isExpanded ? "Show Less" : "Show More"} className="text-[#8E6F00] font-medium flex items-center" onClick={() => setIsExpanded(!isExpanded)}>
                     {isExpanded ? "Show Less" : "Show More"}
                 </button>
             </div>

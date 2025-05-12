@@ -65,9 +65,9 @@ export function Header() {
           <div className="w-[1px] h-8 bg-dark"></div>
 
           <div className="relative group" ref={servicesRef}>
-            <button className="flex items-center hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
+            <div className="flex items-center hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00] cursor-pointer">
               Services <ChevronDown className="ml-1 h-4 w-4" />
-            </button>
+            </div>
 
             {/* Invisible area to prevent gap between button and dropdown */}
             <div className="absolute -bottom-2 left-0 h-2 w-full"></div>
@@ -83,9 +83,9 @@ export function Header() {
           </div>
 
           <div className="relative group" ref={aboutRef}>
-            <button className="flex items-center hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
+            <div className="flex items-center hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00] cursor-pointer">
               About <ChevronDown className="ml-1 h-4 w-4" />
-            </button>
+            </div>
 
             {/* Invisible area to prevent gap between button and dropdown */}
             <div className="absolute -bottom-2 left-0 h-2 w-full"></div>

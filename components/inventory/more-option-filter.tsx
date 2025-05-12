@@ -31,6 +31,7 @@ export default function MoreOptionsFilter() {
         <div className="mb-6">
             {/* More Options header */}
             <button
+                aria-label="Show more filters"
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="flex items-center justify-between w-full py-2 mb-4"
             >

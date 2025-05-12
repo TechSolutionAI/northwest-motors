@@ -68,6 +68,7 @@ export function MobileNav() {
             <li>
               <div className="">
                 <button
+                  aria-label="Toogle services"
                   onClick={toggleServices}
                   className="flex items-center justify-between w-full py-2 hover:text-[#8E6F00]"
                 >
@@ -89,6 +90,7 @@ export function MobileNav() {
             <li>
               <div className="">
                 <button
+                  aria-label="Toogle about"
                   onClick={toggleAbout}
                   className="flex items-center justify-between w-full py-2 hover:text-[#8E6F00]"
                 >

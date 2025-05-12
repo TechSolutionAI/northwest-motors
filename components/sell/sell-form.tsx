@@ -1154,7 +1154,7 @@ export function SellForm() {
                             multiple
                             onChange={handlePhotoUpload}
                         />
-                        <Button variant="outline" onClick={() => document.getElementById("photo-upload")?.click()} className="mt-2">
+                        <Button aria-label="Select files" variant="outline" onClick={() => document.getElementById("photo-upload")?.click()} className="mt-2">
                             Select Files
                         </Button>
                         {formErrors.photos && <p className="text-red-500 text-xs mt-2">{formErrors.photos}</p>}
@@ -1193,6 +1193,7 @@ export function SellForm() {
                         Continue <MoveRight className="ml-2 h-4 w-4" />
                     </Button>
                     <Button
+                        aria-label="Skip photos"
                         variant="outline"
                         onClick={() => {
                             setFormErrors((prev) => ({ ...prev, photos: undefined }))
@@ -1313,7 +1314,7 @@ export function SellForm() {
                     />
                 </div>
 
-                <Button onClick={handleContinue} className="w-full md:w-auto hover:text-white hover:bg-[#8E6F00]">
+                <Button aria-label="Submit" onClick={handleContinue} className="w-full md:w-auto hover:text-white hover:bg-[#8E6F00]">
                     Submit
                 </Button>
 
@@ -1345,6 +1346,7 @@ export function SellForm() {
                 {currentStep > 1 && !isSubmitted && (
                     <div className="p-6 border-b border-border">
                         <Button
+                            aria-label="Start over"
                             variant="outline"
                             onClick={resetAllFields}
                             className="flex items-center hover:text-white hover:bg-[#8E6F00]"
@@ -1361,6 +1363,7 @@ export function SellForm() {
                         <h3 className="text-xl font-medium text-green-600 mb-4">Thank You For Your Submission!</h3>
                         <p className="text-gray-700mb-6">We've received your vehicle information and will be in touch shortly.</p>
                         <Button
+                            aria-label="Submit another vehicle"
                             onClick={() => {
                                 resetAllFields()
                                 setIsSubmitted(false)
@@ -1564,6 +1567,7 @@ export function SellForm() {
                                     )}
 
                                     <Button
+                                        aria-label="Continue"
                                         onClick={handleContinue}
                                         className="w-full md:w-auto hover:text-white hover:bg-[#8E6F00]"
                                         disabled={!isFormValid()}
@@ -1597,7 +1601,7 @@ export function SellForm() {
                                     <div className="w-full border-b border-border mt-4 mb-6"></div>
                                     {renderHistoryConditionForm()}
                                     <div className="mt-6">
-                                        <Button onClick={handleContinue} className="w-full md:w-auto hover:text-white hover:bg-[#8E6F00]">
+                                        <Button aria-label="Continue" onClick={handleContinue} className="w-full md:w-auto hover:text-white hover:bg-[#8E6F00]">
                                             Continue <MoveRight className="ml-2 h-4 w-4" />
                                         </Button>
                                     </div>

@@ -65,6 +65,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
             </span>
           ) : (
             <button
+              aria-label={`Go to page ${page}`}
               key={`page-${page}`}
               onClick={() => typeof page === "number" && onPageChange(page)}
               className={`w-6 h-6 lg:w-8 lg:h-8 flex items-center justify-center rounded-md ${currentPage === page ? "bg-dark text-white" : "text-gray-700 hover:bg-gray-100"

@@ -15,10 +15,10 @@ export default function LocationNavInfo({ index, tabClicked }: LocationNavInfoPr
         <div className="px-10">
             {/** States tab */}
             <div id="location-tab" className="flex justify-center items-center border-y pt-4">
-                <button className={`w-full flex justify-center py-4 text-2xl border-b-4 border-b-[#8E6F00]${index == 0 ? "" : "border-none"}`} onClick={() => { handleTabClick(0) }}>Adelaide</button>
-                <button className={`w-full flex justify-center py-4 text-2xl border-b-4 border-b-[#8E6F00]${index == 1 ? "" : "border-none"}`} onClick={() => { handleTabClick(1) }}>Sydeny </button>
-                <button className={`w-full flex justify-center py-4 text-2xl border-b-4 border-b-[#8E6F00]${index == 2 ? "" : "border-none"}`} onClick={() => { handleTabClick(2) }}>Brisbane</button>
-                <button className={`w-full flex justify-center py-4 text-2xl border-b-4 border-b-[#8E6F00]${index == 3 ? "" : "border-none"}`} onClick={() => { handleTabClick(3) }}>Melbourne</button>
+                <button className={`w-full flex justify-center py-4 text-2xl border-b-4 border-b-[#8E6F00]${index == 0 ? "" : "border-none"}`} onClick={() => { handleTabClick(0) }} aria-label="Go to Adelaide">Adelaide</button>
+                <button className={`w-full flex justify-center py-4 text-2xl border-b-4 border-b-[#8E6F00]${index == 1 ? "" : "border-none"}`} onClick={() => { handleTabClick(1) }} aria-label="Go to Sydeny">Sydeny </button>
+                <button className={`w-full flex justify-center py-4 text-2xl border-b-4 border-b-[#8E6F00]${index == 2 ? "" : "border-none"}`} onClick={() => { handleTabClick(2) }} aria-label="Go to Brisbane">Brisbane</button>
+                <button className={`w-full flex justify-center py-4 text-2xl border-b-4 border-b-[#8E6F00]${index == 3 ? "" : "border-none"}`} onClick={() => { handleTabClick(3) }} aria-label="Go to Melbourne">Melbourne</button>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 py-16 gap-1 lg:gap-4 px-8">

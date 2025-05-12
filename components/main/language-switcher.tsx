@@ -22,7 +22,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
 
   if (!mounted) {
     return (
-      <Button variant="outline" size="icon" className={cn("h-9 w-9 rounded-full", className)}>
+      <Button aria-label="Switch language" variant="outline" size="icon" className={cn("h-9 w-9 rounded-full", className)}>
         <Globe className="h-[1.2rem] w-[1.2rem]" />
         <span className="sr-only">Switch language</span>
       </Button>
@@ -32,7 +32,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className={cn("h-9 w-9 rounded-full", className)}>
+        <Button aria-label="Switch language" variant="outline" size="icon" className={cn("h-9 w-9 rounded-full", className)}>
           <Globe className="h-[1.2rem] w-[1.2rem]" />
           <span className="sr-only">Switch language</span>
         </Button>

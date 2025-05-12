@@ -110,11 +110,11 @@ export default function VehicleInfo({ vehicle }: VehicleInfoProps) {
 
                 </div>
                 <div className="flex flex-row justify-between mt-1">
-                    <button className="flex items-center text-gray-600 mt-2">
+                    <button aria-label="Share the vehicle" className="flex items-center text-gray-600 mt-2">
                         <Share className="h-4 w-4 mr-2" />
                         <span className="underline underline-offset-2">Share this vehicle</span>
                     </button>
-                    <button className="flex items-center text-gray-600 mt-2">
+                    <button aria-label="Show VIN" className="flex items-center text-gray-600 mt-2">
                         <span className="underline underline-offset-2">Show VIN</span>
                     </button>
 

@@ -70,7 +70,7 @@ export default function Home() {
                 </div>
 
                 <div className="mt-8">
-                  <Button className="w-full h-16 bg-[#404241] hover:bg-[#8E6F00]  text-white">
+                  <Button className="w-full h-16 bg-[#404241] hover:bg-[#8E6F00]  text-white" aria-label="VIEW ALL">
                     VIEW ALL
                     <MoveRight className="h-4 w-4 ml-4" />
                   </Button>

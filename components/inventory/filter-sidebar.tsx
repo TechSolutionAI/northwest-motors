@@ -53,8 +53,8 @@ export default function FilterSidebar({ showMobileFilters, toggleMobileFilters }
           </h1>
 
           <div className="grid grid-cols-2 gap-2">
-            <button className="bg-gray-300 px-3 py-2">Save My Search</button>
-            <button className="bg-gray-300 px-3 py-2">My Searches</button>
+            <button className="bg-gray-300 px-3 py-2" aria-label="Save my search">Save My Search</button>
+            <button className="bg-gray-300 px-3 py-2" aria-label="My searches">My Searches</button>
           </div>
 
           <div className="relative my-8">
@@ -270,7 +270,7 @@ export default function FilterSidebar({ showMobileFilters, toggleMobileFilters }
             <MoreOptionsFilter />
           </div>
           <div className="mt-6">
-            <button onClick={toggleMobileFilters} className="w-full bg-dark text-white py-3 rounded-md">
+            <button onClick={toggleMobileFilters} aria-label="View all filters" className="w-full bg-dark text-white py-3 rounded-md">
               VIEW ALL
             </button>
           </div>

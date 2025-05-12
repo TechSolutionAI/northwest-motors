@@ -23,7 +23,7 @@ export default function EnquireInfo({ vehicle }: EnquireInfoProps) {
             <div className="border mt-8"></div>
             <div className="flex justify-between">
                 <p className="text-xl mt-4 text-[#8E6F00]">FINANCE ESTIMATES</p>
-                <button className="flex items-center text-gray-600 mt-2">
+                <button className="flex items-center text-gray-600 mt-2" aria-label="DISCLAIMER">
                     <span className="">DISCLAIMER</span>
                     <MoveUpRight className="h-4 w-4 ml-2" />
                 </button>            </div>
@@ -54,7 +54,7 @@ export default function EnquireInfo({ vehicle }: EnquireInfoProps) {
                     VIEW <MoveRight className="ml-2 h-6 w-6" />
                 </Link>
             </div>
-            <button className="flex items-center text-gray-600 mt-2">
+            <button className="flex items-center text-gray-600 mt-2" aria-label="Share the vehicle">
                 <Share className="h-4 w-4 mr-2" />
                 <span className="underline underline-offset-2">Share this vehicle</span>
             </button>

@@ -158,6 +158,7 @@ export default function LoanCalculator({ vehicle = null, onCalcLoan = () => { } 
                         <h3 className="text-2xl font-bold mb-4">Frequency</h3>
                         <div className="grid grid-cols-3 gap-1 bg-gray-100 p-1 rounded-md">
                             <button
+                                aria-label="Choose weekly"
                                 className={`py-2 rounded-sm ${frequency === "weekly" ? "bg-white shadow-sm" : "text-gray-700"
                                     }`}
                                 onClick={() => setFrequency("weekly")}
@@ -165,6 +166,7 @@ export default function LoanCalculator({ vehicle = null, onCalcLoan = () => { } 
                                 Weekly
                             </button>
                             <button
+                                aria-label="Choose fortnightly"
                                 className={`py-2 rounded-sm ${frequency === "fortnightly" ? "bg-white shadow-sm" : "text-gray-700"
                                     }`}
                                 onClick={() => setFrequency("fortnightly")}
@@ -172,6 +174,7 @@ export default function LoanCalculator({ vehicle = null, onCalcLoan = () => { } 
                                 Fortnightly
                             </button>
                             <button
+                                aria-label="Choose monthly"
                                 className={`py-2 rounded-sm ${frequency === "monthly" ? "bg-white shadow-sm" : "text-gray-700"
                                     }`}
                                 onClick={() => setFrequency("monthly")}

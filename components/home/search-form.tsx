@@ -72,7 +72,7 @@ export function SearchForm({ simplified = false }: SearchFormProps) {
       </div>
 
       <div className="space-y-2">
-        <Button type="submit" className="w-full h-16 text-base flex items-center justify-center bg-[#414042] hover:bg-[#8E6F00] transition-colors duration-300 ease-in">
+        <Button aria-label="Submit" type="submit" className="w-full h-16 text-base flex items-center justify-center bg-[#414042] hover:bg-[#8E6F00] transition-colors duration-300 ease-in">
           <span>{"Show me 100 Cars"}</span>
           <MoveRight className="h-10 w-10" />
         </Button>
