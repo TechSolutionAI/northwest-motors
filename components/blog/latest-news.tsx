@@ -1,9 +1,10 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { MoveLeft, MoveRight } from 'lucide-react'
+import { MoveLeft, MoveRight } from "lucide-react"
 import type { BlogPost } from "@/lib/blog-data"
 import { BlogCard } from "./blog-card"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 interface LatestNewsProps {
     posts: BlogPost[]
@@ -14,15 +15,20 @@ export function LatestNews({ posts }: LatestNewsProps) {
     const [cardWidth, setCardWidth] = useState(0)
     const containerRef = useRef<HTMLDivElement>(null)
     const cardsContainerRef = useRef<HTMLDivElement>(null)
+    const isMobile = useIsMobile()
+
+    // Number of posts to show based on screen size
+    const visiblePosts = isMobile ? 1 : 3
 
     // Calculate card width on mount and resize
     useEffect(() => {
         const calculateCardWidth = () => {
             if (containerRef.current) {
-                // Calculate the width of one card (container width / 3)
+                // Calculate the width of one card based on visible posts
                 const containerWidth = containerRef.current.offsetWidth
                 const gap = 24 // 1.5rem = 24px (gap-6)
-                const width = (containerWidth - (2 * gap)) / 3
+                const totalGaps = visiblePosts - 1
+                const width = (containerWidth - totalGaps * gap) / visiblePosts
                 setCardWidth(width)
             }
         }
@@ -30,18 +36,23 @@ export function LatestNews({ posts }: LatestNewsProps) {
         calculateCardWidth()
         window.addEventListener("resize", calculateCardWidth)
         return () => window.removeEventListener("resize", calculateCardWidth)
-    }, [])
+    }, [visiblePosts])
+
+    // Reset index when switching between mobile and desktop
+    useEffect(() => {
+        setCurrentIndex(0)
+    }, [isMobile])
 
     const handlePrevious = () => {
         setCurrentIndex((prev) => Math.max(0, prev - 1))
     }
 
     const handleNext = () => {
-        setCurrentIndex((prev) => Math.min(posts.length - 3, prev + 1))
+        setCurrentIndex((prev) => Math.min(posts.length - visiblePosts, prev + 1))
     }
 
     // Calculate progress percentage
-    const maxIndex = Math.max(0, posts.length - 3)
+    const maxIndex = Math.max(0, posts.length - visiblePosts)
     const progressPercentage = maxIndex > 0 ? (currentIndex / maxIndex) * 100 : 100
 
     return (
@@ -51,7 +62,7 @@ export function LatestNews({ posts }: LatestNewsProps) {
                 <h2 className="text-4xl font-medium">Latest News</h2>
             </div>
 
-            {/* Container with fixed width for exactly 3 cards */}
+            {/* Container with fixed width for cards */}
             <div ref={containerRef} className="relative overflow-hidden">
                 <div
                     ref={cardsContainerRef}
@@ -61,11 +72,7 @@ export function LatestNews({ posts }: LatestNewsProps) {
                     }}
                 >
                     {posts.map((post) => (
-                        <div
-                            key={post.id}
-                            className="flex-shrink-0"
-                            style={{ width: `${cardWidth}px` }}
-                        >
+                        <div key={post.id} className="flex-shrink-0" style={{ width: `${cardWidth}px` }}>
                             <BlogCard post={post} />
                         </div>
                     ))}
@@ -86,11 +93,11 @@ export function LatestNews({ posts }: LatestNewsProps) {
                     className="rounded-full border border-gray-300 p-2"
                     aria-label="Next"
                     onClick={handleNext}
-                    disabled={currentIndex >= posts.length - 3}
+                    disabled={currentIndex >= posts.length - visiblePosts}
                 >
                     <MoveRight
                         size={16}
-                        className={currentIndex >= posts.length - 3 ? "text-gray-300" : "text-black"}
+                        className={currentIndex >= posts.length - visiblePosts ? "text-gray-300" : "text-black"}
                     />
                 </button>
                 <div className="ml-6 h-1 flex-grow bg-gray-200">
