@@ -27,7 +27,7 @@ export function HeroCarousel() {
     },
     {
       id: 3,
-      image: "https://imagescdn.dealercarsearch.com/DealerImages/19018/saved/88a48cf5.webp",
+      image: "/northwest-motors.webp",
     },
   ]
 

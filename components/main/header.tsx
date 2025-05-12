@@ -54,7 +54,7 @@ export function Header() {
         <div className="lg:hidden"></div>
 
         {/* Desktop Navigation - only visible on large screens */}
-        <nav className="hidden lg:flex items-center justify-end space-x-4 text-black xl:text-lg">
+        <nav className={`hidden lg:flex items-center justify-end space-x-4 ${isHomePage && !scrolled ? "text-white" : "text-black"} xl:text-lg`}>
           <Link href="/inventory" className="hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
             Browse Vehicles
           </Link>
