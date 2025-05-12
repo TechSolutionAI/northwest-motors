@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, MessageCircleMore, Store } from "lucide-react"
 import { usePathname } from "next/navigation"
 import { MobileNav } from "./mobile-nav"
 import { Logo } from "./logo"
@@ -62,6 +62,8 @@ export function Header() {
             Sell your car
           </Link>
 
+          <div className="w-[1px] h-8 bg-dark"></div>
+
           <div className="relative group" ref={servicesRef}>
             <button className="flex items-center hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
               Services <ChevronDown className="ml-1 h-4 w-4" />
@@ -110,6 +112,24 @@ export function Header() {
           <Link href="/blog" className="hover:underline hover:underline-offset-8 hover:decoration-[#8E6F00]">
             Blog
           </Link>
+
+          <div className="w-[1px] h-8 bg-dark"></div>
+
+          <Link
+            href="tel:+1300341911"
+            className="flex items-center justify-center">
+            <MessageCircleMore className="h-5 w-5 mr-1" />
+            <span>Call</span>
+          </Link>
+
+          <div className="w-[1px] h-8 bg-dark"></div>
+
+          <Link
+            href="/wishlist"
+            className="flex items-center justify-center">
+            <Store className="" />
+          </Link>
+
         </nav>
 
         {/* Mobile Navigation */}
