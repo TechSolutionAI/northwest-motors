@@ -343,7 +343,7 @@ export function LoginForm() {
                                 type="button"
                                 aria-label="Show or hide password"
                                 onClick={() => setShowCreatePassword(!showCreatePassword)}
-                                className="absolute right-0 top-3 text-gray-400"
+                                className="absolute right-0 top-3 text-gray-700"
                             >
                                 {showCreatePassword ? <EyeOff size={18} /> : <Eye size={18} />}
                             </button>
@@ -370,7 +370,7 @@ export function LoginForm() {
                                 type="button"
                                 aria-label="Show or hide password"
                                 onClick={() => setShowRepeatPassword(!showRepeatPassword)}
-                                className="absolute right-0 top-3 text-gray-400"
+                                className="absolute right-0 top-3 text-gray-700"
                             >
                                 {showRepeatPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                             </button>

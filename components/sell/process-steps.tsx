@@ -84,11 +84,11 @@ export default function ProcessSteps() {
                             <div key={step.number} className="process-step px-16 mb-12 pb-12 transition-opacity duration-300 opacity-50">
                                 <div className="flex items-center mb-8">
                                     <div className="h-[1px] flex-grow bg-gray-700"></div>
-                                    <span className="text-4xl font-bold px-4 text-gray-400">{step.number}</span>
+                                    <span className="text-4xl font-bold px-4 text-gray-700">{step.number}</span>
                                 </div>
 
                                 <h3 className="text-2xl font-bold mb-6">{step.title}</h3>
-                                <p className="text-gray-300">{step.description}</p>
+                                <p className="text-gray-700">{step.description}</p>
                             </div>
                         ))}
                     </div>

@@ -51,7 +51,7 @@ export function EnquiryHistoryContent() {
 
                 {enquiries.length === 0 ? (
                     <div className="text-center py-12 bg-gray-50 rounded-lg">
-                        <MessageSquare className="h-12 w-12 mx-auto text-gray-400 mb-4" />
+                        <MessageSquare className="h-12 w-12 mx-auto text-gray-700 mb-4" />
                         <h2 className="text-xl font-medium text-gray-600 mb-2">No enquiries yet</h2>
                         <p className="text-gray-700 mb-6">You haven't made any vehicle enquiries.</p>
                         <Link

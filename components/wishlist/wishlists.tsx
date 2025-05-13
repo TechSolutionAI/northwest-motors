@@ -136,7 +136,7 @@ export default function Wishlists() {
                 </>
             ) : (
                 <div className="text-center py-16 mb-8">
-                    <Heart className="h-16 w-16 mx-auto mb-4 text-gray-300" />
+                    <Heart className="h-16 w-16 mx-auto mb-4 text-gray-700" />
                     <h2 className="text-2xl font-medium mb-2">Your wishlist is empty</h2>
                     <p className="text-gray-700 mb-6">Browse our inventory and add vehicles to your wishlist</p>
                     <Link

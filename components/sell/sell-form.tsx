@@ -1142,7 +1142,7 @@ export function SellForm() {
 
                 <div className="mt-6 border border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50 ">
                     <div className="flex flex-col items-center justify-center">
-                        <Upload className="h-12 w-12 text-gray-400 mb-4" />
+                        <Upload className="h-12 w-12 text-gray-700 mb-4" />
                         <p className="text-sm text-gray-700 mb-4">
                             Drag and drop images or click here to select files. Non-image files will be discarded.
                         </p>
@@ -1414,19 +1414,19 @@ export function SellForm() {
                                         >
                                             <TabsList className="grid grid-cols-3 w-full p-0 max-w-md rounded-lg overflow-hidden border border-border [&>*]:px-0 bg-gray-100">
                                                 <TabsTrigger
-                                                    value="make-model"
+                                                    value="make-model" aria-label="Make and model"
                                                     className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 "
                                                 >
                                                     Make & Model
                                                 </TabsTrigger>
                                                 <TabsTrigger
-                                                    value="license-plate"
+                                                    value="license-plate" aria-label="License plate"
                                                     className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                                                 >
                                                     License Plate
                                                 </TabsTrigger>
                                                 <TabsTrigger
-                                                    value="vin"
+                                                    value="vin" aria-label="VIN"
                                                     className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                                                 >
                                                     VIN Number

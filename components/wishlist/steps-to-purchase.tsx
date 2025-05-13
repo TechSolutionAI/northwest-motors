@@ -10,7 +10,7 @@ export default function StepsToPurchase() {
                 <div className="text-center">
                     <div className="flex justify-center items-center pb-6">
                         <div className="border-t-4 border-gray-300 w-full mr-4 "></div>
-                        <h3 className="text-5xl font-light text-gray-400">01</h3>
+                        <h3 className="text-5xl font-light text-gray-700">01</h3>
                     </div>
                     <p className="text-gray-700">
                         Start your engine and speed on over; find your dream car within our extensive range of pre-owned vehicles.
@@ -21,7 +21,7 @@ export default function StepsToPurchase() {
                 <div className="text-center">
                     <div className="flex justify-center items-center pb-6">
                         <div className="border-t-4 border-gray-300 w-full mr-4 "></div>
-                        <h3 className="text-5xl font-light text-gray-400">02</h3>
+                        <h3 className="text-5xl font-light text-gray-700">02</h3>
                     </div>
                     <p className="text-gray-700">
                         Our helpful and passionate specialists are here to help you through any enquiries you have. We will help you
@@ -33,7 +33,7 @@ export default function StepsToPurchase() {
                 <div className="text-center">
                     <div className="flex justify-center items-center pb-6">
                         <div className="border-t-4 border-gray-300 w-full mr-4 "></div>
-                        <h3 className="text-5xl font-light text-gray-400">03</h3>
+                        <h3 className="text-5xl font-light text-gray-700">03</h3>
                     </div>
                     <p className="text-gray-700">You've found the ONE, now it's time to enjoy it. It's time to hit the road.</p>
                 </div>

@@ -31,7 +31,7 @@ export function DashboardContent() {
                             <LockKeyhole className="h-5 w-5 text-gray-700 mr-4" />
                             <span className="text-lg">Change my password</span>
                         </div>
-                        <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-gray-600 transition-colors" />
+                        <ArrowRight className="h-5 w-5 text-gray-700 group-hover:text-gray-600 transition-colors" />
                     </Link>
 
                     <Link
@@ -42,7 +42,7 @@ export function DashboardContent() {
                             <Search className="h-5 w-5 text-gray-700 mr-4" />
                             <span className="text-lg">Saved Searches</span>
                         </div>
-                        <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-gray-600 transition-colors" />
+                        <ArrowRight className="h-5 w-5 text-gray-700 group-hover:text-gray-600 transition-colors" />
                     </Link>
 
                     <Link
@@ -53,7 +53,7 @@ export function DashboardContent() {
                             <MessageSquare className="h-5 w-5 text-gray-700 mr-4" />
                             <span className="text-lg">Enquiry History</span>
                         </div>
-                        <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-gray-600 transition-colors" />
+                        <ArrowRight className="h-5 w-5 text-gray-700 group-hover:text-gray-600 transition-colors" />
                     </Link>
                 </div>
 
@@ -68,7 +68,7 @@ export function DashboardContent() {
                     </Link>
                 </div>
 
-                <div className="mt-16 text-right text-gray-400">
+                <div className="mt-16 text-right text-gray-700">
                     <p className="text-lg">info@duttonone.com.au</p>
                     <p className="text-3xl font-light">+1300 341 911</p>
                 </div>

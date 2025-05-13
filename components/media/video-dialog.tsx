@@ -35,7 +35,7 @@ export default function VideoDialog({ video, isOpen, onClose }: VideoDialogProps
                     ></iframe>
                 </div>
                 {video.description && (
-                    <div className="p-4 text-gray-300 text-sm">
+                    <div className="p-4 text-gray-700 text-sm">
                         <p>{video.description}</p>
                     </div>
                 )}

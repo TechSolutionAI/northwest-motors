@@ -49,7 +49,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
       <button
         onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className={`border rounded-md px-2 lg:px-4 py-1 lg:py-2 flex items-center justify-center ${currentPage === 1 ? "text-gray-400 cursor-not-allowed" : "text-gray-700 hover:bg-gray-100"
+        className={`border rounded-md px-2 lg:px-4 py-1 lg:py-2 flex items-center justify-center ${currentPage === 1 ? "text-gray-700 cursor-not-allowed" : "text-gray-700 hover:bg-gray-100"
           }`}
         aria-label="Previous page"
       >
@@ -88,7 +88,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
       <button
         onClick={() => currentPage < totalPages && onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className={`border rounded-md px-2 lg:px-4 py-1 lg:py-2 flex items-center justify-center ${currentPage === totalPages ? "text-gray-400 cursor-not-allowed" : "text-gray-700 hover:bg-gray-100"
+        className={`border rounded-md px-2 lg:px-4 py-1 lg:py-2 flex items-center justify-center ${currentPage === totalPages ? "text-gray-700 cursor-not-allowed" : "text-gray-700 hover:bg-gray-100"
           }`}
         aria-label="Next page"
       >

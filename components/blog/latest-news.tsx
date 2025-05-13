@@ -87,7 +87,7 @@ export function LatestNews({ posts }: LatestNewsProps) {
                     onClick={handlePrevious}
                     disabled={currentIndex === 0}
                 >
-                    <MoveLeft size={16} className={currentIndex === 0 ? "text-gray-300" : "text-black"} />
+                    <MoveLeft size={16} className={currentIndex === 0 ? "text-gray-700" : "text-black"} />
                 </button>
                 <button
                     className="rounded-full border border-gray-300 p-2"
@@ -97,7 +97,7 @@ export function LatestNews({ posts }: LatestNewsProps) {
                 >
                     <MoveRight
                         size={16}
-                        className={currentIndex >= posts.length - visiblePosts ? "text-gray-300" : "text-black"}
+                        className={currentIndex >= posts.length - visiblePosts ? "text-gray-700" : "text-black"}
                     />
                 </button>
                 <div className="ml-6 h-1 flex-grow bg-gray-200">

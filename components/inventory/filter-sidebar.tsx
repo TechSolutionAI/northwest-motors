@@ -59,7 +59,7 @@ export default function FilterSidebar({ showMobileFilters, toggleMobileFilters }
 
           <div className="relative my-8">
             <Input type="text" placeholder="Find your dream car now" className="w-full pr-10" />
-            <Search className="absolute right-3 top-2.5 h-5 w-5 text-gray-400" />
+            <Search className="absolute right-3 top-2.5 h-5 w-5 text-gray-700" />
           </div>
 
           {/* Filter dropdowns */}
@@ -174,7 +174,7 @@ export default function FilterSidebar({ showMobileFilters, toggleMobileFilters }
         <div className="space-y-4">
           <div className="relative my-8">
             <Input type="text" placeholder="Find your dream car now" className="w-full pr-10" />
-            <Search className="absolute right-3 top-2.5 h-5 w-5 text-gray-400" />
+            <Search className="absolute right-3 top-2.5 h-5 w-5 text-gray-700" />
           </div>
 
           {/* Filter dropdowns */}

@@ -86,7 +86,7 @@ export function ChangePasswordForm() {
                                 type="button"
                                 aria-label="Show or hide password"
                                 onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-                                className="absolute right-2 top-2 text-gray-400"
+                                className="absolute right-2 top-2 text-gray-700"
                             >
                                 {showCurrentPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                             </button>
@@ -108,7 +108,7 @@ export function ChangePasswordForm() {
                                 type="button"
                                 aria-label="Show or hide password"
                                 onClick={() => setShowNewPassword(!showNewPassword)}
-                                className="absolute right-2 top-2 text-gray-400"
+                                className="absolute right-2 top-2 text-gray-700"
                             >
                                 {showNewPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                             </button>
@@ -130,7 +130,7 @@ export function ChangePasswordForm() {
                                 type="button"
                                 aria-label="Show or hide password"
                                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                                className="absolute right-2 top-2 text-gray-400"
+                                className="absolute right-2 top-2 text-gray-700"
                             >
                                 {showConfirmPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                             </button>
