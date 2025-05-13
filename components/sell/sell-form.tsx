@@ -1399,7 +1399,7 @@ export function SellForm() {
                             {expandedSection === 1 && (
                                 <>
                                     {!shouldShowForm && (
-                                        <p className="mb-4 text-muted-foreground">
+                                        <p className="mb-4 text-gray-700">
                                             Get started by entering your Vehicle Identification Number (VIN), make and model, or your license
                                             plate.
                                         </p>

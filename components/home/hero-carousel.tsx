@@ -75,7 +75,10 @@ export function HeroCarousel() {
             fill
             className="object-cover"
             priority={index === 0}
-            sizes="100vw"
+            sizes="(max-width: 640px) 100vw,
+                  (max-width: 1024px) 50vw,
+                  (max-width: 1280px) 33vw,
+                  25vw"
             quality={80}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black/80" />
