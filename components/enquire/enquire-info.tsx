@@ -22,7 +22,7 @@ export default function EnquireInfo({ vehicle }: EnquireInfoProps) {
             </div>
             <div className="border mt-8"></div>
             <div className="flex justify-between">
-                <p className="text-xl mt-4 text-[#8E6F00]">FINANCE ESTIMATES</p>
+                <p className="text-xl mt-4 text-[#8E6F00] font-bold">FINANCE ESTIMATES</p>
                 <button className="flex items-center text-gray-600 mt-2" aria-label="DISCLAIMER">
                     <span className="">DISCLAIMER</span>
                     <MoveUpRight className="h-4 w-4 ml-2" />

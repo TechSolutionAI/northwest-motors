@@ -186,6 +186,11 @@ export default function EnquireForm({ vehicle }: EnquireFormProps) {
                 height={300}
                 className="object-cover"
                 priority
+                sizes="(max-width: 640px) 100vw,
+                  (max-width: 1024px) 50vw,
+                  (max-width: 1280px) 33vw,
+                  25vw"
+                quality={80}
             />
             <h1 className="mt-8 text-4xl font-krona text-gray-700">ENQUIRE NOW</h1>
             <p className="mt-8 text-gray-600">Enquire about this specific car today! Leave us a message and one of our specialists will get the wheels rolling for you!
@@ -233,6 +238,7 @@ export default function EnquireForm({ vehicle }: EnquireFormProps) {
                     </label>
                     <div className="phone-input-container">
                         <PhoneInput
+                            id="phone"
                             international
                             defaultCountry="US"
                             value={formData.phone}

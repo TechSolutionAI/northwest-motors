@@ -19,7 +19,7 @@ export function Footer() {
             <p className="text-sm">Your trusted source for quality vehicles.</p>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-bold">{"Quick Links"}</h3>
+            <p className="text-sm font-bold">{"Quick Links"}</p>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/" className="hover:text-gray-700">
@@ -49,7 +49,7 @@ export function Footer() {
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-bold">{"Contact"}</h3>
+            <p className="text-sm font-bold">{"Contact"}</p>
             <ul className="space-y-2 text-sm">
               <li>2459 S IL Route 83</li>
               <li>Mundelein, IL 60060</li>
@@ -58,7 +58,7 @@ export function Footer() {
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-bold">{"Hours"}</h3>
+            <p className="text-sm font-bold">{"Hours"}</p>
             <ul className="space-y-1 text-sm">
               {/* For simplicity, we'll use the direct values instead of translations for now */}
               {/* In a real app, you would update all language files with these new keys */}
