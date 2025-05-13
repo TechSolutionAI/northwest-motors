@@ -1414,19 +1414,19 @@ export function SellForm() {
                                         >
                                             <TabsList className="grid grid-cols-3 w-full p-0 max-w-md rounded-lg overflow-hidden border border-border [&>*]:px-0 bg-gray-100">
                                                 <TabsTrigger
-                                                    value="make-model" aria-label="Make and model"
+                                                    value="make-model"
                                                     className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700 "
                                                 >
                                                     Make & Model
                                                 </TabsTrigger>
                                                 <TabsTrigger
-                                                    value="license-plate" aria-label="License plate"
+                                                    value="license-plate"
                                                     className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                                                 >
                                                     License Plate
                                                 </TabsTrigger>
                                                 <TabsTrigger
-                                                    value="vin" aria-label="VIN"
+                                                    value="vin"
                                                     className="h-full data-[state=active]:bg-[#8E6F00] data-[state=active]:text-primary-foreground data-[state=inactive]:text-gray-700"
                                                 >
                                                     VIN Number

@@ -74,7 +74,16 @@ export default function ProcessSteps() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Left column - Fixed image */}
                     <div className="relative h-[600px] md::sticky md::top-20 self-start">
-                        <Image src="/white-luxury-suv.webp" alt="Luxury SUV" fill className="object-cover rounded-md:" />
+                        <Image
+                            src="/white-luxury-suv.webp"
+                            alt="Luxury SUV"
+                            fill
+                            className="object-cover rounded-md"
+                            sizes="(max-width: 640px) 100vw,
+                                (max-width: 1024px) 50vw,
+                                (max-width: 1280px) 33vw,
+                                25vw"
+                            quality={80} />
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-30"></div>
                     </div>
 
@@ -83,12 +92,12 @@ export default function ProcessSteps() {
                         {processSteps.map((step, index) => (
                             <div key={step.number} className="process-step px-16 mb-12 pb-12 transition-opacity duration-300 opacity-50">
                                 <div className="flex items-center mb-8">
-                                    <div className="h-[1px] flex-grow bg-gray-700"></div>
-                                    <span className="text-4xl font-bold px-4 text-gray-700">{step.number}</span>
+                                    <div className="h-[1px] flex-grow bg-gray-300"></div>
+                                    <span className="text-4xl font-bold px-4 text-gray-300">{step.number}</span>
                                 </div>
 
                                 <h3 className="text-2xl font-bold mb-6">{step.title}</h3>
-                                <p className="text-gray-700">{step.description}</p>
+                                <p className="text-gray-300">{step.description}</p>
                             </div>
                         ))}
                     </div>
