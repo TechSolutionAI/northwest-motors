@@ -531,7 +531,7 @@ export default function FormConcierge() {
                 {/* Step 3: Review Information */}
                 {currentStep === 3 && (
                     <div className="space-y-6">
-                        <h3 className="text-xl font-semibold">Review Your Information</h3>
+                        <p className="text-xl font-semibold">Review Your Information</p>
 
                         <div className="bg-gray-50 p-4 rounded-lg">
                             <h4 className="font-medium text-lg mb-3">Car Details</h4>

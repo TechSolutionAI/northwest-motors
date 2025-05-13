@@ -73,10 +73,10 @@ export const blogPosts: BlogPost[] = [
       
       <p>At RM Motors, we offer a curated selection of premium vehicles, including many from this list. Visit our showroom to experience these extraordinary machines in person.</p>
     `,
-    coverImage: "/blog/luxury-cars.webp",
+    coverImage: "/blog/luxury-cars.jpg",
     author: {
       name: "Michael Chen",
-      avatar: "/blog/authors/michael-chen.webp",
+      avatar: "/blog/authors/michael-chen.png",
     },
     category: "Car Reviews",
     tags: ["Luxury", "2023 Models", "Performance"],
@@ -163,10 +163,10 @@ export const blogPosts: BlogPost[] = [
       
       <p>At RM Motors, we offer a wide selection of new and pre-owned electric vehicles, and our EV specialists can help guide you through the process of finding the perfect electric vehicle for your needs.</p>
     `,
-    coverImage: "/blog/electric-vehicle.webp",
+    coverImage: "/blog/electric-vehicle.jpg",
     author: {
       name: "Sarah Johnson",
-      avatar: "/blog/authors/sarah-johnson.webp",
+      avatar: "/blog/authors/sarah-johnson.png",
     },
     category: "Buying Guide",
     tags: ["Electric Vehicles", "Buying Guide", "Sustainability"],
@@ -229,10 +229,10 @@ export const blogPosts: BlogPost[] = [
       
       <p>At RM Motors, our service department offers comprehensive maintenance packages tailored to your vehicle's specific needs. Contact us to schedule your next service appointment and keep your car running at its best.</p>
     `,
-    coverImage: "/blog/car-maintenance.webp",
+    coverImage: "/blog/car-maintenance.png",
     author: {
       name: "David Rodriguez",
-      avatar: "/blog/authors/david-rodriguez.webp",
+      avatar: "/blog/authors/david-rodriguez.png",
     },
     category: "Maintenance",
     tags: ["Maintenance", "Car Care", "DIY"],
@@ -358,10 +358,10 @@ export const blogPosts: BlogPost[] = [
       
       <p>At RM Motors, we offer vehicles with the latest driver assistance technologies, providing a glimpse into the autonomous future while enhancing safety and convenience today. Visit our showroom to experience these advanced systems firsthand.</p>
     `,
-    coverImage: "/blog/autonomous-driving.webp",
+    coverImage: "/blog/autonomous-driving.png",
     author: {
       name: "Dr. Emily Wong",
-      avatar: "/blog/authors/emily-wong.webp",
+      avatar: "/blog/authors/emily-wong.png",
     },
     category: "Industry News",
     tags: ["Autonomous Driving", "Technology", "Future Trends"],
@@ -477,10 +477,10 @@ export const blogPosts: BlogPost[] = [
       
       <p>At RM Motors, we occasionally offer investment-grade classics alongside our contemporary inventory. Our specialists can provide guidance on collecting and help you find vehicles with strong investment potential. Contact us to discuss your classic car investment goals.</p>
     `,
-    coverImage: "/blog/classic-cars.webp",
+    coverImage: "/blog/classic-cars.png",
     author: {
       name: "James Wilson",
-      avatar: "/blog/authors/james-wilson.webp",
+      avatar: "/blog/authors/james-wilson.png",
     },
     category: "Buying Guide",
     tags: ["Classic Cars", "Investment", "Collecting"],
@@ -660,10 +660,10 @@ export const blogPosts: BlogPost[] = [
       
       <p>At RM Motors, we offer a wide selection of family-friendly vehicles and our sales consultants are experienced in helping families find their ideal match. Visit our showroom to explore our family vehicle options and schedule test drives with the models that interest you most.</p>
     `,
-    coverImage: "/blog/family-car.webp",
+    coverImage: "/blog/family-car.jpg",
     author: {
       name: "Lisa Chen",
-      avatar: "/blog/authors/lisa-chen.webp",
+      avatar: "/blog/authors/lisa-chen.png",
     },
     category: "Buying Guide",
     tags: ["Family Cars", "SUVs", "Minivans", "Safety"],
@@ -798,10 +798,10 @@ export const blogPosts: BlogPost[] = [
       
       <p>At RM Motors, we offer winter vehicle inspections and maintenance services to help ensure your vehicle is ready for winter driving. Our service department can assist with winter tire installation, battery testing, and comprehensive winter preparation. Contact us to schedule your winter maintenance appointment.</p>
     `,
-    coverImage: "/blog/winter-driving.webp",
+    coverImage: "/blog/winter-driving.png",
     author: {
       name: "Robert Johnson",
-      avatar: "/blog/authors/robert-johnson.webp",
+      avatar: "/blog/authors/robert-johnson.png",
     },
     category: "Maintenance",
     tags: ["Winter Driving", "Safety", "Maintenance", "Driving Tips"],
@@ -1028,10 +1028,10 @@ export const blogPosts: BlogPost[] = [
       
       <p>For current and prospective EV owners, understanding these trends can help inform vehicle purchase decisions and charging strategies. At RM Motors, we offer a range of electric vehicles and can provide guidance on home charging solutions and public charging options in your area. Visit our showroom to explore our electric vehicle lineup and discuss your charging needs with our EV specialists.</p>
     `,
-    coverImage: "/blog/ev-charging.webp",
+    coverImage: "/blog/ev-charging.png",
     author: {
       name: "Dr. Emily Wong",
-      avatar: "/blog/authors/emily-wong.webp",
+      avatar: "/blog/authors/emily-wong.png",
     },
     category: "Industry News",
     tags: ["Electric Vehicles", "Charging Infrastructure", "Future Technology"],
@@ -1043,10 +1043,10 @@ export const blogPosts: BlogPost[] = [
 // Generate placeholder image URLs for blog posts that don't have real images
 for (const post of blogPosts) {
   if (post.coverImage.startsWith("/blog/")) {
-    post.coverImage = `/car-placeholder.webp`
+    post.coverImage = `/car-placeholder.png`
   }
   if (post.author.avatar.startsWith("/blog/")) {
-    post.author.avatar = `/user-placeholder.webp`
+    post.author.avatar = `/user-placeholder.png`
   }
 }
 

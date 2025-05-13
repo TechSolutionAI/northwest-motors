@@ -46,10 +46,10 @@ export default function VehicleCard({ vehicle, isInWishlist, onWishlistClick }: 
 
       <div className="p-4">
         <div className="flex items-baseline">
-          <h3 className="text-xl font-bold text-dark">
+          <p className="text-xl font-bold text-dark">
             {vehicle.make} <span className="text-[#8E6F00]">{vehicle.model}</span>{" "}
             <span className="text-gray-700 text-sm">{vehicle.year}</span>
-          </h3>
+          </p>
         </div>
         <p className="text-sm text-gray-700">{vehicle.trim}</p>
 
@@ -127,6 +127,6 @@ export default function VehicleCard({ vehicle, isInWishlist, onWishlistClick }: 
           </Link>
         </div>
       </div>
-    </div>
+    </div >
   )
 }

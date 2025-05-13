@@ -72,7 +72,7 @@ export default function ServiceAccordion() {
                             >
                                 <div className="flex items-center">
                                     <span className="text-[32px] mr-4 font-medium">{item.number}</span>
-                                    <h3 className="text-[32px] font-bold">{item.title}</h3>
+                                    <p className="text-[32px] font-bold">{item.title}</p>
                                 </div>
                                 <MoveDown
                                     className={`h-5 w-5 text-gray-700 transition-transform duration-200 ${openItem === item.id ? "transform rotate-180" : ""

@@ -155,7 +155,7 @@ export default function LoanCalculator({ vehicle = null, onCalcLoan = () => { } 
 
                 <div className="space-y-8 bg-white p-8 lg:p-8 ">
                     <div>
-                        <h3 className="text-2xl font-bold mb-4">Frequency</h3>
+                        <p className="text-2xl font-bold mb-4">Frequency</p>
                         <div className="grid grid-cols-3 gap-1 bg-gray-100 p-1 rounded-md">
                             <button
                                 aria-label="Choose weekly"
@@ -187,10 +187,11 @@ export default function LoanCalculator({ vehicle = null, onCalcLoan = () => { } 
                     {/* Loan Amount */}
                     <div className="mb-8">
                         <div className="flex items-center mb-2">
-                            <h3 className="text-2xl font-bold mr-2">Loan Amount</h3>
+                            <p className="text-2xl font-bold mr-2">Loan Amount</p>
                             <div className="flex items-center bg-gray-300 py-1">
-                                <span className="text-[#8E6F00] text-2xl font-bold pl-2">$</span>
+                                <label htmlFor="loan" className="text-[#8E6F00] text-2xl font-bold pl-2">$</label>
                                 <input
+                                    id="loan"
                                     type="number"
                                     value={loanAmount}
                                     onChange={handleLoanAmountInputChange}
@@ -230,7 +231,7 @@ export default function LoanCalculator({ vehicle = null, onCalcLoan = () => { } 
                         {/* Max Repayments */}
                         <div>
                             <div className="flex justify-between items-center">
-                                <h3 className="text-2xl font-bold">Max Repayments ($)</h3>
+                                <p className="text-2xl font-bold">Max Repayments ($)</p>
                                 <span className="text-gray-700 cursor-help" title="The maximum repayment amount based on your loan details">
                                     ⓘ
                                 </span>
@@ -242,7 +243,7 @@ export default function LoanCalculator({ vehicle = null, onCalcLoan = () => { } 
 
                         {/* Loan Terms */}
                         <div>
-                            <h3 className="text-2xl font-bold">Loan Terms</h3>
+                            <p className="text-2xl font-bold">Loan Terms</p>
                             <DropdownSelect
                                 options={loanYearOptions}
                                 value={loanTerm}
@@ -256,10 +257,11 @@ export default function LoanCalculator({ vehicle = null, onCalcLoan = () => { } 
                     {/* Interest Rate */}
                     <div>
                         <div className="flex items-center">
-                            <h3 className="text-2xl font-bold mr-2">Interest Rate</h3>
+                            <p className="text-2xl font-bold mr-2">Interest Rate</p>
                             <div className="flex items-center bg-gray-300 py-1">
-                                <span className="text-[#8E6F00] text-2xl font-bold pl-2">%</span>
+                                <label htmlFor="rate" className="text-[#8E6F00] text-2xl font-bold pl-2">%</label>
                                 <input
+                                    id="rate"
                                     type="text"
                                     value={interestRate}
                                     onChange={handleInterestRateInputChange}

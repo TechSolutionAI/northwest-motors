@@ -1360,7 +1360,7 @@ export function SellForm() {
                 {/* Submission confirmation */}
                 {isSubmitted && (
                     <div className="p-6 text-center">
-                        <h3 className="text-xl font-medium text-green-600 mb-4">Thank You For Your Submission!</h3>
+                        <p className="text-xl font-medium text-green-600 mb-4">Thank You For Your Submission!</p>
                         <p className="text-gray-700mb-6">We've received your vehicle information and will be in touch shortly.</p>
                         <Button
                             aria-label="Submit another vehicle"
@@ -1381,7 +1381,7 @@ export function SellForm() {
                         {/* Step 1: Vehicle Information */}
                         <div className={`border-b border-border ${expandedSection === 1 ? "p-6" : "p-0"}`}>
                             <div className={`flex justify-between items-center ${expandedSection !== 1 ? "p-6" : ""}`}>
-                                <h3 className="text-lg font-medium text-primary">Vehicle Information</h3>
+                                <p className="text-lg font-medium text-primary">Vehicle Information</p>
                                 <div className="flex items-center">
                                     {expandedSection !== 1 ? (
                                         <span
@@ -1581,7 +1581,7 @@ export function SellForm() {
                         {/* Step 2: History & Condition */}
                         <div className={`border-b border-border ${expandedSection === 2 ? "p-6" : "p-0"}`}>
                             <div className={`flex justify-between items-center ${expandedSection !== 2 ? "p-6" : ""}`}>
-                                <h3 className="text-lg font-medium text-primary">History & Condition</h3>
+                                <p className="text-lg font-medium text-primary">History & Condition</p>
                                 <div className="flex items-center">
                                     {expandedSection !== 2 && currentStep >= 2 ? (
                                         <span
@@ -1612,7 +1612,7 @@ export function SellForm() {
                         {/* Step 3: Photos (Optional) */}
                         <div className={`border-b border-border ${expandedSection === 3 ? "p-6" : "p-0"}`}>
                             <div className={`flex justify-between items-center ${expandedSection !== 3 ? "p-6" : ""}`}>
-                                <h3 className="text-lg font-medium text-primary">Photos (Optional)</h3>
+                                <p className="text-lg font-medium text-primary">Photos (Optional)</p>
                                 <div className="flex items-center">
                                     {expandedSection !== 3 && currentStep >= 3 ? (
                                         <span
@@ -1638,7 +1638,7 @@ export function SellForm() {
                         {/* Step 4: Contact Information */}
                         <div className={`${expandedSection === 4 ? "p-6" : "p-0"}`}>
                             <div className={`flex justify-between items-center ${expandedSection !== 4 ? "p-6" : ""}`}>
-                                <h3 className="text-lg font-medium text-primary">Contact Information</h3>
+                                <p className="text-lg font-medium text-primary">Contact Information</p>
                                 <div className="flex items-center">
                                     {expandedSection !== 4 && currentStep >= 4 ? (
                                         <span
@@ -1661,8 +1661,9 @@ export function SellForm() {
                             )}
                         </div>
                     </>
-                )}
-            </CardContent>
-        </Card>
+                )
+                }
+            </CardContent >
+        </Card >
     )
 }

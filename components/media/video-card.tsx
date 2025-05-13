@@ -21,7 +21,7 @@ export default function VideoCard({ video, onClick }: VideoCardProps) {
                     <PlayCircle className="w-12 h-12 text-white" />
                 </div>
             </div>
-            <h3 className="text-sm font-medium text-gray-200 group-hover:text-white transition-colors">{video.title}</h3>
+            <p className="text-sm font-medium text-gray-200 group-hover:text-white transition-colors">{video.title}</p>
         </div>
     )
 }

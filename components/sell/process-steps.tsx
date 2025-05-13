@@ -96,7 +96,7 @@ export default function ProcessSteps() {
                                     <span className="text-4xl font-bold px-4 text-gray-300">{step.number}</span>
                                 </div>
 
-                                <h3 className="text-2xl font-bold mb-6">{step.title}</h3>
+                                <p className="text-2xl font-bold mb-6">{step.title}</p>
                                 <p className="text-gray-300">{step.description}</p>
                             </div>
                         ))}

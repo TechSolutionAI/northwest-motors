@@ -5,7 +5,7 @@ import Image from "next/image"
 export default function HeroSection() {
     return (
         <section className="p-10">
-            <h1 className="text-3xl lg:text-4xl mt-4 text-gray-700">Concierge</h1>
+            <h1 className="text-3xl lg:text-4xl mt-4 text-white">Concierge</h1>
             <h2 className="text-4xl lg:text-4xl mt-8 text-white max-w-xl">
                 Can't find the ONE? Let our team help find it for you.
             </h2>
@@ -15,7 +15,7 @@ export default function HeroSection() {
                     <Image src="/finance.webp" alt="Car finance consultation" fill className="object-cover" />
                 </div>
 
-                <div className="flex flex-col col-span-2 lg:px-10 justify-center text-gray-700">
+                <div className="flex flex-col col-span-2 lg:px-10 justify-center text-gray-300">
                     <p className="mb-6">
                         Northwest Motors is a premium pre-owned car dealership that prides itself on offering an exceptional concierge service to its customers. The concierge service is a unique aspect of Northwest Motors that helps ensure all of our customers can find their dream car. If a customer is unable to find the prestige car they desire on our website, Northwest Motors's experienced and knowledgeable team of experts will work tirelessly to locate the perfect car for them within our extensive network.                    </p>
 

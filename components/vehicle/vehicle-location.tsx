@@ -14,7 +14,7 @@ export default function VehicleLocation({ vehicle }: VehicleLocationProps) {
             <div className="col-span-1 flex flex-col justify-center p-10 bg-white">
                 <h2 className="text-4xl mt-8">Location</h2>
                 <div className="my-4">
-                    <h3 className="text-lg font-bold text-[#8E6F00]">THIS VEHICLE IS LOCATED AT</h3>
+                    <p className="text-lg font-bold text-[#8E6F00]">THIS VEHICLE IS LOCATED AT</p>
                     <p className="text-xl font-bold">NorthWest Motors</p>
                 </div>
 

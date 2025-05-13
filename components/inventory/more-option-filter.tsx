@@ -35,7 +35,7 @@ export default function MoreOptionsFilter() {
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="flex items-center justify-between w-full py-2 mb-4"
             >
-                <h3 className="font-medium text-lg">More Options</h3>
+                <p className="font-medium text-lg">More Options</p>
                 {isExpanded ? (
                     <MoveUp className="h-4 w-4 text-gray-700" />
                 ) : (
@@ -44,116 +44,118 @@ export default function MoreOptionsFilter() {
             </button>
 
             {/* Collapsible content */}
-            {isExpanded && (
-                <div className="space-y-6">
-                    {/* Engine section */}
-                    <div>
-                        <h4 className="font-bold mb-4">Engine</h4>
-                        <div className="space-y-4">
-                            <DropdownMultiSelect
-                                title="Cylinder"
-                                options={cylinderOptions}
-                                selectedValues={selectedCylinders}
-                                onChange={setSelectedCylinders}
-                            />
+            {
+                isExpanded && (
+                    <div className="space-y-6">
+                        {/* Engine section */}
+                        <div>
+                            <h4 className="font-bold mb-4">Engine</h4>
+                            <div className="space-y-4">
+                                <DropdownMultiSelect
+                                    title="Cylinder"
+                                    options={cylinderOptions}
+                                    selectedValues={selectedCylinders}
+                                    onChange={setSelectedCylinders}
+                                />
 
-                            <DropdownMultiSelect
-                                title="Engine Size (cc)"
-                                options={engineSizeOptions}
-                                selectedValues={selectedEngineSizes}
-                                onChange={setSelectedEngineSizes}
-                            />
+                                <DropdownMultiSelect
+                                    title="Engine Size (cc)"
+                                    options={engineSizeOptions}
+                                    selectedValues={selectedEngineSizes}
+                                    onChange={setSelectedEngineSizes}
+                                />
 
-                            <DropdownMultiSelect
-                                title="Fuel Economy"
-                                options={fuelEconomyOptions}
-                                selectedValues={selectedFuelEconomy}
-                                onChange={setSelectedFuelEconomy}
-                            />
+                                <DropdownMultiSelect
+                                    title="Fuel Economy"
+                                    options={fuelEconomyOptions}
+                                    selectedValues={selectedFuelEconomy}
+                                    onChange={setSelectedFuelEconomy}
+                                />
 
-                            {/* Tow capacity */}
-                            <div>
-                                <label className="block text-sm font-medium mb-2">Tow (braked)</label>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="block text-xs mb-1">Min</label>
-                                        <DropdownSelect
-                                            options={towOptions}
-                                            value={minTow}
-                                            onChange={setMinTow}
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-xs mb-1">Max</label>
-                                        <DropdownSelect
-                                            options={towOptions}
-                                            value={maxTow}
-                                            onChange={setMaxTow}
-                                        />
+                                {/* Tow capacity */}
+                                <div>
+                                    <label className="block text-sm font-medium mb-2">Tow (braked)</label>
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label className="block text-xs mb-1">Min</label>
+                                            <DropdownSelect
+                                                options={towOptions}
+                                                value={minTow}
+                                                onChange={setMinTow}
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-xs mb-1">Max</label>
+                                            <DropdownSelect
+                                                options={towOptions}
+                                                value={maxTow}
+                                                onChange={setMaxTow}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            {/* Torque */}
-                            <div>
-                                <label className="block text-sm font-medium mb-2">Torque (Nm)</label>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="block text-xs mb-1">Min</label>
-                                        <DropdownSelect
-                                            options={torqueOptions}
-                                            value={minTorque}
-                                            onChange={setMinTorque}
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-xs mb-1">Max</label>
-                                        <DropdownSelect
-                                            options={torqueOptions}
-                                            value={maxTorque}
-                                            onChange={setMaxTorque}
-                                        />
+                                {/* Torque */}
+                                <div>
+                                    <label className="block text-sm font-medium mb-2">Torque (Nm)</label>
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label className="block text-xs mb-1">Min</label>
+                                            <DropdownSelect
+                                                options={torqueOptions}
+                                                value={minTorque}
+                                                onChange={setMinTorque}
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-xs mb-1">Max</label>
+                                            <DropdownSelect
+                                                options={torqueOptions}
+                                                value={maxTorque}
+                                                onChange={setMaxTorque}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    {/* Style section */}
-                    <div>
-                        <h4 className="font-bold mb-4">Style</h4>
-                        <div className="space-y-4">
-                            <DropdownMultiSelect
-                                title="Doors"
-                                options={doorsOptions}
-                                selectedValues={selectedDoors}
-                                onChange={setSelectedDoors}
-                            />
+                        {/* Style section */}
+                        <div>
+                            <h4 className="font-bold mb-4">Style</h4>
+                            <div className="space-y-4">
+                                <DropdownMultiSelect
+                                    title="Doors"
+                                    options={doorsOptions}
+                                    selectedValues={selectedDoors}
+                                    onChange={setSelectedDoors}
+                                />
 
-                            <DropdownMultiSelect
-                                title="Seats"
-                                options={seatsOptions}
-                                selectedValues={selectedSeats}
-                                onChange={setSelectedSeats}
-                            />
+                                <DropdownMultiSelect
+                                    title="Seats"
+                                    options={seatsOptions}
+                                    selectedValues={selectedSeats}
+                                    onChange={setSelectedSeats}
+                                />
 
-                            <DropdownMultiSelect
-                                title="Lifestyle"
-                                options={lifestyleOptions}
-                                selectedValues={selectedLifestyles}
-                                onChange={setSelectedLifestyles}
-                            />
+                                <DropdownMultiSelect
+                                    title="Lifestyle"
+                                    options={lifestyleOptions}
+                                    selectedValues={selectedLifestyles}
+                                    onChange={setSelectedLifestyles}
+                                />
 
-                            <DropdownMultiSelect
-                                title="Colour"
-                                options={colourOptions}
-                                selectedValues={selectedColours}
-                                onChange={setSelectedColours}
-                            />
+                                <DropdownMultiSelect
+                                    title="Colour"
+                                    options={colourOptions}
+                                    selectedValues={selectedColours}
+                                    onChange={setSelectedColours}
+                                />
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
-        </div>
+                )
+            }
+        </div >
     )
 }

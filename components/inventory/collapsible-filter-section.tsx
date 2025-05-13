@@ -21,7 +21,7 @@ export default function CollapsibleFilterSection({
     return (
         <div className="mb-6">
             <div className="flex items-center justify-between cursor-pointer py-2" onClick={() => setIsOpen(!isOpen)}>
-                <h3 className="font-bold">{title}</h3>
+                <p className="font-bold">{title}</p>
                 {isOpen ?
                     <MoveUp className="h-4 w-4 text-gray-700" /> :
                     <MoveDown className="h-4 w-4 text-gray-700" />}
@@ -30,6 +30,6 @@ export default function CollapsibleFilterSection({
             {isOpen && <div className="mt-3">{children}</div>}
 
             <div className="mt-4 border-t border-gray-200"></div>
-        </div>
+        </div >
     )
 }

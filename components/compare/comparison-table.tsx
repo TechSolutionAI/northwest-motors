@@ -75,7 +75,7 @@ export function ComparisonTable({ vehicleA, vehicleB }: ComparisonTableProps) {
 
             {specs.map((section, sectionIndex) => (
                 <div key={sectionIndex} className="mb-8">
-                    <h3 className="text-xl font-medium mb-4">{section.category}</h3>
+                    <p className="text-xl font-medium mb-4">{section.category}</p>
                     <div className="border border-gray-200">
                         <div className="grid grid-cols-3 bg-gray-100 p-4">
                             <div className="font-medium">Specification</div>

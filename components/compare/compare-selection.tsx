@@ -210,9 +210,9 @@ export function CompareSelection() {
                                     </button>
                                 </div>
                                 <div className="p-3">
-                                    <h3 className="font-medium">
+                                    <p className="font-medium">
                                         {vehicle.year} {vehicle.make} {vehicle.model}
-                                    </h3>
+                                    </p>
                                     <p className="text-sm text-gray-600">{vehicle.trim}</p>
                                 </div>
                             </div>
@@ -232,7 +232,7 @@ export function CompareSelection() {
                 </>
             ) : (
                 <div className="text-center py-12">
-                    <h3 className="text-xl font-medium mb-2">Your wishlist is empty</h3>
+                    <p className="text-xl font-medium mb-2">Your wishlist is empty</p>
                     <p className="text-gray-600 mb-6">Add vehicles to your wishlist to compare them.</p>
                     <Button asChild>
                         <Link href="/inventory">Browse Inventory</Link>

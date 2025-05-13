@@ -135,9 +135,9 @@ export function Card({ vehicles, index }: CardProps) {
                                     <div className="lg:col-span-4">
                                         <div className="h-full">
                                             <div className="flex items-baseline">
-                                                <h3 className="text-[28px] font-bold text-dark">
+                                                <p className="text-[28px] font-bold text-dark">
                                                     {vehicle.make} <span className="text-[#8E6F00]">{vehicle.model}</span>{" "}
-                                                </h3>
+                                                </p>
                                             </div>
 
                                             <p className="text-gray-700 mt-1">X253 GLC300 Wagon 5dr 9G-TRONIC 9sp 4MATIC 2.0T</p>

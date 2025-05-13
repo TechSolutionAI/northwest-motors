@@ -19,7 +19,7 @@ export function BlogCard({ post, featured = false }: BlogCardProps) {
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
             </div>
-            <h3 className="mt-3 text-lg font-medium">{post.title}</h3>
+            <p className="mt-3 text-lg font-medium">{post.title}</p>
             <p className="mt-1 text-sm text-gray-700">
                 {new Date(post.publishedAt).toLocaleDateString("en-US", {
                     day: "2-digit",
