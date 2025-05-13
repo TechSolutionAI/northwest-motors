@@ -23,7 +23,10 @@ export default function VehicleCard({ vehicle, isInWishlist, onWishlistClick }: 
             alt={`${vehicle.make} ${vehicle.model}`}
             fill
             className="object-cover"
-            sizes="100vw"
+            sizes="(max-width: 640px) 100vw,
+                  (max-width: 1024px) 50vw,
+                  (max-width: 1280px) 33vw,
+                  25vw"
             quality={80}
           />
         </Link>
