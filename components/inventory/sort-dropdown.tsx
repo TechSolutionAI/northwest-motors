@@ -144,7 +144,7 @@ export default function SortDropdown({ selectedOption, onOptionSelect }: SortDro
             >
                 {/* Mobile header */}
                 <div className="flex items-center justify-between p-4 border-b border-gray-200">
-                    <h3 className="font-bold text-3xl">Sort By</h3>
+                    <p className="font-bold text-3xl">Sort By</p>
                     <button onClick={() => setIsOpen(false)} className="p-1 rounded-full hover:bg-gray-100" aria-label="Close">
                         <X className="h-5 w-5" />
                     </button>
