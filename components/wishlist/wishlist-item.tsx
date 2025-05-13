@@ -31,6 +31,11 @@ export default function WishlistItem({ vehicle, onRemove }: WishlistItemProps) {
                     width={600}
                     height={400}
                     className="w-full h-64 object-cover"
+                    sizes="(max-width: 640px) 100vw,
+                        (max-width: 1024px) 50vw,
+                        (max-width: 1280px) 33vw,
+                        25vw"
+                    quality={80}
                 />
                 <Button
                     aria-label="Remove from wishlist"

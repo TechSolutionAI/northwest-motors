@@ -60,7 +60,18 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 </div>
 
                 <div className="relative mb-8 h-[400px] w-full overflow-hidden">
-                    <Image src={post.coverImage || "/car-placeholder.webp"} alt={post.title} fill className="object-cover" priority />
+                    <Image
+                        // src={post.coverImage || "/car-placeholder.webp"}
+                        src="/car-placeholder.webp"
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                        priority
+                        sizes="(max-width: 640px) 100vw,
+                        (max-width: 1024px) 50vw,
+                        (max-width: 1280px) 33vw,
+                        25vw"
+                        quality={80} />
                 </div>
 
                 <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
@@ -68,7 +79,8 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 <div className="mt-8 flex items-center border-t border-gray-200 pt-6">
                     <div className="relative h-12 w-12 overflow-hidden rounded-full">
                         <Image
-                            src={post.author.avatar || "/car-placeholder.webp"}
+                            // src={post.author.avatar || "/car-placeholder.webp"}
+                            src="/user-placeholder.webp"
                             alt={post.author.name}
                             fill
                             className="object-cover"
@@ -89,10 +101,16 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                             <Link href={`/blog/${relatedPost.slug}`} key={relatedPost.id} className="group block">
                                 <div className="relative h-48 w-full overflow-hidden">
                                     <Image
-                                        src={relatedPost.coverImage || "/car-placeholder.webp"}
+                                        // src={relatedPost.coverImage || "/car-placeholder.webp"}
+                                        src="/car-placeholder.webp"
                                         alt={relatedPost.title}
                                         fill
                                         className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                        sizes="(max-width: 640px) 100vw,
+                                        (max-width: 1024px) 50vw,
+                                        (max-width: 1280px) 33vw,
+                                        25vw"
+                                        quality={80}
                                     />
                                 </div>
                                 <p className="mt-3 text-lg font-medium">{relatedPost.title}</p>

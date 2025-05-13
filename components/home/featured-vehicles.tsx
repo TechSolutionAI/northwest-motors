@@ -108,6 +108,11 @@ export default function FeaturedVehicles() {
                       alt={`${vehicle.make} ${index + 1}`}
                       fill
                       className="object-cover cursor-pointer"
+                      sizes="(max-width: 640px) 100vw,
+                        (max-width: 1024px) 50vw,
+                        (max-width: 1280px) 33vw,
+                        25vw"
+                      quality={80}
                     />
                   </Link>
                 </div>

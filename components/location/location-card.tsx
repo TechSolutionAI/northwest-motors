@@ -23,6 +23,11 @@ export default function LocationCard() {
                 width={300}
                 className="w-full h-[300px] object-cover mt-16"
                 priority
+                sizes="(max-width: 640px) 100vw,
+                        (max-width: 1024px) 50vw,
+                        (max-width: 1280px) 33vw,
+                        25vw"
+                quality={80}
             />
         </div>
     );

@@ -21,7 +21,7 @@ export default function MediaPage() {
     return (
         <div className="bg-dark text-white min-h-screen pb-16">
             <div className="container mx-auto px-10 pt-8">
-                <h1 className="text-gray-700 text-xl mb-2">Media</h1>
+                <h1 className="text-5xl mb-2">Media</h1>
 
                 <FeaturedVideo video={selectedVideo} />
 

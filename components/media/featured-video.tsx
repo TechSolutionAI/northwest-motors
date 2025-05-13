@@ -28,7 +28,7 @@ export default function FeaturedVideo({ video }: FeaturedVideoProps) {
                     ) : (
                         <div className="relative w-full h-full">
                             <img
-                                src={video.thumbnail || "/placeholder.svg"}
+                                src={video.thumbnail || "/car-placeholder.webp"}
                                 alt={video.title}
                                 className="w-full h-full object-cover"
                             />
@@ -44,7 +44,7 @@ export default function FeaturedVideo({ video }: FeaturedVideoProps) {
             </div>
 
             <div className="lg:col-span-4">
-                <p className="text-gray-700 mt-8 lg:mt-24">
+                <p className="text-white mt-8 lg:mt-24">
                     Explore the world of Dutton One and discover the One for you. Catering to every lifestyle and preference, see
                     how we capture attainable aspiration for every individual. Follow us on our socials to keep up to date with
                     the latest photography, video and stock updates.

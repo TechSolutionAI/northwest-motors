@@ -52,7 +52,7 @@ export function Logo({ className, size = "md", isScrolled = false, isFooter = fa
   return (
     <div className={cn(sizes[size], className)}>
       <Image
-        src={logoSrc || "/placeholder.svg"}
+        src={logoSrc || "/car-placeholder.webp"}
         alt="Northwest Motors Logo"
         width={300}
         height={150}

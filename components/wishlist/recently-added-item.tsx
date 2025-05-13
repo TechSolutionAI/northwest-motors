@@ -15,11 +15,16 @@ export default function RecentlyAddedItem({ vehicle }: RecentlyAddedItemProps) {
         <div className="border border-gray-200 rounded-md overflow-hidden">
             <div className="relative">
                 <Image
-                    src={vehicle.image || "/placeholder.svg"}
+                    src={vehicle.image || "/car-placeholder.webp"}
                     alt={`${vehicle.year} ${vehicle.make} ${vehicle.model}`}
                     width={600}
                     height={400}
                     className="w-full h-64 object-cover"
+                    sizes="(max-width: 640px) 100vw,
+                        (max-width: 1024px) 50vw,
+                        (max-width: 1280px) 33vw,
+                        25vw"
+                    quality={80}
                 />
             </div>
             <div className="px-8 py-4">

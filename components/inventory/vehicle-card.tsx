@@ -19,7 +19,7 @@ export default function VehicleCard({ vehicle, isInWishlist, onWishlistClick }: 
       <div className="relative h-64">
         <Link href={`/inventory/${vehicle.id}`}>
           <Image
-            src={vehicle.image || "/placeholder.svg"}
+            src={vehicle.image || "/car-placeholder.webp"}
             alt={`${vehicle.make} ${vehicle.model}`}
             fill
             className="object-cover"

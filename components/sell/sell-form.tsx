@@ -1168,7 +1168,7 @@ export function SellForm() {
                             {uploadedPhotos.map((photo, index) => (
                                 <div key={index} className="relative aspect-square bg-gray-100 rounded-md overflow-hidden">
                                     <img
-                                        src={photo ? URL.createObjectURL(photo) : "/placeholder.svg"}
+                                        src={photo ? URL.createObjectURL(photo) : "/car-placeholder.webp"}
                                         alt={`Uploaded photo ${index + 1}`}
                                         className="w-full h-full object-cover"
                                     />

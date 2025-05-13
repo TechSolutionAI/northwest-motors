@@ -13,7 +13,7 @@ export default function VideoCard({ video, onClick }: VideoCardProps) {
         <div className="group cursor-pointer" onClick={onClick}>
             <div className="relative aspect-video bg-gray-800 rounded-md overflow-hidden mb-2">
                 <img
-                    src={video.thumbnail || "/placeholder.svg"}
+                    src={video.thumbnail || "/car-placeholder.webp"}
                     alt={video.title}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 group-hover:brightness-90"
                 />

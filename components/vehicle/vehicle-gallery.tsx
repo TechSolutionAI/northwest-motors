@@ -178,6 +178,11 @@ export default function VehicleGallery({ vehicle, images = [] }: VehicleGalleryP
                             alt={`${vehicle.make} ${vehicle.model}`}
                             fill
                             className="object-contain"
+                            sizes="(max-width: 640px) 100vw,
+                            (max-width: 1024px) 50vw,
+                            (max-width: 1280px) 33vw,
+                            25vw"
+                            quality={80}
                         />
 
                         <button

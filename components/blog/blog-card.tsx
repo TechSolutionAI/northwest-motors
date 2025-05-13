@@ -13,10 +13,16 @@ export function BlogCard({ post, featured = false }: BlogCardProps) {
         <Link href={`/blog/${post.slug}`} key={post.id} className="group block">
             <div className="relative h-48 w-full overflow-hidden">
                 <Image
-                    src={post.coverImage || "/car-placeholder.webp"}
+                    // src={post.coverImage || "/car-placeholder.webp"}
+                    src="/car-placeholder.webp"
                     alt={post.title}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw,
+                        (max-width: 1024px) 50vw,
+                        (max-width: 1280px) 33vw,
+                        25vw"
+                    quality={80}
                 />
             </div>
             <p className="mt-3 text-lg font-medium">{post.title}</p>

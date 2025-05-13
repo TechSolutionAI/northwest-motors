@@ -12,7 +12,16 @@ export default function HeroSection() {
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mt-8">
                 <div className="col-span-3 relative h-[500px] overflow-hidden">
-                    <Image src="/finance.webp" alt="Car finance consultation" fill className="object-cover" />
+                    <Image
+                        src="/finance.webp"
+                        alt="Car finance consultation"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw,
+                        (max-width: 1024px) 50vw,
+                        (max-width: 1280px) 33vw,
+                        25vw"
+                        quality={80} />
                 </div>
 
                 <div className="flex flex-col col-span-2 lg:px-10 justify-center text-gray-300">

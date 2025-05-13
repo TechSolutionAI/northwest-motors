@@ -116,6 +116,11 @@ export function CompareSelection() {
                                     alt="Selected vehicle 1"
                                     fill
                                     className="object-cover"
+                                    sizes="(max-width: 640px) 100vw,
+                                    (max-width: 1024px) 50vw,
+                                    (max-width: 1280px) 33vw,
+                                    25vw"
+                                    quality={80}
                                 />
                             ) : (
                                 <p className="text-gray-700">Press + on the vehicle to compare</p>
@@ -155,6 +160,11 @@ export function CompareSelection() {
                                     alt="Selected vehicle 2"
                                     fill
                                     className="object-cover"
+                                    sizes="(max-width: 640px) 100vw,
+                                    (max-width: 1024px) 50vw,
+                                    (max-width: 1280px) 33vw,
+                                    25vw"
+                                    quality={80}
                                 />
                             ) : (
                                 <p className="text-gray-700">Press + on the vehicle to compare</p>
@@ -197,6 +207,11 @@ export function CompareSelection() {
                                         alt={`${vehicle.year} ${vehicle.make} ${vehicle.model}`}
                                         fill
                                         className="object-cover"
+                                        sizes="(max-width: 640px) 100vw,
+                                        (max-width: 1024px) 50vw,
+                                        (max-width: 1280px) 33vw,
+                                        25vw"
+                                        quality={80}
                                     />
                                     <button
                                         className={`absolute top-2 right-2 p-1 rounded-full ${selectedVehicles.includes(vehicle.id)
