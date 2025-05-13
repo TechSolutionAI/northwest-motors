@@ -62,7 +62,7 @@ export default function VehicleInfo({ vehicle }: VehicleInfoProps) {
 
             {/* Finance Estimates */}
             <div className="mb-6">
-                <h2 className="text-xl text-[#8E6F00] mb-4">FINANCE ESTIMATES</h2>
+                <h2 className="text-xl text-[#8E6F00] mb-4 font-bold">FINANCE ESTIMATES</h2>
                 <div className="flex justify-between items-center mb-4">
                     <div>
                         <p className="text-lg font-bold">${vehicle.weeklyPayment.toFixed(2)}</p>

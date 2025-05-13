@@ -85,6 +85,11 @@ export default function VehicleGallery({ vehicle, images = [] }: VehicleGalleryP
                     fill
                     className="object-cover"
                     priority
+                    sizes="(max-width: 640px) 100vw,
+                        (max-width: 1024px) 50vw,
+                        (max-width: 1280px) 33vw,
+                        25vw"
+                    quality={80}
                 />
 
                 {/* Image Counter */}
@@ -150,6 +155,11 @@ export default function VehicleGallery({ vehicle, images = [] }: VehicleGalleryP
                                 width={150}
                                 height={100}
                                 className="object-cover w-[120px] h-20"
+                                sizes="(max-width: 640px) 100vw,
+                                (max-width: 1024px) 50vw,
+                                (max-width: 1280px) 33vw,
+                                25vw"
+                                quality={80}
                             />
                         </div>
                     ))}
